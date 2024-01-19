@@ -1,3 +1,233 @@
-This is the project page for the SAWGraph project.
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAWGraph</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
 
-More details coming soon ...
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>SAW</b>Graph</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Overview</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#team" class="w3-bar-item w3-button">Team</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src=images/graph.jpg alt="Graph" style="width:1500px; height:300px; object-fit:cover ">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>SAW</b></span> <span class="w3-hide-small w3-text-light-grey">Graph</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Overview</h3>
+    <p><strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>: An <b>Open Knowledge Network </b> to Monitor and Trace PFAS and Other Contaminants in the Nation's Food and Water Systems
+    </p>
+    <p><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782"><i>A ProtoOKN project</i></a></p>
+    <p>Our Goal: Connect federal and other datasets to more quickly analyze data and make decisions around PFAS sources, testing, impacts, and risks </p>
+
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">What we want to know</h4>
+    <ul>
+      <li>Which communities are at greatest risk? 
+        </li>
+      <li>How do the millions of potential sources (sites where sludge has spread and close to industry, airports, firefighting training) affect their surroundings?
+      </li>
+      <li>Where does the PFAS end up? How do they get transported? How far, how quickly? 
+      </li>
+      <li>What agricultural practices reduce PFAS exposure?
+      </li>
+    </ul>
+    <p>We don’t just want to provide raw data, but actionable knowledge that helps answer these questions
+    </p>
+    <img src="images/overview.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+
+
+  <!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">What are PFAs?</h4>
+    <p>PFAS: A group of thousands of manmade chemicals</p>
+    <ul>
+      <li>Highly Persistent due to strong carbon-flourine bonds</li>
+      <li><b>"Forever Chemicals"</b>: due to their properties, they don not break down easily</li>
+    </ul>
+    <div  class="w3-panel w3-leftbar w3-light-grey">
+      <p>Toxicology and human health impacts of PFAS:</p>
+      <ul>
+        <li>Exposure and effects are poorly understood and likely underestimated</li>
+        <li>Increased cholesterol levels</li>
+        <li>Decreased vaccine response in children</li>
+        <li>Changes in liver enzymes</li>
+        <li>Small decreases in infant birth weights</li>
+        <li>Increased risk of high blood pressure or pre-eclampsia in pregnant women</li>
+        <li>Increased risk of kidney or testicular cancer</li>
+      </ul>
+    </div>
+    <p><i><a href="www.atsdr.cdc.gov/pfas/">source</a></i></p>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Where are PFAs?</h4>
+    <ul><li>They are dispersed via air, soil and water</li>
+    <li>How does PFAs get into the environment?</li>
+    <ul><li>Chemical Plants</li>
+    <li>Landfills</li>
+    <li>Wastewater</li>
+    <li>Biosolids used as fertilizer in agriculture</li>
+    <li>Sites of usage: Airports, firefighting training sites, spills</li></ul></ul>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">What's a Knowledge Graph?</h4>
+    <ul>
+      <li>Establishes connections (links) across datasets
+        </li>
+        <li> Kind of a distributed database that can grow over time</li>
+    </ul>
+    <img src="images/graph_example.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+</div>
+
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="team">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Team</h3>
+    <p> Team from University of Maine, Kansas State University, Northeastern University and EPA brings together computer science, data science,  geospatial, and chemistry experts 
+    </p>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Torsten Hahmann</h3>
+      <p class="w3-opacity">PI</p>
+      <p><i>University of Maine</i></p>
+      <!--<p><button class="w3-button w3-light-grey w3-block">Contact</button></p>-->
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Hande McGinty</h3>
+      <p class="w3-opacity">Co-PI</p>
+      <p><i>Kansas State University</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Pascal Hitzler</h3>
+      <p class="w3-opacity">Co-PI</p>
+      <p><i>Kansas State University</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Ganga Hettiarachchi</h3>
+      <p class="w3-opacity">Co-PI</p>
+      <p><i>Kansas State University</i>></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Onur Apul</h3>
+      <p class="w3-opacity">Co-PI</p>
+      <p><i>Kansas State University</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Hari Palani</h3>
+      <p class="w3-opacity">Co-PI</p>
+      <p><i>Northeastern</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Antony Williams</h3>
+      <p class="w3-opacity">Partner</p>
+      <p><i>EPA</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Vasu Kilaru</h3>
+      <p class="w3-opacity">Partner</p>
+      <p><i>EPA</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Shirly Stephen</h3>
+      <p class="w3-opacity">PostDoc Researcher</p>
+      <p><i>University of California Santa Barbara</i></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>David Kedrowski</h3>
+      <p class="w3-opacity">Research Assistant</p>
+      <p><i>University of Maine</i></p>
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Katrina Schweikert</h3>
+      <p class="w3-opacity">Research Assistant</p>
+      <p><i>University of Maine</i></p>
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Sonia Moavensadeh</h3>
+      <p class="w3-opacity">Research Assistant</p>
+      <p><i>University of Maine</i></p>
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Adrita Barua</h3>
+      <p class="w3-opacity">Research Assistant</p>
+      <p><i>Kansas State University</i></p>
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <!--<img src="/w3images/team2.jpg" alt="Torsten" style="width:100%">-->
+      <h3>Yinglun Zhang</h3>
+      <p class="w3-opacity">Research Assistant</p>
+      <p><i>Kansas State University</i></p>
+
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <!--<div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Lets get in touch and talk about your next project.</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>-->
+  
+<!-- Image of location/map -->
+<div class="w3-container">
+  <!--<img src="images/graph.jpg" class="w3-image" style="width:100%">-->
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
+
