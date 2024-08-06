@@ -42,14 +42,11 @@
 
     <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">What we want to know</h4>
     <ul>
-      <li>Which communities are at greatest risk? 
-        </li>
-      <li>How do the millions of potential sources (sites where sludge has spread and close to industry, airports, firefighting training) affect their surroundings?
-      </li>
-      <li>Where does the PFAS end up? How do they get transported? How far, how quickly? 
-      </li>
-      <li>What agricultural practices reduce PFAS exposure?
-      </li>
+      <li>Where have we tested for what? Where are the biggest testing gaps?</li>li> 
+      <li>Which communities are at greatest risk?</li>
+      <li>How do the millions of potential sources (sites where sludge has spread and close to industry, airports, firefighting training) affect their surroundings?</li>
+      <li>Where does the PFAS end up? How do they get transported? How far, how quickly?</li>
+      <li>What agricultural practices reduce PFAS exposure?</li>
     </ul>
     <p>We don’t just want to provide raw data, but actionable knowledge that helps answer these questions
     </p>
@@ -57,10 +54,10 @@
   </div>
 
 
-  <!-- About Container -->
-<div class="w3-container" id="about">
+  <!-- About PFAS -->
+<div class="w3-container" id="about-pfas">
   <div class="w3-container w3-padding-32">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About PFAS Contamination</h3>
     <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">What are PFAS?</h4>
     <p>PFAS: A group of thousands of manmade chemicals</p>
     <ul>
@@ -99,8 +96,50 @@
   </div>
 </div>
 
+  
+  <!-- Project Summary (Datasheet) -->
+<div class="w3-container" id="datasheet">
+  <div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Project Summary</h3>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Use cases and societal challenges being addressed</h4>
+    <p>The Safe Agricultural Products and Water Graph (SAWGraph) is an open knowledge network (OKN) for knowledge on contamination of water and food supplies with perfluoroalkyl and polyfluoroalkyl substances (PFAS), and for assessing how different places and communities are exposed to different levels of PFAS-related health risks. Domain knowledge and semantic metadata expressed in KGs add context, bridge data silos, and help infer richer layers of information such as connections between what has been observed and where it may have originated from or what other places or resources it may impact. The graph’s development supports three use cases: (1) Prioritizing Testing and Identifying Testing Gaps; (2) Assessing Impacts and Risk to Different Communities; (3) Connecting Contamination Sources to Results for Improved Tracing. In addition, the graph will support communication of contamination occurrence and other kinds of hypothesis development to support PFAS research. 
+The primary end users of SAWGraphs are personnel at state and federal agencies who monitor the environment and the safety of drinking water and agricultural land and products. End users include but are not limited to personnel at EPA and state environmental protection agencies (e.g. state environmental toxicologists) and at USDA and state agricultural agencies. Other potential users include experts from FDA, USGS and similar state agencies.  
+We distinguish four types of users based on their primary responsibility: (1) drinking water monitoring; (2) understanding the extent and sources of environmental contamination with PFAS; (3) PFAS researchers; (4) environmental justice.
+The graph is expected to empower these users to: (1) formulate and implement comprehensive test plans aimed at monitoring elevated PFAS levels in drinking water or agricultural lands, (2) pinpoint the most significant sources of PFAS in a state and how it impacts disadvantaged communities; (3) identify populations at elevated risk and prioritize testing resources and support accordingly; (4) design contamination management and remediation plana; and (5) identify research gaps in knowledge about PFAS fate and transport. Collectively, these applications will expedite comprehension of PFAS contamination and its mitigation, while ensuring the efficient and equitable allocation of testing and remediation resources.
+    </p>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Knowledge graph source datasets</h4>
+    <ul>
+      <li>PFAS testing results from drinking water (federal: PFAS Analytics Tools; original source UCMR data and select state data); ground and surface water, soil and tissue samples.
+        </li>
+      <li>Point sources for PFAS based on the Facilities Registry Service using North American Industry Classification System (NAICS) and Standard Industrial Classification (SIC) as well as DoD sites, DoE sites, airports, and superfund sites and landfills  
+        </li>
+      <li>EPA’s PFAS release data collected in accordance with the Clean Water and Clean Air Acts
+        </li>
+      <li>Potentially impacted features like private water wells and drinking water protection areas from select states.
+        </li>
+      <li>Data layers on agricultural uses; surface water (stream reaches, watersheds) and groundwater (aquifers) features via connections to geoconnex and KnowWhereGraph.
+        </li>
+      <li>Geospatial relations to connect data:  Spatial connection via S2 cells (level 13 or finer) and via administrative regions (geoIds, FIPS codes, ZIP codes, etc.) and hydrologic connections
+        </li>
+The graph to be subdivided by state where possible and be constructed only for select states. Each graph would be on the order of 1 million entities and 10 million triples and likely rapidly growing.    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Knowledge graph source datasets</h4>
+    </ul>
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Competency questions and User queries
+</h4>
+    <ul>
+<li>Testing Coverage and Gaps: Where (locations/towns) should we prioritize environmental/water testing?
+ <li>E.g. which wells are within 5 miles of landfills/airports/biosludge application sites? Which wells near locations with a reported PFOA contamination above 4ppt have not been tested?
+   </li></li>
+<li>Assessing Contamination Impacts: Where and who is impacted? (Prevalence, risk/vulnerability mapping)
+ <li>E.g. Which towns or counties have multiple test results with PFOS levels above 20ppt with no known contamination source nearby? Which chemicals show the highest average readings in samples from a particular region? Which towns/counties are most vulnerable based on their proximity to known or potential PFAS sources? 
+   </li></li>
+<li>Contaminant Tracing: What are potential sources of contamination at a particular location or area?
+<li>E.g. What potential contamination sources exist 20 miles upstream from the sample result? What wells are hydrologically connected to other wells with a reported contamination of +10ppt
+   </li></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- About Section -->
+  <!-- About Team Section -->
   <div class="w3-container w3-padding-32" id="team">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Team</h3>
     <p> Team from University of Maine, Kansas State University, Northeastern University and EPA brings together computer science, data science,  geospatial, and chemistry experts 
