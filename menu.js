@@ -10,7 +10,7 @@ document.write('\
                 <a href="index.html#about-kgs" class="w3-bar-item w3-button">Knowledge Graphs</a>\
                 <div class="w3-dropdown-hover">\
                     <button class="w3-bar-item w3-button w3-wide">Examples</button>\
-                    <div class="w3-dropdown-content w3-bar-block w3-card-4">\
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
                         <a href="testing.html" class="w3-bar-item w3-button">Testing Gaps</a>\
                         <a href="impacts.html" class="w3-bar-item w3-button">Assessing Impacts</a>\
                         <a href="#" class="w3-bar-item w3-button">Contaminant Tracing</a>\
