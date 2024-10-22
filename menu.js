@@ -13,7 +13,7 @@ document.write('\
                     <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
                         <a href="testing.html" class="w3-bar-item w3-button">Testing Gaps</a>\
                         <a href="impacts.html" class="w3-bar-item w3-button">Assessing Impacts</a>\
-                        <a href="#" class="w3-bar-item w3-button">Contaminant Tracing</a>\
+                        <a href="tracing.html" class="w3-bar-item w3-button">Contaminant Tracing</a>\
                     </div>\
                     </div>\
                 <a href="index.html#project" class="w3-bar-item w3-button">Project</a>\
