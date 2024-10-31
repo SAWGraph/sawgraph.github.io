@@ -16,7 +16,7 @@ document.write('\
                         <a href="tracing.html" class="w3-bar-item w3-button">Contaminant Tracing</a>\
                     </div>\
                     </div>\
-                <a href="index.html#project" class="w3-bar-item w3-button">Project</a>\
+                <a href="index.html#project" class="w3-bar-item w3-button">Data Sources</a>\
                 <a href="index.html#team" class="w3-bar-item w3-button">Team</a>\
             </div>\
             </div>\
