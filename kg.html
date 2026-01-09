@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAWGraph - About Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+<script src="menu.js"></script>
+</div>
+              </div>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+
+  <!-- Project Summary (Datasheet) -->
+
+<div class="w3-container" id="project">
+  <div class="w3-container w3-padding-32">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Architecture</h3>
+    <p>The SAWGraph Knowledge Graph provides a comprehensive view of PFAS contamination, potential sources, and potential impacts. </p>
+     <p>This data is organized into a series of interconnected knowledge graphs to facilitate reuse and modularize the large graphs.</p>
+    <img src="images/SAWGraphOverview-Jan2025.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+<div class="w3-container" id="data-sources">
+  <div class="w3-container w3-padding-32">
+    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Source data</h4>
+    <p> SAWGraph integrates data from multiple federal and state sources. The primary data sources include:</p>
+    <table class="w3-table-all" "w3-card-4">
+      <thead><tr>
+        <tr style="height: 30px">
+          <th>Repository</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Source</th>
+          <th>Source URL</th>
+          <th>Geospatial Metadata URL (to comply with Geospatial Act of 2018)</th>
+        </tr>
+      </tr></thead>
+      <tbody>
+
+        <tr style="height: 30px">
+          <td>Sawgraph-KG</td>
+          <td>Water Quality Samples (WQP)</td>
+          <td>Samples</td>
+          <td>Surface and groundwater locations (WQP sites), PFAS test results</td>
+          <td>USGS, states and tribes, EPA</td>
+          <td><a target="_blank" href="https://www.waterqualitydata.us/#countrycode=US&amp;characteristicType=PFAS%2CPerfluorinated%20Alkyl%20Substance&amp;characteristicType=PFOA%2C%20Perfluorooctanoic%20Acid&amp;startDateLo=01-01-2020&amp;startDateHi=12-31-2023&amp;mimeType=csv&amp;dataProfile=resultPhysChem&amp;providers=NWIS&amp;providers=STEWARDS&amp;providers=STORET">Water Quality Portal</a></td>
+          <td><a target="_blank" href="https://www.waterqualitydata.us/portal_userguide/">Water Quality Portal User Guide</a></td>
+        </tr>
+        <tr style="height: 30px">
+          <td>Sawgraph-KG</td>
+          <td>Maine EGAD</td>
+          <td>Samples</td>
+          <td>PFAS samples from Maine Environmental and Geographic Analysis Database (EGAD)</td>
+          <td> Maine DEP</td>
+          <td><a target="_blank" href="https://www.maine.gov/dep/gis/datamaps/egad_samples/">Maine EGAD Samples</a></td>
+          <td><a target="_blank" href="https://www.arcgis.com/home/item.html?id=3d2c55224fa642fb9bf3fe4deb52a3d9">Maine EGAD Metadata</a></td>
+          </tr>
+          <tr style="height: 30px">
+            <td>FIO</td>
+            <td class="s4">Facility Registry Service / Envirofacts</td>
+            <td>Facilities</td>
+            <td class="s3">Facilities and program records about facilities (location, identifiers, NAICS) from different state and EPA program information systems</td>
+            <td>EPA</td>
+            <td><a target="_blank" href="https://enviro.epa.gov">EPA Envirofacts</a></td>
+            <td></td>
+          </tr>
+          <tr style="height: 30px">
+            <td >FIO</td>
+            <td >NAICS (North American Industry Classification System) </td>
+            <td >Industries</td>
+            <td> Industry Classification System to categories businesses and facilities</td>
+            <td >US Census Bureau</td>
+            <td ><a target="_blank" href="https://www.census.gov/naics/">NAICS</a></td>
+            <td ></td>
+          </tr>
+          <tr style="height: 30px">
+            <td>FIO</td>
+            <td>PFAS Industries</td>
+            <td>Industry Collection</td>
+            <td>Industries to research for PFAS use compiled by Environmental Council of States workgroup</td>
+            <td>ECOS</td>
+            <td><a target="_blank" href="https://www.ecos.org/pfas/pfas-industry-data/">ECOS PFAS Industry Data</a></td>
+            <td></td>
+          </tr>
+          <tr style="height: 30px">
+            
+            <td>FIO</td>
+            <td>PFAS Industries</td>
+            <td>Industry Collection</td>
+            <td>PFAS Handling Industry Sectors list compiled by EPA </td>
+            <td>EPA  PFAS Analytic Tools</td>
+            <td><a target="_blank" href="https://echo.epa.gov/trends/pfas-tools#data">EPA PFAS Analytic Tools Data Sources</a></td>
+            <td></td>
+          </tr>
+          <tr style="height: 30px">
+            
+            <td>Hydrology</td>
+            <td>Flowlines (NHDPlus v2)</td>
+            <td>Surface Water Flowlines</td>
+            <td>Surface water flowlines (small catchment realizations) with downstream connectivity for network tracing</td>
+            <td>USGS</td>
+            <td><a target="_blank" href="https://www.epa.gov/waterdata/get-nhdplus-national-hydrography-dataset-plus-data#v2datamap">NHDPlus V2</a></td>
+            <td><a target="_blank" href="https://www.epa.gov/system/files/documents/2023-04/NHDPlusV2_User_Guide.pdf">NHDPlus V2 UserGuide</a></td>
+          </tr>
+          <tr style="height: 30px">
+            
+            <td>Hydrology</td>
+            <td>Waterbodies (NHDPlus v2)</td>
+            <td>Surface Water Bodies</td>
+            <td>Surface water bodies, named and unnamed, including ponds, lakes, and some marshes/wetlands</td>
+            <td>USGS</td>
+            <td><a target="_blank" href="https://www.epa.gov/waterdata/get-nhdplus-national-hydrography-dataset-plus-data#v2datamap">NHDPlusV2</a></td>
+            <td><a target="_blank" href="https://www.epa.gov/system/files/documents/2023-04/NHDPlusV2_User_Guide.pdf">NHDPlus V2 UserGuide</a></td>
+          </tr>
+          <tr style="height: 30px">
+            
+            <td>Hydrology</td>
+            <td>Wells</td>
+            <td>Water Wells</td>
+            <td>Primarily private drinking water wells</td>
+            <td>Individual States<br><i>Moving toward a single source like USGWD or NWWDB</i></td>
+            <td><a target="_blank" href="https://maps.isgs.illinois.edu/arcgis/rest/services/ILWATER/Water_and_Related_Wells2/MapServer">ISGS ILWATER</a>
+              <br><a target="_blank" href="https://mgs-maine.opendata.arcgis.com/datasets/maine-well-database-well-depth/explore">MGS Maine Well Database</a><br>
+              <a target="_blank" href="https://mgs-maine.opendata.arcgis.com/datasets/maine-well-database-unlocated-wells/explore">MGS Maine Well Database Unlocated</a>
+              <br><a target="_blank" href="https://services1.arcgis.com/RbMX0mRVOFNTdLzd/ArcGIS/rest/services/MGS_Wells_Database/FeatureServer/0">MGS Maine Well Database Geoserver</a></td>
+            <td><a target="_blank" href="https://prairie-research.maps.arcgis.com/apps/webappviewer/index.html?id=e06b64ae0c814ef3a4e43a191cb57f87">ISGS ILWATER Map</a><br>
+              <a target="_blank" href="https://mgs-maine.opendata.arcgis.com/datasets/maine::maine-well-database-well-depth/about">MGS Maine Well Database Metadata</a><br>
+              <a target="_blank" href="https://mgs-maine.opendata.arcgis.com/datasets/maine::maine-well-database-unlocated-wells/about">MGS Maine Well Database Unlocated Metadata</a><br>
+              <a target="_blank" href="https://www.maine.gov/dacf/mgs/pubs/digital/well.htm">Maine DACF Water Well Database Metadata</a></td>
+          </tr>
+          <tr style="height: 30px">
+            <td>Hydrology</td>
+            <td>Aquifers</td>
+            <td>Aquifers</td>
+            <td>Aquifers at various scales, from large national aquifer systems to more local aquifers, from deep bedrock to shallow sand and gravel</td>
+            <td>Individual States<br></td>
+            <td><a href="https://clearinghouse.isgs.illinois.edu/data/hydrology/major-aquifers">IL ISGS Acquifers</a><br><a href="https://www.maine.gov/dacf/mgs/pubs/digital/aquifers.htm">Maine DACF Aquifers</a></td>
+            <td></td>
+          </tr>
+          <tr style="height: 30px">
+           
+            <td>Hydrology</td><td class="s4">Safe Drinking Water Information System</td>
+            <td>Public water systems</td>
+            <td>Basic information about each public water system, including violation and enforcement information</td>
+            <td>EPA</td>
+            <td><a target="_blank" href="https://sdwis.epa.gov/ords/sfdw_pub/r/sfdw/sdwis_fed_reports_public/200">SDWIS</a></td>
+            <td><a target="_blank" href="https://www.epa.gov/DWdata/sdwis-federal-reporting-services-data-dictionary">SDWIS Metadata</a></td>
+          </tr>
+          <tr style="height: 30px">
+            <td>Spatial</td>
+            <td>Administrative Regions</td>
+            <td>States (level 1)<br>Counties (level 2)<br>County subdivisions (level 3)</td>
+            <td>Political units, boundaries, FIPS codes, and hierarchy</td>
+            <td>KnowWhereGraph (Levels 1 &amp; 2)<br>Census Bureau (Level 3)</td>
+            <td><a target="_blank" href="https://www.knowwheregraph.org/">KnowWhereGraph</a><br><a target="_blank" href="https://www.census.gov/cgi-bin/geo/shapefiles/index.php">Census Bureau TIGER/linefiles</a></td>
+            <td>Each Census Bureau shapefile includes a *.iso.xml metadata file</td>
+          </tr>
+          <tr style="height: 30px">
+            <td>Spatial</td>
+            <td class="s16">S2 Cells</td>
+            <td>Level 13 S2 cells</td>
+            <td>Level 13 S2 cells</td>
+            <td>KnowWhereGraph</td>
+            <td><a target="_blank" href="https://www.knowwheregraph.org/">KnowWhereGraph</a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+    <!--<ul>
+      <li>PFAS testing results from drinking water (federal: PFAS Analytics Tools; original source UCMR data and select state data); ground and surface water, soil and tissue samples.
+        </li>
+      <li>Point sources for PFAS based on the Facilities Registry Service using North American Industry Classification System (NAICS) and Standard Industrial Classification (SIC) as well as DoD sites, DoE sites, airports, and superfund sites and landfills  
+        </li>
+      <li>EPA’s PFAS release data collected in accordance with the Clean Water and Clean Air Acts
+        </li>
+      <li>Potentially impacted features like private water wells and drinking water protection areas from select states.
+        </li>
+      <li>Data layers on agricultural uses; surface water (stream reaches, watersheds) and groundwater (aquifers) features via connections to geoconnex and KnowWhereGraph.
+        </li>
+      <li>Geospatial relations to connect data:  locations and sites are spatially integrated  via S2 cells (level 13 or finer) and via administrative regions (geoIds, FIPS codes, ZIP codes, etc.) and hydrologic connections
+        </li>
+    </ul>-->
+
+
+      <!-- End page content -->
+</div>
+
+</body>
+</html>
