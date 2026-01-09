@@ -6,28 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<style>
+  .header-spacing { padding-top:50px; padding-bottom:0px; }
+  @media (max-width:800px) { .header-spacing { padding-top:50px; padding-bottom:0px;} }
+  .header-logo { display:block; margin:18px auto; padding:10px; max-width:400px; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+  @media (max-width:600px) { .header-logo { max-width:92%; padding:8px; } }
+</style>
+</head>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<div class="w3-top w3-padding-8">
               <div class="w3-bar w3-white w3-wide w3-padding w3-card">
               <script src="menu.js"></script>
               </div>
 </div>
 
-
-<!-- Header -->
-<header class="w3-display-container w3-content" style="max-width:1500px; height:500px;" id="home">
-  <div class="w3-display-middle">
-    <img class="w3-image" src=images\Sawgraph-Logo-transparent.png alt="Graph" width="600" height="600">
-  </div>
-</header>
-
 <!-- Page content -->
 <div class="w3-content w3-main w3-padding" style="max-width:1564px">
 
+<!-- Header -->
+<header class="header-spacing" style="max-width:1500px;" id="home">
+    <img class="header-logo" src="images/Sawgraph-Logo-transparent.png" alt="SAWGraph logo">
+</header>
+
+
+
   <!-- Project Section -->
-  <div class="w3-container w3-padding-64" id="intro">
+  <div class="w3-container w3-padding-8" id="intro">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Overview</h3>
     <p><strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>: An <b>Open Knowledge Network </b> to Monitor and Trace PFAS and Other Contaminants in the Nation's Food and Water Systems
     </p>
