@@ -9,26 +9,30 @@
 <body>
 
 <!-- Navbar (sit on top) -->
-<script src="menu.js"></script>
+<div class="w3-top">
+              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+              <script src="menu.js"></script>
+              </div>
+</div>
+
 
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src=images/graph.jpg alt="Graph" style="width:1500px; height:300px; object-fit:cover ">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>SAW</b></span> <span class="w3-hide-small w3-text-light-grey">Graph</span></h1>
+<header class="w3-display-container w3-content" style="max-width:1500px; height:500px;" id="home">
+  <div class="w3-display-middle">
+    <img class="w3-image" src=images\Sawgraph-Logo-transparent.png alt="Graph" width="600" height="600">
   </div>
 </header>
 
 <!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+<div class="w3-content w3-main w3-padding" style="max-width:1564px">
 
   <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="intro">
+  <div class="w3-container w3-padding-64" id="intro">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Overview</h3>
     <p><strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>: An <b>Open Knowledge Network </b> to Monitor and Trace PFAS and Other Contaminants in the Nation's Food and Water Systems
     </p>
     <p><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782"><i>A ProtoOKN project</i></a></p>
-    <p>The goal of SAWGraph is to onnect federal and other datasets to more quickly analyze data and make decisions around  Per- and polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks
+    <p>The goal of SAWGraph is to connect federal and other datasets to more quickly analyze data and make decisions around  per- and polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks
       The graph will integrate data data and provide interfaces that support analysis, mapping and communication of the results of testing for PFAS contamination, spatial connections to known and potential sources to support PFAS research and decision making around PFAS testing and mitigation. 
 The primary end users of SAWGraphs are personnel at state and federal agencies who monitor the environment and the safety of drinking water and agricultural land and products. End users include but are not limited to personnel at EPA and state environmental protection agencies (e.g. state environmental toxicologists) and at USDA and state agricultural agencies. Other potential users include experts from FDA, USGS and similar state agencies.  
 We distinguish four types of users based on their primary responsibility: (1) drinking water monitoring; (2) understanding the extent and sources of environmental contamination with PFAS; (3) PFAS researchers; (4) environmental justice.
@@ -303,217 +307,6 @@ The graph is expected to empower these users to: (1) formulate and implement com
     </ul>
   </div>
 </div>
-
-  <!-- About Team Section -->
-  <div class="w3-container w3-padding-32" id="team">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Team</h3>
-    <p> Team from University of Maine, Kansas State University, Pennsylvania State University, Northeastern University and EPA brings together computer science, data science,  geospatial, and chemistry experts 
-    </p>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images\THahmann.jpg" class="" alt="Torsten" style="width:100%">
-      <h3>Torsten Hahmann</h3>
-      <p class="w3-opacity">Principal Investigator</p>
-      <p><i>University of Maine</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href="https://orcid.org/0000-0002-5331-5052"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-            0000-0002-5331-5052
-        </a></p>
-        <p><a href="https://umaine.edu/scis/people/torsten-hahmann/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/PHitzler.jpg" alt="Pascal" style="width:100%">
-      <h3>Pascal Hitzler</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p><a href="https://people.cs.ksu.edu/~hitzler/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/GHettiarachchi.jpg" alt="Ganga" style="width:100%">
-      <h3>Ganga Hettiarachchi</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href="https://orcid.org/0000-0002-6669-2885"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-            0000-0002-6669-2885
-        </a></p>
-        <p><a href="http://www.agronomy.k-state.edu/people/faculty/hettiarachchi-ganga/index.html">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/HMcGinty.jpg" alt="Hande" style="width:100%">
-      <h3>Hande Küçük McGinty</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p>       </p>
-      <p><a href="https://www.koncordantlab.com/teams/hande-k%C3%BC%C3%A7%C3%BCk-mcginty">Information</a></p>
-    </div>
-  </div>
-  <div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/OApul.jpg" alt="Onur" style="width:100%">
-      <h3>Onur Apul</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Pennsylvania State University</i></p>
-      <p>
-         </p>
-      <p><a href="https://civil.umaine.edu/faculty/onur-g-apul/">Information</a> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/HPalani.jpg" alt="Hari" style="width:100%">
-      <h3>Hari Palani</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Northeastern</i></p>
-      <p>
-         </p>
-      <p><a href="https://roux.northeastern.edu/people/hari-palani/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/AWilliams.jpg" alt="Antony" style="width:100%">
-      <h3>Antony Williams</h3>
-      <p class="w3-opacity">Federal Partner</p>
-      <p><i>EPA</i></p>
-      <p><a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0002-2668-4821"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-        0000-0002-2668-4821
-      </a></p>
-      <p> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell" >
-      <img src="images/VKilaru.jpg" alt="Vasu" style="width:100%">
-      <h3>Vasu Kilaru</h3>
-      <p class="w3-opacity">Federal Partner</p>
-      <p><i>EPA</i></p>
-      <p> 
-          
-      </p>
-      <p> </p>
-    </div>
-  </div>
-  <div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/SStephen.jpg" alt="Shirly" style="width:100%">
-      <h3>Shirly Stephen</h3>
-      <p class="w3-opacity">PostDoc Researcher</p>
-      <p><i>University of California Santa Barbara</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href=https://orcid.org/0000-0003-3547-8058"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-          0000-0003-3547-8058
-        </a></p>
-        <p> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/DKedrowski.jpg" alt="David" style="width:100%">
-      <h3>David Kedrowski</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
-      <a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0002-9070-3169"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-      0000-0002-9070-3169
-      </a>
-      <p><a href="https://umaine.edu/scis/people/david-kedrowski/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/KSchweikert.jpg" alt="Katrina" style="width:100%">
-      <h3>Katrina Schweikert</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
-      <p><a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0003-3271-6700"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-        0000-0003-3271-6700
-      </a></p>
-      <p><a href="https://umaine.edu/scis/people/katrina-schweikert/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/SMoavenzadeh.jpg" alt="Sonia" style="width:100%">
-      <h3>Sonia Moavenzadeh</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
-      <p> .</p>
-      <p> .</p>
-    </div>
-  </div>
-  <div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/ABarua.jpg" alt="Adrita" style="width:100%">
-      <h3>Adrita Barua</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/YZhang.jpg" alt="Yinglun" style="width:100%">
-      <h3>Yinglun Zhang</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p> <a href="https://www.koncordantlab.com/teams/yinglun-zhang">Information </a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/RBabuRaavi.jpg" alt="Revanth" style="width:100%">
-      <h3>Revanth Babu Raavi</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p><a href="https://www.koncordantlab.com/teams/revanth-babu-raavi">Information</a> </p>
-    </div>
-  </div>
 
 <!-- End page content -->
 </div>

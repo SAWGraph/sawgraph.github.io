@@ -1,7 +1,4 @@
 document.write('\
-        <!-- Navbar (sit on top) -->\
-        <div class="w3-top">\
-            <div class="w3-bar w3-white w3-wide w3-padding w3-card">\
             <a href="index.html#home" class="w3-bar-item w3-button"><b>SAW</b>Graph</a>\
             <!-- Float links to the right. Hide them on small screens -->\
             <div class="w3-right w3-hide-small">\
@@ -19,6 +16,4 @@ document.write('\
                 <a href="index.html#project" class="w3-bar-item w3-button">Data Sources</a>\
                 <a href="index.html#team" class="w3-bar-item w3-button">Team</a>\
             </div>\
-            </div>\
-        </div>\
         ');
