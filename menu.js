@@ -17,6 +17,7 @@ document.write('\
                 <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
                     <a href="kg.html#project" class="w3-bar-item w3-button">Architecture</a>\
                     <a href="kg.html#data-sources" class="w3-bar-item w3-button">Data Sources</a>\
+                    <a href="ontologies.html" class="w3-bar-item w3-button">Ontologies</a>\
                     <a href="index.html#about-kgs" class="w3-bar-item w3-button">About KGs</a>\
                 </div>\
             </div>\

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAWGraph - About Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+<script src="menu.js"></script>
+</div>
+              </div>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+<br>
+<br>
+<h1>Ontologies</h1>
+<p>Each of the graphs in the SAWGraph project is built upon a set of ontologies that define the structure and relationships within the data. 
+  Ontologies define the concepts and categories and how they relate. SAWGraph reuses and extends existing ontologies to ensure consistency and interoperability across datasets. 
+  Each graph also has dataset specific ontology extensions that preserve the original data structure and semantics while aligning it with the overall SAWGraph framework.
+</p>
+
+<img src="images\SAWGraph-Ontology-Overview (simple).png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+<h2>SAWGraph (PFAS) KG</h2>
+<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-white">
+  <tr>
+    <th>Ontology</th>
+    <th>Description</th>
+    <th>Source</th> 
+    <th>Documentation</th>
+    <th>Publication</th>
+  </tr>
+  <tr>
+    <td>The Contaminant Observations and Samples Ontology (ContaminOSO)</td>
+    <td>The core ontology for the SAWGraph knowledge graph, defining key concepts and relationships related to environmental sampling and release of contaminants. An extensions of <a href="https://www.w3.org/TR/vocab-ssn/">SOSA</a></td>
+    <td><a href="https://github.com/SAWGraph/contaminoso" target="_blank">Github</a></td>
+    <td><a href="https://sawgraph.github.io/contaminoso/" target="_blank">ContaminOSO</a></td>
+    <td><a href="https://doi.org/10.3233/FAIA250501" target="_blank">ContaminOSO: Ontological Foundations and Design Choices for an Ontology for Environmental Contamination Data</a>
+      <i> T Hahmann, K Schweikert, S Stephen, D Kedrowski</i></td>
+  </tr>
+</table>
+
+<h2>FRS KG</h2>
+<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-white">
+  <tr>
+    <th>Ontology</th>
+    <th>Description</th>
+    <th>Source</th> 
+    <th>Documentation</th>
+    <th>Publication</th>
+      </tr>
+      <tr>
+    <td>Facilities and Industries Ontology (FIO)</td>
+    <td>Concepts and relations between facilities, industries and organizations</td>
+    <td><a href="https://github.com/SAWGraph/fio" target="_blank">Github</a></td>
+    <td><a href="http://w3id.org/fio/" target="_blank">FIO</a></td>
+    <td><a href="" target="_blank">An Ontology Design Pattern for Industry Classification in the Facilities and Industries Ontology (FIO)</a>
+      <i>K Schweikert,T Hahmann</i></td>
+  </tr>
+  <tr>
+    <td>Facility Registry Service</td>
+    <td> Dataset ontology for EPA Facility Registry Service</td>
+    <td><a href="https://github.com/SAWGraph/fio/tree/main/datasets/federal/us-frs" target="_blank">Github</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>North American Industry Classification System</td>
+    <td> Dataset ontology for NAICS industry classification</td>
+    <td><a href="https://github.com/SAWGraph/fio/tree/main/datasets/federal/naics" target="_blank">Github</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Spatial KG</h2>
+<p>SAWGraph uses topological enrichment with S2 and Administrative Region 3 (county subdivisions and towns) in order to semantically link data in all graphs via their location. This is further outlined in our paper: </p>
+<p class="w3-panel"><a href="https://doi.org/10.4230/lipics.giscience.2025.4 " target="_blank">Precomputed Topological Relations for Integrated Geospatial Analysis Across Knowledge Graphs</a> <i>K Schweikert, DK Kedrowski, S Stephen, THahmann</i> In 13th International Conference on Geographic Information Science (GIScience 2025). Leibniz International Proceedings in Informatics (LIPIcs), Volume 346, pp. 4:1-4:22, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2025) <a href="https://doi.org/10.4230/LIPIcs.GIScience.2025.4" target="_blank">https://doi.org/10.4230/LIPIcs.GIScience.2025.4</a>
+</p>
+  <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-white">
+  <tr> 
+    <th>Ontology</th>
+    <th>Description</th>
+    <th>Source</th> 
+    <th>Documentation</th>
+    <th>Publication</th>
+  </tr>
+  <tr>
+        <td>SAWGraph Spatial Ontology</td>
+        <td>A KWG-Ont extension that simplifies querying of spatial predicates by adding a superproperty for all spatial relations (excluding disjoint)</td>
+        <td><a href="https://github.com/SAWGraph/geospatial-kg/blob/main/ontologies/sawgraph-spatial-ontology.ttl">Github</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+<tr>
+    <td>KnowWhereGraph Ontology</td>
+    <td>Ontology for representing and querying geospatial data (Administrative Regions, Precomputed Topological Relations)</td>
+    <td></td>
+    <td><a href="https://knowwheregraph.org/graph/" target="_blank">KnowWhereGraph</a></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>GeoSPARQL</td>
+    <td>OGC standard for representing and querying geospatial data on the Semantic Web</td>
+    <td><a href="https://www.ogc.org/standards/geosparql" target="_blank">OGC</a></td>
+    <td><a href="https://www.ogc.org/standards/geosparql" target="_blank">GeoSPARQL</a></td>
+    <td></td>
+  </tr>
+
+
+    </table>
+
+<h2> Hydrology KG</h2>
+<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-white">
+  <tr>
+    <th>Ontology</th>
+    <th>Description</th>
+    <th>Source</th>
+    <th>Documentation</th>
+    <th>Publication</th>
+  </tr>
+  <tr>
+    <td>SAWGraph Water Ontology</td>
+    <td> Ontology for representing both surface and groundwater. Combines concepts from HY_Features, HYFO, GWML2 and alsoaligns to Geoconnex.</td>
+    <td><a href="https://github.com/SAWGraph/water-kg/tree/main/ontologies" target="_blank">Github</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+  <h2>DSSTox</h2>
+<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable w3-white">
+  <tr>
+    <th>Ontology</th>
+    <th>Description</th>
+    <th>Source</th>
+    <th>Documentation</th>
+    <th>Publication</th> 
+  </tr>
+  <tr>
+    <td>DSSTox Ontology</td>
+    <td>Ontology for representing chemical substances and their properties based on the DSSTox database structure</td>
+    <td><a href="https://github.com/SAWGraph/comptox-ontology" target="_blank">Github</a></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  </table>
+  <!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
