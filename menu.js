@@ -18,16 +18,18 @@ document.write('\
                     <a href="kg.html#project" class="w3-bar-item w3-button">Architecture</a>\
                     <a href="kg.html#data-sources" class="w3-bar-item w3-button">Data Sources</a>\
                     <a href="ontologies.html" class="w3-bar-item w3-button">Ontologies</a>\
-                    <a href="index.html#about-kgs" class="w3-bar-item w3-button">About KGs</a>\
+                    <a href="kgs.html" class="w3-bar-item w3-button">About KGs</a>\
                 </div>\
             </div>\
                 \
             <div class="w3-dropdown-hover">\
                     <button class="w3-bar-item w3-button w3-wide">Examples</button>\
                     <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
-                        <a href="testing.html" class="w3-bar-item w3-button">Testing Gaps</a>\
+                        <a href="testing.html" class="w3-bar-item w3-button">Testing: Waterbodies Near Facilities </a>\
+                        <a href="testing_aquifers.html" class="w3-bar-item w3-button">Testing: Wells with Common Aquifers</a>\
                         <a href="impacts.html" class="w3-bar-item w3-button">Assessing Impacts</a>\
-                        <a href="tracing.html" class="w3-bar-item w3-button">Contaminant Tracing</a>\
+                        <a href="tracing.html" class="w3-bar-item w3-button">Tracing:Downstream of Facilities</a>\
+                        <a href="tracing_alldownstream.html" class="w3-bar-item w3-button">Tracing:Downstream of Industry Facilities</a>\
                     </div>\
             </div>\
                 \
