@@ -24,7 +24,7 @@ document.write('\
                 \
             <div class="w3-dropdown-hover">\
                     <button class="w3-bar-item w3-button w3-wide">Examples</button>\
-                    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px z-index=1000">\
                         <a href="testing.html" class="w3-bar-item w3-button">Testing: Waterbodies Near Facilities </a>\
                         <a href="testing_aquifers.html" class="w3-bar-item w3-button">Testing: Wells with Common Aquifers</a>\
                         <a href="impacts.html" class="w3-bar-item w3-button">Assessing Impacts</a>\
