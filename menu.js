@@ -2,7 +2,7 @@ document.write('\
             <a href="index.html#home" class="w3-bar-item w3-button"><b>SAW</b>Graph</a>\
             <!-- Float links to the right. Hide them on small screens -->\
             <div class="w3-right w3-hide-small">\
-            <a href="index.html" class="w3-bar-item w3-button"></a>\
+            <a href="index.html" class="w3-bar-item w3-button"> </a>\
             <div class="w3-dropdown-hover">\
                 <button class="w3-bar-item w3-button w3-wide">Overview</button>\
                 <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px">\
@@ -19,17 +19,19 @@ document.write('\
                     <a href="kg.html#data-sources" class="w3-bar-item w3-button">Data Sources</a>\
                     <a href="ontologies.html" class="w3-bar-item w3-button">Ontologies</a>\
                     <a href="aboutkgs.html" class="w3-bar-item w3-button">About KGs</a>\
+                    <a href="publications.html" class="w3-bar-item w3-button">Publications</a>\
                 </div>\
             </div>\
                 \
             <div class="w3-dropdown-hover">\
                     <button class="w3-bar-item w3-button w3-wide">Examples</button>\
-                    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px z-index=1000">\
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="margin-top: 32px; z-index:9999;">\
                         <a href="testing.html" class="w3-bar-item w3-button">Testing: Waterbodies Near Facilities </a>\
                         <a href="testing_aquifers.html" class="w3-bar-item w3-button">Testing: Wells with Common Aquifers</a>\
                         <a href="impacts.html" class="w3-bar-item w3-button">Assessing Impacts</a>\
                         <a href="tracing.html" class="w3-bar-item w3-button">Tracing:Downstream of Facilities</a>\
                         <a href="tracing_alldownstream.html" class="w3-bar-item w3-button">Tracing:Downstream of Industry Facilities</a>\
+                        <a href="tracing_upstream.html" class="w3-bar-item w3-button">Tracing:Upstream of Contamination</a>\
                     </div>\
             </div>\
                 \
