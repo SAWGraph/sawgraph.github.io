@@ -11,6 +11,104 @@
   @media (max-width:800px) { .header-spacing { padding-top:50px; padding-bottom:0px;} }
   .header-logo { display:block; margin:18px auto; padding:10px; max-width:400px; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
   @media (max-width:600px) { .header-logo { max-width:92%; padding:8px; } }
+  
+  /* Page Title Styling */
+  h1 {
+    color: #1a1a1a;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #0066cc;
+    padding-bottom: 15px;
+    font-weight: 700;
+  }
+
+  /* Publications List Styling */
+  ol {
+    list-style: none;
+    counter-reset: item;
+    padding: 0;
+  }
+
+  ol li {
+    counter-increment: item;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-left: 5px solid #0066cc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  ol li:hover {
+    background: #f0f4ff;
+    box-shadow: 0 4px 12px rgba(0,102,204,0.15);
+    transform: translateX(5px);
+  }
+
+  /* Publication Title Link */
+  ol li a {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  ol li a:hover {
+    color: #004499;
+    text-decoration: underline;
+  }
+
+  /* Authors Styling */
+  ol li i {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.95em;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    ol li {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    ol li a {
+      font-size: 1em;
+    }
+  }
+
+  /* Introduction Section */
+  .intro-section {
+    background: #f0f4ff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-left: 5px solid #0066cc;
+  }
+
+  .intro-section p {
+    color: #333;
+    line-height: 1.7;
+    font-size: 1.05em;
+    margin: 0;
+  }
+
+  /* Section Heading */
+  h2 {
+    color: #0066cc;
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 10px;
+  }
 </style>
 </head>
 </head>
@@ -26,7 +124,14 @@
 <!-- Page content -->
 <div class="w3-content w3-main w3-padding" style="max-width:1564px">
     <br>
+    <br>
     <h1>Publications</h1>
+    
+    <div class="intro-section">
+      <p>The SAWGraph project has produced peer-reviewed research and technical publications focused on ontologies, knowledge graphs, and their applications to environmental contamination monitoring and decision-making. Below is a selection of our key publications covering advances in semantic web technologies, geospatial analysis, and environmental data integration.</p>
+    </div>
+
+    <h2>Featured Research</h2>
 <ol>
     <li id="pub1"><a href="https://doi.org/10.3233/FAIA250501" target="_blank">ContaminOSO: Ontological Foundations and Design Choices for an Ontology for Environmental Contamination Data</a>
       <i> T Hahmann, K Schweikert, S Stephen, D Kedrowski</i></li>
@@ -36,10 +141,20 @@
       <i>K Schweikert, D Kedrowski, S Stephen, T Hahmann</i></li>
     <li id="pub4"><a href="publications/CompTox_Ontology.pdf" target="_blank">CompTox Ontology: Leveraging Knowledge Graphs for PFAS
 Monitoring and Decision-Making</a>
-<i>Y Zhang, S Moavenzadeh et al.</i>
+<i>Y Zhang, S Moavenzadeh et al.</i></li>
 </ol>
 
+<h2>About Our Research</h2>
+<p style="line-height: 1.8; color: #333; font-size: 1.05em;">Our publications demonstrate the application of semantic web technologies and ontology-driven approaches to solve real-world environmental challenges. We focus on areas including:</p>
+<ul style="color: #333; font-size: 1.05em; line-height: 1.8;">
+  <li><strong>Ontology Design:</strong> Creating robust, reusable ontologies for environmental contamination and sampling, spatial features of interest, hydrology and chemical informatics</li>
+  <li><strong>Knowledge Graphs:</strong> Leveraging knowledge graphs for integrated geospatial analysis and decision support</li>
+  <li><strong>Contamination Monitoring:</strong> Supporting PFAS monitoring and other emerging contaminant tracking</li>
+  <li><strong>Spatial Reasoning:</strong> Precomputed approaches for efficient spatial relationship analysis</li>
+</ul>
 
+<h2>Contact & Collaboration</h2>
+<p style="line-height: 1.8; color: #333; font-size: 1.05em;">If you have questions about our publications or are interested in collaborating on related research, please visit our <a href="aboutus.html" style="color: #0066cc; text-decoration: none; font-weight: 600;">about us page</a> or contact the SAWGraph team through our project resources.</p>
 
 <!-- End page content -->
 </div>
