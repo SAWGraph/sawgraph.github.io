@@ -7,10 +7,25 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <style>
-  .header-spacing { padding-top:50px; padding-bottom:0px; }
-  @media (max-width:800px) { .header-spacing { padding-top:50px; padding-bottom:0px;} }
-  .header-logo { display:block; margin:18px auto; padding:10px; max-width:400px; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+  .header-spacing { padding-top:80px; padding-bottom:0px; min-height: 300px; display: flex; align-items: center; justify-content: center; }
+  @media (max-width:800px) { .header-spacing { padding-top:10px; padding-bottom:50px; min-height: 250px;} }
+  .header-logo { display:block; margin:18px auto; padding:10px; max-width:400px; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .header-logo:hover { transform: translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.2); }
   @media (max-width:600px) { .header-logo { max-width:92%; padding:8px; } }
+  
+  h2 { color: #1a4d7a; font-weight: 700; font-size: 2em; margin-top: 40px; }
+  h3 { color: #2a5c91; font-weight: 600; }
+  h4 { color: #0066cc; font-weight: 600; margin-bottom: 15px; }
+  
+  .use-case-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 15px ; transition: all 0.3s ease; border-top: 4px solid #0066cc; }
+  .use-case-card:hover { box-shadow: 0 8px 20px rgba(0,102,204,0.25); transform: translateY(-4px); }
+  
+  .query-section { background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); border-radius: 8px; border-left: 5px solid #0099cc; }
+  
+  ul { line-height: 1.8; }
+  li { margin-bottom: 12px; }
+  a { color: #0066cc; text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+  a:hover { color: #004499; text-decoration: underline; }
 </style>
 </head>
 </head>
@@ -28,7 +43,7 @@
 
 <!-- Header -->
 <header class="header-spacing" style="max-width:1500px;" id="home">
-    <img class="header-logo" src="images/Sawgraph-Logo-transparent.png" alt="SAWGraph logo">
+  <img class="header-logo" src="images/Sawgraph-Logo-transparent.png" alt="SAWGraph logo">
 </header>
 
   <!-- Overview Section -->
@@ -71,36 +86,62 @@ The graph is expected to empower these users to:
 </div>
 
 <!-- Use Cases Section -->
-<div class="w3-panel w3-padding-large w3-light-green" id="use_cases">
-<h3 class="w3-border-bottom w3-auto w3-border-light-grey w3-padding-16">Use Cases</h3>
-    <ul>
-      <li><b>Understanding Testing and Testing Gaps:</b> Where have we tested and were are significant gaps?
-        <ul>
+<div class="w3-padding-32" id="use_cases" style="margin-top:40px;">
+<h2 class="w3-border-bottom w3-border-blue w3-padding-24" style="border-bottom-width:3px!important;">Use Cases</h2>
+
+<div class="w3-row w3-margin-top">
+  <div class="w3-col m6 w3-padding-24">
+    <div class="use-case-card w3-padding-32">
+      <h4>🔍 Understanding Testing Gaps</h4>
+      <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Where have we tested and where are significant gaps?</b></p>
+      <ul style="color:#333; font-size:0.95em;">
         <li>Where have we tested for what?</li>
-        <li>What waterbodies are near potential contamination sources?, see <a href="tracing.html">Testing Gaps Example Use Case</a> </li>
+        <li>What waterbodies are near potential contamination sources? <a href="tracing.html">See Example</a></li>
         <li>What do the available test results show in a particular region?</li>
-        <li>Where are the biggest testing gaps based on what is known so far?</li>
-        </ul>
-      <li><b>Assess and Map Risks:</b>  Who is impacted the most?
-        <ul>
-        <li>Where are existing test results especially concerning and suggest prioritizing further testing or investigation?, see <a href="impacts.html">Assessing Impacts Example Use Case</a></li>
-        <li>Which communities are at greatest risk?</li>
-        </ul>
-      <li><b>Trace Contamination:</b> Where does the PFAS end up? Where does it originate from?
-        <ul>
-        <li>How do specific point sources like industrial facilities, landfills, firefighting training sites, or biosolid application sites affect their surroundings?</li>
-        <li>What potential sources are upstream from concerning test results?</li>
-        <li>What do the test results downstream from a potential point source show?, see <a href="testing.html">Contaminant Tracing Example Use Case</a></li>
-        <li>What water wells downstream from or connected to sites with concerning levels should be prioritized for testing?</li>
+        <li>Where are the biggest testing gaps based on what is known?</li>
       </ul>
-      <li><b>Research: What linkages does the data suggest? What warrants further research?</b> 
-        <ul>
-        <li>Where are unexplained high test results?</li>
-        <li>What agricultural practices seem to reduce PFAS exposure?</li>
-        <li>What connections are between different PFAS substances in the environment?</li>
-        </ul>
-    </ul>
     </div>
+  </div>
+  
+  <div class="w3-col m6 w3-padding-24">
+    <div class="use-case-card w3-padding-32">
+      <h4>⚠️ Assess and Map Risks</h4>
+      <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Who is impacted the most?</b></p>
+      <ul style="color:#333; font-size:0.95em;">
+        <li>Where are concerning test results suggesting prioritized investigation? <a href="impacts.html">See Example</a></li>
+        <li>Which communities are at greatest risk?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="w3-row">
+  <div class="w3-col m6 w3-padding-24">
+    <div class="use-case-card w3-padding-32">
+      <h4>🔄 Trace Contamination</h4>
+      <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Where does PFAS end up? Where does it originate?</b></p>
+      <ul style="color:#333; font-size:0.95em;">
+        <li>How do point sources (facilities, landfills, training sites) affect surroundings?</li>
+        <li>What potential sources are upstream from concerning test results?</li>
+        <li>What do downstream test results show? <a href="testing.html">See Example</a></li>
+        <li>Which wells need prioritized testing?</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="w3-col m6 w3-padding-24">
+    <div class="use-case-card w3-padding-32">
+      <h4>🔬 Research Insights</h4>
+      <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>What linkages does the data suggest?</b></p>
+      <ul style="color:#333; font-size:0.95em;">
+        <li>Where are unexplained high test results?</li>
+        <li>What agricultural practices reduce PFAS exposure?</li>
+        <li>What connections exist between different PFAS substances?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
 
 <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Competency questions and User queries
 </h3>
