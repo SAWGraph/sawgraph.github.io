@@ -55,6 +55,21 @@
   a { color: #0066cc; text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
   a:hover { color: #004499; text-decoration: underline; }
 
+/* Fixes bullet points hidden by floating images */
+  #intro ul { 
+    list-style-position: inside; 
+    padding-left: 0; 
+  }
+  
+  /* Creates a column for text so it doesn't "leak" under the image */
+  .intro-text-block {
+    overflow: hidden; /* This creates a new "block formatting context" */
+  }
+
+  @media (max-width:850px) {
+    .intro-text-block { overflow: visible; }
+  }
+  
 /* Back to Top Button Styling */
   #backToTop {
     display: none; /* Hidden until user scrolls */
@@ -95,21 +110,24 @@
 
   <div class="w3-container w3-padding-8 header-spacing" id="home">
     <img class="header-logo" src="images/Sawgraph-Logo-transparent.png" alt="SAWGraph logo">
-
-    <div id="intro">
+  
+    <div id="intro" class="intro-text-block">
       <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Overview</h2>
       <p><strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>: An <b>Open Knowledge Network </b> to Monitor and Trace PFAS and Other Contaminants in the Nation's Food and Water Systems
       <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782"><i>A ProtoOKN project</i></a></p>
+      
       <p>The goal of SAWGraph is to connect federal and other datasets to more quickly analyze data and make decisions around per- and polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks.
-        The graph integrates data and provides interfaces that support:
+        The graph integrates data and provides interfaces that support:</p>
+        
         <ul>
           <li>analysis, mapping and communication of the results of testing for PFAS contamination</li>
           <li>spatial connections to known and potential sources</li>
         </ul>
-         to support PFAS research and decision making around PFAS testing and mitigation.</p>
+        
+      <p>to support PFAS research and decision making around PFAS testing and mitigation.</p>
     </div>
   </div>
-
+  
   <div class="w3-container">
     <div class="w3-card-4 w3-leftbar w3-light-grey" style="max-width:1100px; padding:15px">
       <img src="images/overview.png" style="width:100%;max-width:1000px" class="w3-margin w3-center" alt="Overview of SAWGraph architecture">
