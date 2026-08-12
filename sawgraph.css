@@ -298,6 +298,30 @@ li {
   transform: translateY(-2px);
 }
 
+/* Secondary section-link buttons */
+
+.site-main a.site-button-secondary {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid var(--saw-blue);
+  color: var(--saw-blue);
+  background: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-main a.site-button-secondary:hover {
+  background: var(--saw-pale-blue);
+  color: var(--saw-blue-dark);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
 
 /* ---------- Responsive Video ---------- */
 
