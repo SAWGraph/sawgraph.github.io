@@ -1,185 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<title>SAWGraph</title>
+  <title>SAWGraph</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<style>
-
-  /* Allow anchored sections to clear the fixed navigation bar */
-  html {
-    scroll-padding-top: 70px;
-  }
-
-  /* Page Header/Intro Container */
-  .header-spacing { 
-    padding-top: 80px; 
-    padding-bottom: 20px; 
-    overflow: auto;
-  }
-
-  /* SAWGraph Logo */
-  .header-logo { 
-    float: left; 
-    margin: 10px 35px 20px 0; 
-    max-width: 380px;
-    height: auto; 
-    object-fit: contain; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  }
-
-  .header-logo:hover { 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
-  }
-
-  /* Stack logo above text on smaller screens */
-  @media (max-width:850px) { 
-    .header-logo { 
-      float: none; 
-      margin: 0 auto 30px auto; 
-      display: block;
-      max-width: 90%; 
-    }
-  }
-
-  h2 { 
-    color: #1a4d7a; 
-    font-weight: 700; 
-    font-size: 2em; 
-    margin-top: 10px; 
-  }
-
-  h3 { 
-    color: #2a5c91; 
-    font-weight: 600; 
-  }
-
-  h4 { 
-    color: #0066cc; 
-    font-weight: 600; 
-    margin-bottom: 15px; 
-  }
-
-  .use-case-card { 
-    background: white; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-    padding: 15px; 
-    transition: all 0.3s ease; 
-    border-top: 4px solid #0066cc; 
-  }
-
-  .use-case-card:hover { 
-    box-shadow: 0 8px 20px rgba(0,102,204,0.25); 
-    transform: translateY(-4px); 
-  }
-
-  ul { 
-    line-height: 1.8; 
-  }
-
-  li { 
-    margin-bottom: 12px; 
-  }
-
-  a { 
-    color: #0066cc; 
-    text-decoration: none; 
-    font-weight: 500; 
-    transition: color 0.2s ease; 
-  }
-
-  a:hover { 
-    color: #004499; 
-    text-decoration: underline; 
-  }
-
-  /* Fix bullet points alongside floating logo */
-  #intro ul { 
-    list-style-position: inside; 
-    padding-left: 0; 
-  }
-
-  /* Prevent intro text from flowing underneath the floating logo */
-  .intro-text-block {
-    overflow: hidden;
-  }
-
-  @media (max-width:850px) {
-    .intro-text-block { 
-      overflow: visible; 
-    }
-  }
-
-  /* Responsive video */
-  .video-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .video-container iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    height: auto;
-    border: 0;
-  }
-
-  /* Site Footer */
-  .site-footer {
-    background-color: #1a4d7a;
-    color: white;
-    text-align: center;
-    padding: 32px 20px;
-    margin-top: 48px;
-  }
-
-  .site-footer p {
-    margin: 0;
-    font-size: 1.2em;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-  }
-
-  /* Back to Top Button */
-  #backToTop {
-    display: none;
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #1a4d7a;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.3s;
-  }
-
-  #backToTop:hover {
-    background-color: #0066cc;
-    transform: scale(1.1);
-  }
-
-</style>
+  <!-- SAWGraph shared styles -->
+  <link rel="stylesheet" href="sawgraph.css">
 
 </head>
 
+
 <body>
 
-<!-- Navbar -->
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <script src="menu.js"></script>
@@ -187,351 +31,498 @@
 </div>
 
 
-<!-- Page Content -->
-<div class="w3-content w3-main w3-padding" style="max-width:1564px">
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
+
+<main class="site-main">
 
 
-  <!-- Overview -->
-  <div class="w3-container header-spacing" id="home">
+  <!-- ====================================================
+       Overview
+       ==================================================== -->
+
+  <section class="home-header" id="home">
 
     <img
       class="header-logo"
       src="images/sawgraph_logo_small.png"
       alt="SAWGraph logo">
 
-    <div id="intro" class="intro-text-block">
+    <div class="home-intro-text">
 
-      <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-        Overview
-      </h2>
+      <h1 class="project-title">
+        Safe Agricultural Products and Water Graph (SAWGraph):
+        An Open Knowledge Network to Monitor and Trace PFAS and Other
+        Contaminants in the Nation’s Food and Water Systems
+      </h1>
 
-      <p>
-        <strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>:
-        An <b>Open Knowledge Network</b> to Monitor and Trace PFAS and Other
-        Contaminants in the Nation's Food and Water Systems
+      <p class="tagline">
+        Integrating PFAS data and context to support research and decision-making.
       </p>
 
       <p>
-        <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782">
-          <i>A Proto-OKN project</i>
+        SAWGraph integrates U.S. federal, state, and other datasets about
+        per- and polyfluoroalkyl substances (PFAS) in food, water, and the
+        environment. It brings PFAS observations together with information
+        about facilities and industries, hydrology, geography, agriculture,
+        and chemical substances so that related data can be explored and
+        analyzed together.
+      </p>
+
+      <p>
+        <a
+          href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782"
+          target="_blank"
+          rel="noopener">
+          A Proto-OKN project
         </a>
       </p>
 
-      <p>
-        The goal of SAWGraph is to connect federal and other datasets to more
-        quickly analyze data and make decisions around per- and
-        polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks.
-        The graph integrates data and provides interfaces that support:
-      </p>
-
-      <ul>
-        <li>
-          analysis, mapping and communication of the results of testing for
-          PFAS contamination
-        </li>
-        <li>
-          spatial connections to known and potential sources
-        </li>
-      </ul>
-
-      <p>
-        to support PFAS research and decision making around PFAS testing and
-        mitigation.
-      </p>
-
-    </div>
-  </div>
-
-
-  <!-- Overview Graphic -->
-  <div class="w3-container">
-
-    <div
-      class="w3-card-4 w3-leftbar w3-light-grey"
-      style="max-width:1100px; padding:15px;">
-
-      <div class="w3-center">
-        <img
-          src="images/overview.png"
-          style="width:100%; max-width:1000px;"
-          alt="Overview of SAWGraph architecture">
-      </div>
-
-      <p>
-        In contrast to the current ecosystem of disconnected datasources,
-        SAWGraph works by integrating and aligning data into a geospatial
-        knowledge graph that supports interfaces that can dynamically answer
-        questions about the related datasets.
-      </p>
-
     </div>
 
+  </section>
 
-    <!-- Intended Users -->
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-      Intended Users
-    </h3>
+
+
+  <!-- ====================================================
+       Why SAWGraph?
+       ==================================================== -->
+
+  <section id="why-sawgraph">
+
+    <h2 class="section-title">
+      Why SAWGraph?
+    </h2>
 
     <p>
-      The primary end users of SAWGraphs are personnel at state and federal
-      agencies who monitor the environment and the safety of drinking water
-      and agricultural land and products. End users include but are not
-      limited to:
+      PFAS-related information is often maintained in separate datasets,
+      agencies, systems, and formats. Monitoring results, potential sources,
+      water systems, facilities, agricultural information, chemical
+      information, and geographic context may be documented separately and
+      at different scales.
+    </p>
+
+    <p>
+      This can make it difficult and time-consuming to determine where
+      monitoring has occurred, what the results show, where important gaps
+      remain, what may be affected, and what sources or pathways warrant
+      further investigation.
+    </p>
+
+    <p>
+      SAWGraph addresses this problem by integrating data and context within
+      an interconnected geospatial knowledge network. It links observations
+      with environmental, hydrologic, agricultural, chemical, and spatial
+      information so that users can investigate relationships across datasets
+      without first having to assemble and align those datasets themselves.
+    </p>
+
+    <p>
+      <a href="pfas.html">
+        Learn About PFAS
+      </a>
+    </p>
+
+
+    <!-- Comparison Graphic -->
+
+    <div class="comparison-box">
+
+      <img
+        src="images/overview.png"
+        alt="Comparison of current PFAS monitoring and analysis with SAWGraph's integrated geospatial approach">
+
+      <p>
+        In contrast to a fragmented ecosystem of separate data sources,
+        SAWGraph integrates and aligns related data within a geospatial
+        knowledge network that supports dynamic analysis across datasets.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================================
+       Core Use Cases
+       ==================================================== -->
+
+  <section id="use-cases">
+
+    <h2 class="section-title">
+      Core Use Cases
+    </h2>
+
+    <p>
+      SAWGraph was developed around three primary use cases identified
+      through collaboration with government stakeholders and other domain
+      experts.
+    </p>
+
+
+    <div class="use-case-grid">
+
+
+      <!-- Use Case 1 -->
+
+      <article class="use-case-card">
+
+        <h3>
+          Understanding Monitoring Results and Coverage
+        </h3>
+
+        <p class="use-case-question">
+          Where has PFAS monitoring occurred, what do the results show,
+          and where are important gaps?
+        </p>
+
+        <p>
+          SAWGraph connects monitoring observations with spatial and
+          environmental context to help users examine sampling patterns,
+          compare results, identify less-tested locations or features,
+          and determine where additional monitoring may be useful.
+        </p>
+
+      </article>
+
+
+      <!-- Use Case 2 -->
+
+      <article class="use-case-card">
+
+        <h3>
+          Assessing and Mapping Potential Impacts
+        </h3>
+
+        <p class="use-case-question">
+          What water systems, resources, places, or other features may be
+          affected by reported PFAS contamination?
+        </p>
+
+        <p>
+          SAWGraph connects contamination observations with surface water,
+          groundwater, wells, drinking water systems, agricultural areas,
+          and geographic regions to support investigation of potential
+          impacts and help inform monitoring, communication, and mitigation
+          efforts.
+        </p>
+
+      </article>
+
+
+      <!-- Use Case 3 -->
+
+      <article class="use-case-card">
+
+        <h3>
+          Tracing Potential Contamination Sources
+        </h3>
+
+        <p class="use-case-question">
+          What facilities, activities, or environmental pathways may be
+          connected to observed PFAS contamination?
+        </p>
+
+        <p>
+          SAWGraph combines contamination observations with information
+          about facilities, industries, spatial relationships, and
+          hydrologic networks to help users identify candidate sources and
+          plausible pathways for further investigation.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================================
+       What SAWGraph Brings Together
+       ==================================================== -->
+
+  <section id="data-context">
+
+    <h2 class="section-title">
+      What SAWGraph Brings Together
+    </h2>
+
+    <p>
+      SAWGraph integrates information across several related areas:
+    </p>
+
+
+    <div class="info-grid">
+
+      <p class="info-item">
+        <strong>PFAS monitoring and releases:</strong>
+        samples, observations, measurement results, and reported releases
+      </p>
+
+      <p class="info-item">
+        <strong>Facilities and industries:</strong>
+        industrial, commercial, institutional, and other facilities together
+        with industry classifications
+      </p>
+
+      <p class="info-item">
+        <strong>Hydrology and water systems:</strong>
+        streams, rivers, lakes, ponds, wells, aquifers, and drinking water
+        systems
+      </p>
+
+      <p class="info-item">
+        <strong>Spatial context:</strong>
+        states, counties, towns and townships, and other spatial reference
+        information
+      </p>
+
+      <p class="info-item">
+        <strong>Agricultural context:</strong>
+        cropland use, crop information, and soil properties relevant to
+        contaminant transport and retention
+      </p>
+
+      <p class="info-item">
+        <strong>Chemical information:</strong>
+        PFAS identities, classifications, and related chemical properties
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ====================================================
+       What SAWGraph Helps Users Do
+       ==================================================== -->
+
+  <section id="user-tasks">
+
+    <h2 class="section-title">
+      What SAWGraph Helps Users Do
+    </h2>
+
+    <p>
+      By bringing these data and relationships together, SAWGraph can help
+      users:
     </p>
 
     <ul>
       <li>
-        personnel at EPA and state environmental protection agencies
-        (e.g., state environmental toxicologists)
+        explore PFAS monitoring results and patterns across locations and
+        sample types
       </li>
+
       <li>
-        personnel at USDA and state agricultural agencies
+        see where monitoring has and has not occurred
       </li>
+
       <li>
-        experts from FDA, USGS, and similar state agencies
+        identify places or features where additional testing may be useful
+      </li>
+
+      <li>
+        investigate possible relationships between contamination observations
+        and potential sources
+      </li>
+
+      <li>
+        trace spatial, surface-water, and groundwater connections
+      </li>
+
+      <li>
+        assess potential impacts on water systems, agricultural resources,
+        and other places or features
+      </li>
+
+      <li>
+        develop research questions and investigate cross-domain patterns
+      </li>
+
+      <li>
+        communicate PFAS information through maps, summaries, and other
+        visual outputs
+      </li>
+
+      <li>
+        support decisions about monitoring, investigation, communication,
+        and mitigation
       </li>
     </ul>
 
-    <p>
-      We distinguish four types of users based on their primary responsibility:
-    </p>
-
-    <ol>
-      <li>drinking water monitoring</li>
-      <li>
-        understanding the extent and sources of environmental contamination
-        with PFAS
-      </li>
-      <li>PFAS researchers</li>
-      <li>environmental justice</li>
-    </ol>
-
-    <p>
-      The graph is expected to empower these users to:
-    </p>
-
-    <ol>
-      <li>
-        formulate and implement comprehensive test plans aimed at monitoring
-        elevated PFAS levels in drinking water or agricultural lands;
-      </li>
-      <li>
-        pinpoint the most significant sources of PFAS in a state and how it
-        impacts disadvantaged communities;
-      </li>
-      <li>
-        identify populations at elevated risk and prioritize testing resources
-        and support accordingly.
-      </li>
-    </ol>
-
-  </div>
+  </section>
 
 
-  <!-- Use Cases -->
-  <div
-    class="w3-padding-32"
-    id="use_cases"
-    style="margin-top:40px;">
 
-    <h2
-      class="w3-border-bottom w3-border-blue w3-padding-24"
-      style="border-bottom-width:3px!important;">
-      Use Cases
+  <!-- ====================================================
+       Explore SAWGraph
+       ==================================================== -->
+
+  <section id="explore">
+
+    <h2 class="section-title">
+      Explore SAWGraph
     </h2>
 
+    <div class="callout-section">
 
-    <div class="w3-row w3-margin-top">
+      <p>
+        SAWGraph provides multiple ways to explore the integrated data
+        without requiring users to write SPARQL queries.
+      </p>
 
-      <div class="w3-col m6 w3-padding-24">
-        <div class="use-case-card w3-padding-32">
+      <p>
+        Prebuilt analyses and annotated demos illustrate questions related
+        to monitoring coverage, potential impacts, and contamination tracing.
+        The SAWGraph Explorer provides a more flexible interface for creating
+        or modifying analysis workflows and viewing the results on
+        interactive maps.
+      </p>
 
-          <h4>🔍 Understanding Testing Gaps</h4>
+      <div class="button-row">
 
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
-            <b>Where have we tested and where are significant gaps?</b>
-          </p>
+        <!-- Update this filename if the Querying and Demos page uses
+             a different name. -->
+        <a
+          href="explore.html"
+          class="site-button">
+          Explore Querying and Demos
+        </a>
 
-          <ul style="color:#333; font-size:0.95em;">
-            <li>Where have we tested for what?</li>
-            <li>
-              What waterbodies are near potential contamination sources?
-              <a href="tracing.html">See Example</a>
-            </li>
-            <li>
-              What do the available test results show in a particular region?
-            </li>
-            <li>
-              Where are the biggest testing gaps based on what is known?
-            </li>
-          </ul>
+        <a
+          href="https://sawgraph-explorer.netlify.app/"
+          class="site-button"
+          target="_blank"
+          rel="noopener">
+          Open SAWGraph Explorer App
+        </a>
 
-        </div>
-      </div>
-
-
-      <div class="w3-col m6 w3-padding-24">
-        <div class="use-case-card w3-padding-32">
-
-          <h4>⚠️ Assess and Map Risks</h4>
-
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
-            <b>Who is impacted the most?</b>
-          </p>
-
-          <ul style="color:#333; font-size:0.95em;">
-            <li>
-              Where are concerning test results suggesting prioritized
-              investigation?
-              <a href="impacts.html">See Example</a>
-            </li>
-            <li>
-              Which communities are at greatest risk?
-            </li>
-          </ul>
-
-        </div>
       </div>
 
     </div>
 
-
-    <div class="w3-row">
-
-      <div class="w3-col m6 w3-padding-24">
-        <div class="use-case-card w3-padding-32">
-
-          <h4>🔄 Trace Contamination</h4>
-
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
-            <b>Where does PFAS end up? Where does it originate?</b>
-          </p>
-
-          <ul style="color:#333; font-size:0.95em;">
-            <li>
-              How do point sources (facilities, landfills, training sites)
-              affect surroundings?
-            </li>
-            <li>
-              What potential sources are upstream from concerning test results?
-            </li>
-            <li>
-              What do downstream test results show?
-              <a href="testing.html">See Example</a>
-            </li>
-            <li>
-              Which wells need prioritized testing?
-            </li>
-          </ul>
-
-        </div>
-      </div>
+  </section>
 
 
-      <div class="w3-col m6 w3-padding-24">
-        <div class="use-case-card w3-padding-32">
 
-          <h4>🔬 Research Insights</h4>
+  <!-- ====================================================
+       Intended Users
+       ==================================================== -->
 
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
-            <b>What linkages does the data suggest?</b>
-          </p>
+  <section id="intended-users">
 
-          <ul style="color:#333; font-size:0.95em;">
-            <li>
-              Where are unexplained high test results?
-            </li>
-            <li>
-              What agricultural practices reduce PFAS exposure?
-            </li>
-            <li>
-              What connections exist between different PFAS substances?
-            </li>
-          </ul>
+    <h2 class="section-title">
+      Intended Users
+    </h2>
 
-        </div>
-      </div>
+    <p>
+      SAWGraph is designed for people and organizations working on PFAS and
+      other contaminants in food, water, and the environment.
+    </p>
+
+    <p>
+      Primary users include staff and experts at federal and state agencies
+      responsible for environmental protection, agriculture, food safety,
+      drinking water, public health, and geological science, including EPA,
+      USDA, FDA, USGS, and related state agencies.
+    </p>
+
+    <p>
+      SAWGraph is also relevant to agency associations, universities,
+      research organizations, technical partners, project managers, and
+      other researchers and decision-makers who need to examine PFAS
+      information together with environmental and geographic context.
+    </p>
+
+  </section>
+
+
+
+  <!-- ====================================================
+       How SAWGraph Works
+       ==================================================== -->
+
+  <section id="how-it-works">
+
+    <h2 class="section-title">
+      How SAWGraph Works
+    </h2>
+
+    <p>
+      SAWGraph uses a modular network of interconnected knowledge graphs and
+      ontologies to integrate data from different sources while preserving
+      their meaning and provenance.
+    </p>
+
+    <p>
+      The ontologies provide consistent concepts and relationships across
+      datasets. Spatial and hydrologic relationships—including proximity,
+      containment, and upstream and downstream connections—allow information
+      from different domains to be linked and queried together.
+    </p>
+
+    <p>
+      User-facing tools build on this integrated structure to support maps,
+      prebuilt analyses, and configurable workflows without requiring users
+      to understand the underlying semantic technologies.
+    </p>
+
+    <p>
+      <a href="kg.html">
+        Learn About SAWGraph Data &amp; Methods
+      </a>
+    </p>
+
+  </section>
+
+
+
+  <!-- ====================================================
+       Project Overview
+       ==================================================== -->
+
+  <section id="project-overview">
+
+    <h2 class="section-title">
+      Project Overview
+    </h2>
+
+    <p>
+      This short overview introduces SAWGraph, the problem it addresses,
+      and the project’s approach to integrating data for PFAS monitoring
+      and analysis.
+    </p>
+
+
+    <div class="video-container">
+
+      <iframe
+        src="https://www.youtube.com/embed/vS82LsLjZ5U?si=DePgmMknHwZyUBLP"
+        title="SAWGraph project overview video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
 
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- Competency Questions and User Queries -->
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-    Competency Questions and User Queries
-  </h3>
-
-  <ul>
-
-    <li>
-      <b>Testing Coverage and Gaps:</b>
-      Where (locations/towns) should we prioritize environmental/water testing?
-
-      <ul>
-        <li>
-          E.g., which wells are within 5 miles of landfills/airports/biosludge
-          application sites? Which wells near locations with a reported PFOA
-          contamination above 4ppt have not been tested?
-        </li>
-      </ul>
-    </li>
-
-    <li>
-      <b>Assessing Contamination Impacts:</b>
-      Where and who is impacted? (Prevalence, risk/vulnerability mapping)
-
-      <ul>
-        <li>
-          E.g., which towns or counties have multiple test results with PFOS
-          levels above 20ppt with no known contamination source nearby? Which
-          chemicals show the highest average readings in samples from a
-          particular region? Which towns/counties are most vulnerability based
-          on their proximity to known or potential PFAS sources?
-        </li>
-      </ul>
-    </li>
-
-    <li>
-      <b>Contaminant Tracing:</b>
-      What are potential sources of contamination at a particular location or
-      area?
-
-      <ul>
-        <li>
-          E.g., what potential contamination sources exist 20 miles upstream
-          from the sample result? What wells are hydrologically connected to
-          other wells with a reported contamination of +10ppt?
-        </li>
-      </ul>
-    </li>
-
-  </ul>
+</main>
 
 
-  <!-- Project Overview -->
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-    Project Overview
-  </h3>
 
-  <div class="video-container w3-padding-32">
+<!-- ======================================================
+     Site Footer
+     ====================================================== -->
 
-    <iframe
-      src="https://www.youtube.com/embed/vS82LsLjZ5U?si=DePgmMknHwZyUBLP"
-      title="SAWGraph project overview video"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-
-<!-- End Page Content -->
-</div>
-
-
-<!-- Site Footer -->
 <footer class="site-footer">
 
   <p>
@@ -541,7 +532,11 @@
 </footer>
 
 
-<!-- Back to Top -->
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
 <button
   onclick="topFunction()"
   id="backToTop"
@@ -553,30 +548,35 @@
 
 <script>
 
-  const mybutton = document.getElementById("backToTop");
+  const backToTopButton = document.getElementById("backToTop");
 
   function scrollFunction() {
+
     if (
       document.body.scrollTop > 400 ||
       document.documentElement.scrollTop > 400
     ) {
-      mybutton.style.display = "block";
+      backToTopButton.style.display = "block";
     } else {
-      mybutton.style.display = "none";
+      backToTopButton.style.display = "none";
     }
+
   }
 
   window.addEventListener("scroll", scrollFunction);
 
   function topFunction() {
+
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+
   }
 
 </script>
 
 
 </body>
+
 </html>
