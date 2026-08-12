@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
 <title>SAWGraph</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
-  /* Combined Page Header/Intro Container: last updated March 2026 */
-  .header-spacing { 
-    padding-top: 100px; 
-    padding-bottom: 20px; 
-    overflow: auto; /* Ensures container expands to fit the floating logo */
+
+  /* Allow anchored sections to clear the fixed navigation bar */
+  html {
+    scroll-padding-top: 70px;
   }
 
-  /* SAWGraph Logo: Floating left for text wrap */
+  /* Page Header/Intro Container */
+  .header-spacing { 
+    padding-top: 80px; 
+    padding-bottom: 20px; 
+    overflow: auto;
+  }
+
+  /* SAWGraph Logo */
   .header-logo { 
     float: left; 
     margin: 10px 35px 20px 0; 
-    max-width: 380px; 
+    max-width: 380px;
     height: auto; 
     object-fit: contain; 
     border-radius: 12px; 
@@ -30,7 +40,7 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
   }
 
-  /* Responsive: Stacks logo on top for smaller screens */
+  /* Stack logo above text on smaller screens */
   @media (max-width:850px) { 
     .header-logo { 
       float: none; 
@@ -38,272 +48,535 @@
       display: block;
       max-width: 90%; 
     }
-    .header-spacing { padding-top: 80px; } 
   }
-  
-  h2 { color: #1a4d7a; font-weight: 700; font-size: 2em; margin-top: 10px; }
-  h3 { color: #2a5c91; font-weight: 600; }
-  h4 { color: #0066cc; font-weight: 600; margin-bottom: 15px; }
-  
-  .use-case-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 15px ; transition: all 0.3s ease; border-top: 4px solid #0066cc; }
-  .use-case-card:hover { box-shadow: 0 8px 20px rgba(0,102,204,0.25); transform: translateY(-4px); }
-  
-  .query-section { background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); border-radius: 8px; border-left: 5px solid #0099cc; }
-  
-  ul { line-height: 1.8; }
-  li { margin-bottom: 12px; }
-  a { color: #0066cc; text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
-  a:hover { color: #004499; text-decoration: underline; }
 
-/* Fixes bullet points hidden by floating images */
+  h2 { 
+    color: #1a4d7a; 
+    font-weight: 700; 
+    font-size: 2em; 
+    margin-top: 10px; 
+  }
+
+  h3 { 
+    color: #2a5c91; 
+    font-weight: 600; 
+  }
+
+  h4 { 
+    color: #0066cc; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+  }
+
+  .use-case-card { 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    padding: 15px; 
+    transition: all 0.3s ease; 
+    border-top: 4px solid #0066cc; 
+  }
+
+  .use-case-card:hover { 
+    box-shadow: 0 8px 20px rgba(0,102,204,0.25); 
+    transform: translateY(-4px); 
+  }
+
+  ul { 
+    line-height: 1.8; 
+  }
+
+  li { 
+    margin-bottom: 12px; 
+  }
+
+  a { 
+    color: #0066cc; 
+    text-decoration: none; 
+    font-weight: 500; 
+    transition: color 0.2s ease; 
+  }
+
+  a:hover { 
+    color: #004499; 
+    text-decoration: underline; 
+  }
+
+  /* Fix bullet points alongside floating logo */
   #intro ul { 
     list-style-position: inside; 
     padding-left: 0; 
   }
-  
-  /* Creates a column for text so it doesn't "leak" under the image */
+
+  /* Prevent intro text from flowing underneath the floating logo */
   .intro-text-block {
-    overflow: hidden; /* This creates a new "block formatting context" */
+    overflow: hidden;
   }
 
   @media (max-width:850px) {
-    .intro-text-block { overflow: visible; }
+    .intro-text-block { 
+      overflow: visible; 
+    }
   }
-  
-/* Back to Top Button Styling */
+
+  /* Responsive video */
+  .video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+  }
+
+  /* Site Footer */
+  .site-footer {
+    background-color: #1a4d7a;
+    color: white;
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 48px;
+  }
+
+  .site-footer p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  /* Back to Top Button */
   #backToTop {
-    display: none; /* Hidden until user scrolls */
+    display: none;
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 99; /* Higher than content, lower than navbar dropdowns */
+    z-index: 99;
     border: none;
     outline: none;
-    background-color: #1a4d7a; /* Matches your H2 color */
+    background-color: #1a4d7a;
     color: white;
     cursor: pointer;
     padding: 15px;
-    border-radius: 50%; /* Makes it a circle */
+    border-radius: 50%;
     font-size: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: background-color 0.3s, transform 0.3s;
   }
 
   #backToTop:hover {
-    background-color: #0066cc; /* Brighter blue on hover */
+    background-color: #0066cc;
     transform: scale(1.1);
   }
 
 </style>
+
 </head>
+
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top w3-padding">
+<!-- Navbar -->
+<div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <script src="menu.js"></script>
   </div>
 </div>
 
-<!-- Page content -->
+
+<!-- Page Content -->
 <div class="w3-content w3-main w3-padding" style="max-width:1564px">
 
-  <div class="w3-container w3-padding header-spacing" id="home">
-    <img class="header-logo" src="images/sawgraph_logo_small.png" alt="SAWGraph logo">
-  
+
+  <!-- Overview -->
+  <div class="w3-container header-spacing" id="home">
+
+    <img
+      class="header-logo"
+      src="images/sawgraph_logo_small.png"
+      alt="SAWGraph logo">
+
     <div id="intro" class="intro-text-block">
-      <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Overview</h2>
-      <p><strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>: An <b>Open Knowledge Network </b> to Monitor and Trace PFAS and Other Contaminants in the Nation's Food and Water Systems
-      </p>
+
+      <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+        Overview
+      </h2>
+
       <p>
-      <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782"><i>A Proto-OKN project</i></a></p>
-      
-      <p>The goal of SAWGraph is to connect federal and other datasets to more quickly analyze data and make decisions around per- and polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks.
-        The graph integrates data and provides interfaces that support:</p>
-        
-        <ul>
-          <li>analysis, mapping and communication of the results of testing for PFAS contamination</li>
-          <li>spatial connections to known and potential sources</li>
-        </ul>
-        
-      <p>to support PFAS research and decision making around PFAS testing and mitigation.</p>
+        <strong>Safe Agricultural Products and Water Graph (SAWGraph)</strong>:
+        An <b>Open Knowledge Network</b> to Monitor and Trace PFAS and Other
+        Contaminants in the Nation's Food and Water Systems
+      </p>
+
+      <p>
+        <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2333782">
+          <i>A Proto-OKN project</i>
+        </a>
+      </p>
+
+      <p>
+        The goal of SAWGraph is to connect federal and other datasets to more
+        quickly analyze data and make decisions around per- and
+        polyfluoroalkyl substances (PFAS) sources, testing, impacts, and risks.
+        The graph integrates data and provides interfaces that support:
+      </p>
+
+      <ul>
+        <li>
+          analysis, mapping and communication of the results of testing for
+          PFAS contamination
+        </li>
+        <li>
+          spatial connections to known and potential sources
+        </li>
+      </ul>
+
+      <p>
+        to support PFAS research and decision making around PFAS testing and
+        mitigation.
+      </p>
+
     </div>
   </div>
-  
+
+
+  <!-- Overview Graphic -->
   <div class="w3-container">
-    <div class="w3-card-4 w3-leftbar w3-light-grey" style="max-width:1100px; padding:15px">
-      <img src="images/overview.png" style="width:100%;max-width:1000px" class="w3-margin w3-center" alt="Overview of SAWGraph architecture">
-      <p>In contrast to the current ecosystem of disconnected datasources, SAWGraph works by integrating and aligning data into a geospatial knowledge graph that supports interfaces that can dynamically answer questions about the related datasets. </p>
+
+    <div
+      class="w3-card-4 w3-leftbar w3-light-grey"
+      style="max-width:1100px; padding:15px;">
+
+      <div class="w3-center">
+        <img
+          src="images/overview.png"
+          style="width:100%; max-width:1000px;"
+          alt="Overview of SAWGraph architecture">
+      </div>
+
+      <p>
+        In contrast to the current ecosystem of disconnected datasources,
+        SAWGraph works by integrating and aligning data into a geospatial
+        knowledge graph that supports interfaces that can dynamically answer
+        questions about the related datasets.
+      </p>
+
     </div>
 
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Intended Users</h3>
+
+    <!-- Intended Users -->
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+      Intended Users
+    </h3>
 
     <p>
-      The primary end users of SAWGraphs are personnel at state and federal agencies who monitor the environment and the safety of drinking water and agricultural land and products.
-      End users include but are not limited to:
+      The primary end users of SAWGraphs are personnel at state and federal
+      agencies who monitor the environment and the safety of drinking water
+      and agricultural land and products. End users include but are not
+      limited to:
     </p>
-    
+
     <ul>
-      <li>personnel at EPA and state environmental protection agencies (e.g. state environmental toxicologists)</li>
-      <li>personnel at USDA and state agricultural agencies</li>
-      <li>experts from FDA, USGS and similar state agencies</li>
+      <li>
+        personnel at EPA and state environmental protection agencies
+        (e.g., state environmental toxicologists)
+      </li>
+      <li>
+        personnel at USDA and state agricultural agencies
+      </li>
+      <li>
+        experts from FDA, USGS, and similar state agencies
+      </li>
     </ul>
-    
-    <p>We distinguish four types of users based on their primary responsibility:</p>
-    
+
+    <p>
+      We distinguish four types of users based on their primary responsibility:
+    </p>
+
     <ol>
       <li>drinking water monitoring</li>
-      <li>understanding the extent and sources of environmental contamination with PFAS</li>
+      <li>
+        understanding the extent and sources of environmental contamination
+        with PFAS
+      </li>
       <li>PFAS researchers</li>
       <li>environmental justice</li>
     </ol>
-    
-    <p>The graph is expected to empower these users to:</p>
-    
+
+    <p>
+      The graph is expected to empower these users to:
+    </p>
+
     <ol>
-      <li>formulate and implement comprehensive test plans aimed at monitoring elevated PFAS levels in drinking water or agricultural lands;</li>
-      <li>pinpoint the most significant sources of PFAS in a state and how it impacts disadvantaged communities;</li>
-      <li>identify populations at elevated risk and prioritize testing resources and support accordingly.</li>
+      <li>
+        formulate and implement comprehensive test plans aimed at monitoring
+        elevated PFAS levels in drinking water or agricultural lands;
+      </li>
+      <li>
+        pinpoint the most significant sources of PFAS in a state and how it
+        impacts disadvantaged communities;
+      </li>
+      <li>
+        identify populations at elevated risk and prioritize testing resources
+        and support accordingly.
+      </li>
     </ol>
+
   </div>
 
-<!-- Use Cases Section -->
-  <div class="w3-padding-32" id="use_cases" style="margin-top:40px;">
-    <h2 class="w3-border-bottom w3-border-blue w3-padding-24" style="border-bottom-width:3px!important;">Use Cases</h2>
+
+  <!-- Use Cases -->
+  <div
+    class="w3-padding-32"
+    id="use_cases"
+    style="margin-top:40px;">
+
+    <h2
+      class="w3-border-bottom w3-border-blue w3-padding-24"
+      style="border-bottom-width:3px!important;">
+      Use Cases
+    </h2>
+
 
     <div class="w3-row w3-margin-top">
+
       <div class="w3-col m6 w3-padding-24">
         <div class="use-case-card w3-padding-32">
+
           <h4>🔍 Understanding Testing Gaps</h4>
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Where have we tested and where are significant gaps?</b></p>
+
+          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
+            <b>Where have we tested and where are significant gaps?</b>
+          </p>
+
           <ul style="color:#333; font-size:0.95em;">
             <li>Where have we tested for what?</li>
-            <li>What waterbodies are near potential contamination sources? <a href="tracing.html">See Example</a></li>
-            <li>What do the available test results show in a particular region?</li>
-            <li>Where are the biggest testing gaps based on what is known?</li>
+            <li>
+              What waterbodies are near potential contamination sources?
+              <a href="tracing.html">See Example</a>
+            </li>
+            <li>
+              What do the available test results show in a particular region?
+            </li>
+            <li>
+              Where are the biggest testing gaps based on what is known?
+            </li>
           </ul>
+
         </div>
       </div>
-      
+
+
       <div class="w3-col m6 w3-padding-24">
         <div class="use-case-card w3-padding-32">
+
           <h4>⚠️ Assess and Map Risks</h4>
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Who is impacted the most?</b></p>
+
+          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
+            <b>Who is impacted the most?</b>
+          </p>
+
           <ul style="color:#333; font-size:0.95em;">
-            <li>Where are concerning test results suggesting prioritized investigation? <a href="impacts.html">See Example</a></li>
-            <li>Which communities are at greatest risk?</li>
+            <li>
+              Where are concerning test results suggesting prioritized
+              investigation?
+              <a href="impacts.html">See Example</a>
+            </li>
+            <li>
+              Which communities are at greatest risk?
+            </li>
           </ul>
+
         </div>
       </div>
+
     </div>
+
 
     <div class="w3-row">
+
       <div class="w3-col m6 w3-padding-24">
         <div class="use-case-card w3-padding-32">
+
           <h4>🔄 Trace Contamination</h4>
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>Where does PFAS end up? Where does it originate?</b></p>
+
+          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
+            <b>Where does PFAS end up? Where does it originate?</b>
+          </p>
+
           <ul style="color:#333; font-size:0.95em;">
-            <li>How do point sources (facilities, landfills, training sites) affect surroundings?</li>
-            <li>What potential sources are upstream from concerning test results?</li>
-            <li>What do downstream test results show? <a href="testing.html">See Example</a></li>
-            <li>Which wells need prioritized testing?</li>
+            <li>
+              How do point sources (facilities, landfills, training sites)
+              affect surroundings?
+            </li>
+            <li>
+              What potential sources are upstream from concerning test results?
+            </li>
+            <li>
+              What do downstream test results show?
+              <a href="testing.html">See Example</a>
+            </li>
+            <li>
+              Which wells need prioritized testing?
+            </li>
           </ul>
+
         </div>
       </div>
-      
+
+
       <div class="w3-col m6 w3-padding-24">
         <div class="use-case-card w3-padding-32">
+
           <h4>🔬 Research Insights</h4>
-          <p style="font-size:1.05em; color:#333; margin-bottom:15px;"><b>What linkages does the data suggest?</b></p>
+
+          <p style="font-size:1.05em; color:#333; margin-bottom:15px;">
+            <b>What linkages does the data suggest?</b>
+          </p>
+
           <ul style="color:#333; font-size:0.95em;">
-            <li>Where are unexplained high test results?</li>
-            <li>What agricultural practices reduce PFAS exposure?</li>
-            <li>What connections exist between different PFAS substances?</li>
+            <li>
+              Where are unexplained high test results?
+            </li>
+            <li>
+              What agricultural practices reduce PFAS exposure?
+            </li>
+            <li>
+              What connections exist between different PFAS substances?
+            </li>
           </ul>
+
         </div>
       </div>
+
     </div>
+
   </div>
 
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Competency questions and User queries</h3>
+
+  <!-- Competency Questions and User Queries -->
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+    Competency Questions and User Queries
+  </h3>
+
   <ul>
-    <li><b>Testing Coverage and Gaps:</b> Where (locations/towns) should we prioritize environmental/water testing?
+
+    <li>
+      <b>Testing Coverage and Gaps:</b>
+      Where (locations/towns) should we prioritize environmental/water testing?
+
       <ul>
-        <li>E.g. which wells are within 5 miles of landfills/airports/biosludge application sites? Which wells near locations with a reported PFOA contamination above 4ppt have not been tested?</li>
+        <li>
+          E.g., which wells are within 5 miles of landfills/airports/biosludge
+          application sites? Which wells near locations with a reported PFOA
+          contamination above 4ppt have not been tested?
+        </li>
       </ul>
     </li>
-    <li><b>Assessing Contamination Impacts:</b> Where and who is impacted? (Prevalence, risk/vulnerability mapping)
+
+    <li>
+      <b>Assessing Contamination Impacts:</b>
+      Where and who is impacted? (Prevalence, risk/vulnerability mapping)
+
       <ul>
-        <li>E.g. Which towns or counties have multiple test results with PFOS levels above 20ppt with no known contamination source nearby? Which chemicals show the highest average readings in samples from a particular region? Which towns/counties are most vulnerability based on their proximity to known or potential PFAS sources?</li>
+        <li>
+          E.g., which towns or counties have multiple test results with PFOS
+          levels above 20ppt with no known contamination source nearby? Which
+          chemicals show the highest average readings in samples from a
+          particular region? Which towns/counties are most vulnerability based
+          on their proximity to known or potential PFAS sources?
+        </li>
       </ul>
     </li>
-    <li><b>Contaminant Tracing:</b> What are potential sources of contamination at a particular location or area?
+
+    <li>
+      <b>Contaminant Tracing:</b>
+      What are potential sources of contamination at a particular location or
+      area?
+
       <ul>
-        <li>E.g. What potential contamination sources exist 20 miles upstream from the sample result? What wells are hydrologically connected to other wells with a reported contamination of +10ppt</li>
+        <li>
+          E.g., what potential contamination sources exist 20 miles upstream
+          from the sample result? What wells are hydrologically connected to
+          other wells with a reported contamination of +10ppt?
+        </li>
       </ul>
     </li>
+
   </ul>
 
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Project Overview</h3>
-  <div class="w3-center w3-padding-32">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/vS82LsLjZ5U?si=DePgmMknHwZyUBLP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <!-- Project Overview -->
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+    Project Overview
+  </h3>
+
+  <div class="video-container w3-padding-32">
+
+    <iframe
+      src="https://www.youtube.com/embed/vS82LsLjZ5U?si=DePgmMknHwZyUBLP"
+      title="SAWGraph project overview video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
   </div>
 
-<!-- End page content -->
-  </div>
 
-<!-- Page Links -->
-<div class="w3-container w3-padding-32 w3-light-grey">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Explore SAWGraph</h3>
-
-  <div class="w3-row-padding">
-    <div class="w3-col s12 m6 l4">
-      <p><a href="index.html">Home</a></p>
-      <p><a href="kg.html#project">Knowledge Graph</a></p>
-      <p><a href="kg.html#data-sources">Data Sources</a></p>
-    </div>
-
-    <div class="w3-col s12 m6 l4">
-      <p><a href="ontologies.html">Ontologies</a></p>
-      <p><a href="publications.html">Publications</a></p>
-      <p><a href="aboutus.html">Team</a></p>
-    </div>
-
-    <div class="w3-col s12 m6 l4">
-      <p><a href="pfas.html">About PFAS</a></p>
-      <p><a href="aboutkgs.html">About KGs</a></p>
-    </div>
-  </div>
+<!-- End Page Content -->
 </div>
-  
-<!-- Page Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+
+
+<!-- Site Footer -->
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making.
+  </p>
+
 </footer>
 
-<button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
+
+<!-- Back to Top -->
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
 
 
 <script>
-  // Get the button
+
   const mybutton = document.getElementById("backToTop");
 
-  // When the user scrolls down 400px from the top, show the button
-  window.onscroll = function() {scrollFunction()};
-
   function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
     }
   }
 
-  // When the user clicks, scroll to the top smoothly
+  window.addEventListener("scroll", scrollFunction);
+
   function topFunction() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
+
 </script>
+
 
 </body>
 </html>
