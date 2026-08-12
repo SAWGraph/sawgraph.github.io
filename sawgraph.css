@@ -1,0 +1,504 @@
+/* =========================================================
+   SAWGraph Shared Stylesheet
+   ========================================================= */
+
+
+/* ---------- Color Variables ---------- */
+
+:root {
+  --saw-blue: #0066cc;
+  --saw-blue-dark: #004499;
+  --saw-heading-blue: #1a4d7a;
+  --saw-subheading-blue: #2a5c91;
+
+  --saw-pale-blue: #f0f4ff;
+  --saw-light-grey: #f8f9fa;
+  --saw-border-grey: #e5e5e5;
+
+  --saw-text: #333333;
+  --saw-muted-text: #555555;
+
+  --saw-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.08);
+
+  --saw-shadow-hover:
+    0 4px 12px rgba(0, 102, 204, 0.15);
+}
+
+
+/* ---------- General Page Layout ---------- */
+
+html {
+  scroll-padding-top: 75px;
+}
+
+body {
+  color: var(--saw-text);
+}
+
+.site-main {
+  max-width: 1564px;
+  margin: 0 auto;
+  padding: 80px 16px 0;
+}
+
+p {
+  line-height: 1.7;
+}
+
+ul,
+ol {
+  line-height: 1.8;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+
+/* ---------- Links ---------- */
+
+/*
+   Main-content links only.
+   This prevents these rules from changing the appearance
+   of navigation links created by menu.js.
+*/
+
+.site-main a {
+  color: var(--saw-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-main a:hover {
+  color: var(--saw-blue-dark);
+  text-decoration: underline;
+}
+
+
+/* ---------- Page and Section Headings ---------- */
+
+/* Primary title on interior pages */
+.page-title {
+  color: #1a1a1a;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0 0 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--saw-blue);
+}
+
+/* Major page sections */
+.section-title {
+  color: var(--saw-blue);
+  font-size: 1.8em;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--saw-blue);
+}
+
+/* Subsections within a major section */
+.subsection-title {
+  color: var(--saw-subheading-blue);
+  font-size: 1.35em;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+
+/* ---------- Introductory / Highlighted Sections ---------- */
+
+.intro-section {
+  background: var(--saw-pale-blue);
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  border-left: 5px solid var(--saw-blue);
+}
+
+.intro-section p:first-child {
+  margin-top: 0;
+}
+
+.intro-section p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* General callout using the same visual vocabulary */
+.callout-section {
+  background: var(--saw-pale-blue);
+  padding: 25px;
+  border-radius: 8px;
+  margin: 30px 0;
+  border-left: 5px solid var(--saw-blue);
+}
+
+
+/* ---------- Home Page Header ---------- */
+
+.home-header {
+  padding-bottom: 20px;
+  overflow: auto;
+}
+
+.header-logo {
+  float: left;
+  margin: 10px 35px 20px 0;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--saw-shadow);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--saw-shadow-hover);
+}
+
+.home-intro-text {
+  overflow: hidden;
+}
+
+.project-title {
+  color: var(--saw-heading-blue);
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  color: var(--saw-subheading-blue);
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* ---------- Comparison Graphic ---------- */
+
+.comparison-box {
+  background: var(--saw-pale-blue);
+  border-left: 5px solid var(--saw-blue);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 0 40px;
+  box-shadow: var(--saw-shadow);
+}
+
+.comparison-box img {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.comparison-box p {
+  margin-bottom: 0;
+}
+
+
+/* ---------- Core Use Case Cards ---------- */
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 25px 0 40px;
+}
+
+.use-case-card {
+  background: var(--saw-light-grey);
+  border-left: 5px solid var(--saw-blue);
+  border-radius: 6px;
+  padding: 22px;
+  box-shadow: var(--saw-shadow);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.use-case-card:hover {
+  background: var(--saw-pale-blue);
+  box-shadow: var(--saw-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.use-case-card h3 {
+  color: var(--saw-blue);
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.use-case-question {
+  color: var(--saw-text);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+/* ---------- Multi-column Information Lists ---------- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 35px;
+  margin: 20px 0 35px;
+}
+
+.info-item {
+  margin: 0;
+}
+
+.info-item strong {
+  color: var(--saw-heading-blue);
+}
+
+
+/* ---------- Action Buttons ---------- */
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.site-main a.site-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--saw-blue);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.site-main a.site-button:hover {
+  background: var(--saw-blue-dark);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+
+/* ---------- Responsive Video ---------- */
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 25px auto 40px;
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+
+/* ---------- Publications ---------- */
+
+/*
+   Use class="publication-list" on the Publications page.
+   Do not style every <ol> as publication cards because
+   ordered lists are used normally elsewhere on the site.
+*/
+
+.publication-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publication-list li {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: var(--saw-light-grey);
+  border-left: 5px solid var(--saw-blue);
+  border-radius: 6px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.publication-list li:hover {
+  background: var(--saw-pale-blue);
+  box-shadow: var(--saw-shadow-hover);
+  transform: translateX(5px);
+}
+
+.site-main .publication-list li a {
+  color: var(--saw-blue);
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.publication-list li i {
+  display: block;
+  margin-top: 10px;
+  color: var(--saw-muted-text);
+  font-size: 0.95em;
+}
+
+
+/* ---------- Site Footer ---------- */
+
+.site-footer {
+  background: var(--saw-heading-blue);
+  color: white;
+  text-align: center;
+  padding: 32px 20px;
+  margin-top: 48px;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+
+/* ---------- Back to Top Button ---------- */
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+
+  border: none;
+  outline: none;
+
+  background-color: var(--saw-heading-blue);
+  color: white;
+
+  cursor: pointer;
+
+  width: 52px;
+  height: 52px;
+  padding: 0;
+
+  border-radius: 50%;
+  font-size: 20px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: var(--saw-blue);
+  transform: scale(1.08);
+}
+
+
+/* ---------- Responsive Styles ---------- */
+
+@media (max-width: 850px) {
+
+  .header-logo {
+    float: none;
+    display: block;
+    max-width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .home-intro-text {
+    overflow: visible;
+  }
+
+  .use-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .site-main {
+    padding-top: 75px;
+  }
+
+  .page-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+  }
+
+  .project-title {
+    font-size: 1.35em;
+  }
+
+  .tagline {
+    font-size: 1.1em;
+  }
+
+  .intro-section,
+  .callout-section,
+  .comparison-box {
+    padding: 18px;
+  }
+
+  .use-case-card {
+    padding: 18px;
+  }
+
+  .publication-list li {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .publication-list li a {
+    font-size: 1em;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .site-main a.site-button {
+    text-align: center;
+  }
+
+  #backToTop {
+    bottom: 25px;
+    right: 25px;
+  }
+
+}
