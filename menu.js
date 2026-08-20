@@ -22,19 +22,19 @@ document.write(`
         <div class="desktop-menu-item">
 
             <a href="index.html"
-               class="desktop-menu-heading w3-bar-item w3-button">
+               class="desktop-menu-heading">
                 <strong>About SAWGraph</strong>
             </a>
 
             <div class="desktop-dropdown w3-bar-block w3-white w3-card-4">
 
                 <a href="index.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Overview
                 </a>
 
                 <a href="pfas.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     About PFAS
                 </a>
 
@@ -48,29 +48,29 @@ document.write(`
         <div class="desktop-menu-item">
 
             <a href="kg.html"
-               class="desktop-menu-heading w3-bar-item w3-button">
+               class="desktop-menu-heading">
                 <strong>Data &amp; Methods</strong>
             </a>
 
             <div class="desktop-dropdown w3-bar-block w3-white w3-card-4">
 
                 <a href="kg.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Architecture
                 </a>
 
                 <a href="kg.html#data-sources"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Data Sources
                 </a>
 
                 <a href="ontologies.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Ontologies
                 </a>
 
                 <a href="aboutkgs.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     About KGs
                 </a>
 
@@ -83,39 +83,39 @@ document.write(`
 
         <div class="desktop-menu-item">
 
-            <div class="desktop-menu-heading w3-bar-item w3-button">
+            <div class="desktop-menu-heading">
                 <strong>Explore</strong>
             </div>
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
                 <a href="testing.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Testing Demo 1
                 </a>
 
                 <a href="testing_aquifers.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Testing Demo 2
                 </a>
 
                 <a href="impacts.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Impacts Demo 1
                 </a>
 
                 <a href="tracing.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Tracing Demo 1
                 </a>
 
                 <a href="tracing_alldownstream.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Tracing Demo 2
                 </a>
 
                 <a href="tracing_upstream.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Tracing Demo 3
                 </a>
 
@@ -128,19 +128,19 @@ document.write(`
 
         <div class="desktop-menu-item">
 
-            <div class="desktop-menu-heading w3-bar-item w3-button">
+            <div class="desktop-menu-heading">
                 <strong>Project</strong>
             </div>
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
                 <a href="aboutus.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Team
                 </a>
 
                 <a href="publications.html"
-                   class="w3-bar-item w3-button w3-left-align">
+                   class="w3-bar-item w3-button">
                     Publications
                 </a>
 
