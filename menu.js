@@ -5,7 +5,7 @@ document.write(`
          ========================================== -->
 
 <a href="index.html#home"
-   class="w3-bar-item w3-button">
+   class="site-identity w3-bar-item w3-button">
     <b>SAW</b>Graph
 </a>
 
