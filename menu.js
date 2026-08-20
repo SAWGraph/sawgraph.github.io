@@ -1,6 +1,9 @@
 document.write(`
 
-    <!-- Site Identity -->
+    <!-- ==========================================
+         Site Identity
+         ========================================== -->
+
     <a href="index.html#home"
        class="w3-bar-item w3-button">
         <b>SAW</b>Graph
@@ -19,17 +22,19 @@ document.write(`
         <div class="desktop-menu-item">
 
             <a href="index.html"
-               class="desktop-menu-heading">
-                About SAWGraph
+               class="desktop-menu-heading w3-bar-item w3-button">
+                <strong>About SAWGraph</strong>
             </a>
 
-            <div class="desktop-dropdown">
+            <div class="desktop-dropdown w3-bar-block w3-white w3-card-4">
 
-                <a href="index.html">
+                <a href="index.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Overview
                 </a>
 
-                <a href="pfas.html">
+                <a href="pfas.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     About PFAS
                 </a>
 
@@ -43,25 +48,29 @@ document.write(`
         <div class="desktop-menu-item">
 
             <a href="kg.html"
-               class="desktop-menu-heading">
-                Data &amp; Methods
+               class="desktop-menu-heading w3-bar-item w3-button">
+                <strong>Data &amp; Methods</strong>
             </a>
 
-            <div class="desktop-dropdown">
+            <div class="desktop-dropdown w3-bar-block w3-white w3-card-4">
 
-                <a href="kg.html">
+                <a href="kg.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Architecture
                 </a>
 
-                <a href="kg.html#data-sources">
+                <a href="kg.html#data-sources"
+                   class="w3-bar-item w3-button w3-left-align">
                     Data Sources
                 </a>
 
-                <a href="ontologies.html">
+                <a href="ontologies.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Ontologies
                 </a>
 
-                <a href="aboutkgs.html">
+                <a href="aboutkgs.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     About KGs
                 </a>
 
@@ -74,36 +83,39 @@ document.write(`
 
         <div class="desktop-menu-item">
 
-            <button
-                type="button"
-                class="desktop-menu-heading"
-                aria-haspopup="true">
-                Explore
-            </button>
+            <div class="desktop-menu-heading w3-bar-item w3-button">
+                <strong>Explore</strong>
+            </div>
 
-            <div class="desktop-dropdown dropdown-right">
+            <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
-                <a href="testing.html">
+                <a href="testing.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Testing Demo 1
                 </a>
 
-                <a href="testing_aquifers.html">
+                <a href="testing_aquifers.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Testing Demo 2
                 </a>
 
-                <a href="impacts.html">
+                <a href="impacts.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Impacts Demo 1
                 </a>
 
-                <a href="tracing.html">
+                <a href="tracing.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Tracing Demo 1
                 </a>
 
-                <a href="tracing_alldownstream.html">
+                <a href="tracing_alldownstream.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Tracing Demo 2
                 </a>
 
-                <a href="tracing_upstream.html">
+                <a href="tracing_upstream.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Tracing Demo 3
                 </a>
 
@@ -116,26 +128,26 @@ document.write(`
 
         <div class="desktop-menu-item">
 
-            <button
-                type="button"
-                class="desktop-menu-heading"
-                aria-haspopup="true">
-                Project
-            </button>
+            <div class="desktop-menu-heading w3-bar-item w3-button">
+                <strong>Project</strong>
+            </div>
 
-            <div class="desktop-dropdown dropdown-right">
+            <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
-                <a href="aboutus.html">
+                <a href="aboutus.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Team
                 </a>
 
-                <a href="publications.html">
+                <a href="publications.html"
+                   class="w3-bar-item w3-button w3-left-align">
                     Publications
                 </a>
 
             </div>
 
         </div>
+
 
     </nav>
 
@@ -297,30 +309,73 @@ document.write(`
    Mobile Menu Functions
    ========================================================= */
 
+
+/* Close the mobile menu */
+
+function closeSiteMenu() {
+
+    const menu = document.getElementById("siteMenu");
+    const button = document.getElementById("siteMenuButton");
+
+    if (menu && button) {
+
+        menu.style.display = "none";
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        button.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+    }
+
+}
+
+
+/* Open or close the mobile menu */
+
 function toggleSiteMenu(event) {
 
     event.stopPropagation();
 
-    const menu = document.getElementById("siteMenu");
-    const button = document.getElementById("siteMenuButton");
-    const navbar = button.closest(".w3-bar");
+    const menu =
+        document.getElementById("siteMenu");
+
+    const button =
+        document.getElementById("siteMenuButton");
+
+    const navbar =
+        button.closest(".w3-bar");
+
 
     if (menu.style.display === "block") {
 
-        menu.style.display = "none";
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open navigation menu");
+        closeSiteMenu();
 
     } else {
 
         const navbarBottom =
             navbar.getBoundingClientRect().bottom;
 
-        menu.style.top = navbarBottom + "px";
-        menu.style.display = "block";
+        menu.style.top =
+            navbarBottom + "px";
 
-        button.setAttribute("aria-expanded", "true");
-        button.setAttribute("aria-label", "Close navigation menu");
+        menu.style.display =
+            "block";
+
+        button.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        button.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
 
     }
 
@@ -329,66 +384,58 @@ function toggleSiteMenu(event) {
 
 /* Close mobile menu when clicking elsewhere */
 
-document.addEventListener("click", function(event) {
+document.addEventListener(
+    "click",
+    function(event) {
 
-    const menu = document.getElementById("siteMenu");
-    const button = document.getElementById("siteMenuButton");
+        const menu =
+            document.getElementById("siteMenu");
 
-    if (
-        menu &&
-        button &&
-        !menu.contains(event.target) &&
-        !button.contains(event.target)
-    ) {
+        const button =
+            document.getElementById("siteMenuButton");
 
-        menu.style.display = "none";
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open navigation menu");
+        if (
+            menu &&
+            button &&
+            !menu.contains(event.target) &&
+            !button.contains(event.target)
+        ) {
+
+            closeSiteMenu();
+
+        }
 
     }
-
-});
+);
 
 
 /* Close mobile menu with Escape */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    if (event.key === "Escape") {
+        if (event.key === "Escape") {
 
-        const menu = document.getElementById("siteMenu");
-        const button = document.getElementById("siteMenuButton");
-
-        if (menu && button) {
-
-            menu.style.display = "none";
-            button.setAttribute("aria-expanded", "false");
-            button.setAttribute("aria-label", "Open navigation menu");
+            closeSiteMenu();
 
         }
 
     }
+);
 
-});
 
+/* Reset mobile menu when switching to desktop width */
 
-/* Reset mobile menu when switching to desktop navigation */
+window.addEventListener(
+    "resize",
+    function() {
 
-window.addEventListener("resize", function() {
+        if (window.innerWidth > 850) {
 
-    if (window.innerWidth > 850) {
-
-        const menu = document.getElementById("siteMenu");
-        const button = document.getElementById("siteMenuButton");
-
-        if (menu && button) {
-
-            menu.style.display = "none";
-            button.setAttribute("aria-expanded", "false");
-            button.setAttribute("aria-label", "Open navigation menu");
+            closeSiteMenu();
 
         }
 
     }
-
-});
+);
