@@ -4,10 +4,14 @@ document.write(`
          Site Identity
          ========================================== -->
 
-    <a href="index.html#home"
-       class="w3-bar-item w3-button">
-        <b>SAW</b>Graph
-    </a>
+<a href="index.html#home"
+   class="w3-bar-item w3-button">
+    <b>SAW</b>Graph
+</a>
+
+<div class="desktop-tagline">
+    Integrating PFAS data and context to support research and decision-making.
+</div>
 
 
     <!-- ==========================================
