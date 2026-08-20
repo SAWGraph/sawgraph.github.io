@@ -59,14 +59,20 @@ li {
 /* ---------- Site Navigation ---------- */
 
 /*
-   Desktop navigation appears above 850px.
-   Mobile hamburger navigation appears at 850px and below.
+   W3.CSS provides the visual styling for navigation items.
 
-   The parent navbar still uses W3.CSS classes in the HTML.
+   Above 850px:
+   - SAWGraph remains on the left
+   - top-level menu headings appear horizontally on the right
+   - only the submenu for the hovered heading is displayed
+
+   At 850px and below:
+   - desktop navigation is hidden
+   - the hamburger button and existing mobile menu are used
 */
 
 
-/* Desktop navigation */
+/* Desktop navigation container */
 
 .desktop-nav {
   float: right;
@@ -75,90 +81,96 @@ li {
   letter-spacing: normal;
 }
 
+
+/* Each top-level desktop menu and its submenu */
+
 .desktop-menu-item {
   position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
-.desktop-menu-heading {
-  display: block;
-  padding: 8px 14px;
-  border: 0;
-  background: transparent;
-  color: #333333;
-  font: inherit;
-  font-weight: 600;
-  line-height: inherit;
+
+/*
+   Top-level desktop headings use W3.CSS w3-bar-item
+   and w3-button classes in menu.js.
+
+   These rules only correct positioning inherited from
+   the surrounding W3 bar and keep each heading on one line.
+*/
+
+.w3-bar .desktop-menu-heading {
+  float: none;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
   white-space: nowrap;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.desktop-menu-heading:hover,
-.desktop-menu-heading:focus {
-  background: #f1f1f1;
-  color: var(--saw-blue);
-  text-decoration: none;
-  outline: none;
+  font: inherit;
+  letter-spacing: normal;
 }
 
 
-/* Desktop dropdown menus */
+/* Desktop submenus */
 
 .desktop-dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 210px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  min-width: 220px;
   z-index: 10000;
   letter-spacing: normal;
 }
+
+
+/* Right-align selected dropdowns near the right edge */
 
 .desktop-dropdown.dropdown-right {
   left: auto;
   right: 0;
 }
 
-.desktop-menu-item:hover .desktop-dropdown,
-.desktop-menu-item:focus-within .desktop-dropdown {
+
+/* Show only the submenu belonging to the hovered heading */
+
+.desktop-menu-item:hover > .desktop-dropdown {
   display: block;
 }
 
-.desktop-dropdown a {
-  display: block;
-  padding: 11px 16px;
-  color: #333333;
-  font-weight: 400;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.desktop-dropdown a:hover,
-.desktop-dropdown a:focus {
-  background: #f1f1f1;
-  color: var(--saw-blue);
-  text-decoration: none;
-  outline: none;
-}
-
-
-/* Mobile navigation */
 
 /*
-   These elements are hidden on wider screens.
-   menu.js changes the mobile menu's inline display value
-   when the hamburger button is clicked.
+   Mobile hamburger button is hidden on desktop.
+
+   The .w3-bar prefix and !important are intentional:
+   W3.CSS gives .w3-bar-item its own display rule,
+   so this guarantees that the hamburger does not also
+   appear beside the desktop navigation.
 */
 
-.mobile-menu-button,
-.mobile-site-menu {
-  display: none;
+.w3-bar .mobile-menu-button {
+  display: none !important;
 }
+
+
+/* Preserve normal text spacing in the mobile menu */
 
 .mobile-site-menu {
   letter-spacing: normal;
+}
+
+
+/*
+   If a mobile menu happens to be open when the viewport
+   changes to desktop width, keep it hidden on desktop.
+*/
+
+@media (min-width: 851px) {
+
+  .mobile-site-menu {
+    display: none !important;
+  }
+
 }
 
 
@@ -564,11 +576,11 @@ li {
   /* Navigation */
 
   .desktop-nav {
-    display: none;
+    display: none !important;
   }
 
-  .mobile-menu-button {
-    display: block;
+  .w3-bar .mobile-menu-button {
+    display: block !important;
   }
 
 
