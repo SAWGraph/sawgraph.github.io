@@ -102,7 +102,6 @@ li {
   display: none;
 }
 
-
 /*
    On sufficiently wide screens, place the tagline
    between the SAWGraph identity and the main menu.
@@ -124,6 +123,10 @@ li {
 
     white-space: nowrap;
     letter-spacing: normal;
+
+    position: relative;
+    top: 2px;
+   
   }
 
 }
