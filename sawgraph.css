@@ -56,6 +56,112 @@ li {
 }
 
 
+/* ---------- Site Navigation ---------- */
+
+/*
+   Desktop navigation appears above 850px.
+   Mobile hamburger navigation appears at 850px and below.
+
+   The parent navbar still uses W3.CSS classes in the HTML.
+*/
+
+
+/* Desktop navigation */
+
+.desktop-nav {
+  float: right;
+  display: flex;
+  align-items: stretch;
+  letter-spacing: normal;
+}
+
+.desktop-menu-item {
+  position: relative;
+}
+
+.desktop-menu-heading {
+  display: block;
+  padding: 8px 14px;
+  border: 0;
+  background: transparent;
+  color: #333333;
+  font: inherit;
+  font-weight: 600;
+  line-height: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.desktop-menu-heading:hover,
+.desktop-menu-heading:focus {
+  background: #f1f1f1;
+  color: var(--saw-blue);
+  text-decoration: none;
+  outline: none;
+}
+
+
+/* Desktop dropdown menus */
+
+.desktop-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  z-index: 10000;
+  letter-spacing: normal;
+}
+
+.desktop-dropdown.dropdown-right {
+  left: auto;
+  right: 0;
+}
+
+.desktop-menu-item:hover .desktop-dropdown,
+.desktop-menu-item:focus-within .desktop-dropdown {
+  display: block;
+}
+
+.desktop-dropdown a {
+  display: block;
+  padding: 11px 16px;
+  color: #333333;
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.desktop-dropdown a:hover,
+.desktop-dropdown a:focus {
+  background: #f1f1f1;
+  color: var(--saw-blue);
+  text-decoration: none;
+  outline: none;
+}
+
+
+/* Mobile navigation */
+
+/*
+   These elements are hidden on wider screens.
+   menu.js changes the mobile menu's inline display value
+   when the hamburger button is clicked.
+*/
+
+.mobile-menu-button,
+.mobile-site-menu {
+  display: none;
+}
+
+.mobile-site-menu {
+  letter-spacing: normal;
+}
+
+
 /* ---------- Links ---------- */
 
 /*
@@ -80,6 +186,7 @@ li {
 /* ---------- Page and Section Headings ---------- */
 
 /* Primary title on interior pages */
+
 .page-title {
   color: #1a1a1a;
   font-size: 2.5em;
@@ -89,7 +196,9 @@ li {
   border-bottom: 3px solid var(--saw-blue);
 }
 
+
 /* Major page sections */
+
 .section-title {
   color: var(--saw-blue);
   font-size: 1.8em;
@@ -100,7 +209,9 @@ li {
   border-bottom: 2px solid var(--saw-blue);
 }
 
+
 /* Subsections within a major section */
+
 .subsection-title {
   color: var(--saw-subheading-blue);
   font-size: 1.35em;
@@ -130,6 +241,7 @@ li {
 
 
 /* General callout using the same visual vocabulary */
+
 .callout-section {
   background: var(--saw-pale-blue);
   padding: 25px;
@@ -298,6 +410,7 @@ li {
   transform: translateY(-2px);
 }
 
+
 /* Secondary section-link buttons */
 
 .site-main a.site-button-secondary {
@@ -448,6 +561,19 @@ li {
 
 @media (max-width: 850px) {
 
+  /* Navigation */
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+
+  /* Home page */
+
   .header-logo {
     float: none;
     display: block;
@@ -458,6 +584,9 @@ li {
   .home-intro-text {
     overflow: visible;
   }
+
+
+  /* Content grids */
 
   .use-case-grid {
     grid-template-columns: 1fr;
@@ -516,7 +645,8 @@ li {
     flex-direction: column;
   }
 
-  .site-main a.site-button {
+  .site-main a.site-button,
+  .site-main a.site-button-secondary {
     text-align: center;
   }
 
