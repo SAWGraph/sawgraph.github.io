@@ -76,8 +76,15 @@ li {
 
 .w3-top > .w3-bar {
   overflow: visible;
+  letter-spacing: normal;
 }
 
+
+/* Site identity */
+
+.w3-bar .site-identity {
+  letter-spacing: 4px;
+}
 
 /* Desktop navigation container */
 
