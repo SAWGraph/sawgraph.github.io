@@ -89,6 +89,39 @@ li {
 }
 
 
+/* Tagline displayed only on wide desktop screens */
+
+.desktop-tagline {
+  display: none;
+}
+
+
+/*
+   On sufficiently wide screens, place the tagline
+   between the SAWGraph identity and the main menu.
+*/
+
+@media (min-width: 1300px) {
+
+  .desktop-tagline {
+    display: block;
+    float: left;
+
+    padding: 8px 12px;
+
+    color: var(--saw-muted-text);
+
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: inherit;
+
+    white-space: nowrap;
+    letter-spacing: normal;
+  }
+
+}
+
+
 /* Each top-level menu item */
 
 .desktop-menu-item {
