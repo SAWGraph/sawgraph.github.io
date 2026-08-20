@@ -61,10 +61,25 @@ li {
 /*
    Desktop navigation appears above 850px.
    Mobile hamburger navigation appears at 850px and below.
+
+   W3.CSS provides the basic appearance of submenu items.
+   These rules control layout, dropdown behavior, and the
+   desktop/mobile switch.
 */
 
 
-/* Desktop navigation */
+/*
+   W3.CSS normally hides overflow on .w3-bar.
+   Desktop dropdowns need to extend below the fixed
+   navigation ribbon.
+*/
+
+.w3-top > .w3-bar {
+  overflow: visible;
+}
+
+
+/* Desktop navigation container */
 
 .desktop-nav {
   float: right;
@@ -72,6 +87,9 @@ li {
   align-items: stretch;
   letter-spacing: normal;
 }
+
+
+/* Each top-level menu item */
 
 .desktop-menu-item {
   position: relative;
@@ -85,14 +103,18 @@ li {
   float: none;
   display: block;
   width: auto;
+
   padding: 8px 16px;
+
   color: inherit;
   background: transparent;
+
   font: inherit;
-  font-weight: inherit;
   line-height: inherit;
+
   white-space: nowrap;
   letter-spacing: normal;
+
   text-decoration: none;
   cursor: default;
 }
@@ -105,7 +127,7 @@ li {
 }
 
 
-/* Match normal W3 navigation hover for linked headings */
+/* Match the normal W3.CSS navigation hover effect */
 
 .w3-bar a.desktop-menu-heading:hover {
   background-color: #ccc;
@@ -118,17 +140,24 @@ li {
 
 .desktop-dropdown {
   display: none;
+
   position: absolute;
   top: 100%;
   left: 0;
+
+  width: max-content;
   min-width: 220px;
+  max-width: calc(100vw - 32px);
+
   background: white;
+
   z-index: 10000;
+
   letter-spacing: normal;
 }
 
 
-/* Align menus near the right edge */
+/* Keep menus near the right edge inside the viewport */
 
 .desktop-dropdown.dropdown-right {
   left: auto;
@@ -136,7 +165,7 @@ li {
 }
 
 
-/* Display only the submenu belonging to the hovered heading */
+/* Show only the submenu belonging to the hovered heading */
 
 .desktop-menu-item:hover > .desktop-dropdown {
   display: block;
@@ -144,15 +173,19 @@ li {
 
 
 /*
-   Important:
-   the outer navbar is also a .w3-bar, so explicitly restore
-   vertical w3-bar-block behavior for submenu items.
+   The outer navigation is a horizontal .w3-bar.
+   Explicitly restore vertical behavior inside each
+   desktop dropdown so submenu items stack like the
+   rows in the mobile menu.
 */
 
 .w3-bar .desktop-dropdown .w3-bar-item {
-  float: none;
-  display: block;
-  width: 100%;
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+
+  padding: 8px 16px;
+
   text-align: left;
   white-space: nowrap;
   letter-spacing: normal;
@@ -161,16 +194,29 @@ li {
 
 /* Mobile navigation */
 
+/*
+   Hide the hamburger on desktop.
+
+   !important is needed because W3.CSS gives
+   .w3-bar-item its own display rule.
+*/
+
 .w3-bar .mobile-menu-button {
   display: none !important;
 }
+
+
+/* Preserve normal text spacing in the mobile menu */
 
 .mobile-site-menu {
   letter-spacing: normal;
 }
 
 
-/* Keep mobile navigation hidden at desktop widths */
+/*
+   Prevent an opened mobile menu from remaining visible
+   if the viewport changes to desktop width.
+*/
 
 @media (min-width: 851px) {
 
@@ -285,6 +331,7 @@ li {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: var(--saw-shadow);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -355,6 +402,7 @@ li {
   border-radius: 6px;
   padding: 22px;
   box-shadow: var(--saw-shadow);
+
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -411,12 +459,17 @@ li {
 
 .site-main a.site-button {
   display: inline-block;
+
   padding: 12px 20px;
+
   background: var(--saw-blue);
   color: white;
+
   font-weight: 600;
   text-decoration: none;
+
   border-radius: 5px;
+
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
@@ -434,13 +487,19 @@ li {
 
 .site-main a.site-button-secondary {
   display: inline-block;
+
   padding: 10px 18px;
+
   border: 2px solid var(--saw-blue);
+
   color: var(--saw-blue);
   background: white;
+
   font-weight: 600;
   text-decoration: none;
+
   border-radius: 5px;
+
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
@@ -476,6 +535,7 @@ li {
 
 /*
    Use class="publication-list" on the Publications page.
+
    Do not style every <ol> as publication cards because
    ordered lists are used normally elsewhere on the site.
 */
@@ -489,11 +549,15 @@ li {
 .publication-list li {
   margin-bottom: 25px;
   padding: 20px;
+
   background: var(--saw-light-grey);
+
   border-left: 5px solid var(--saw-blue);
   border-radius: 6px;
+
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.05);
+
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -542,9 +606,11 @@ li {
 
 #backToTop {
   display: none;
+
   position: fixed;
   bottom: 40px;
   right: 40px;
+
   z-index: 99;
 
   border: none;
@@ -560,6 +626,7 @@ li {
   padding: 0;
 
   border-radius: 50%;
+
   font-size: 20px;
 
   box-shadow:
