@@ -1,297 +1,1014 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>SAWGraph - About Us</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-  .team-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-  }
-</style>
+
+  <title>Project | SAWGraph</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- SAWGraph shared styles -->
+  <link rel="stylesheet" href="sawgraph.css">
+
+  <!-- Team page styles -->
+  <style>
+
+    .team-card {
+      margin-bottom: 32px;
+    }
+
+    .team-img,
+    .team-photo-placeholder {
+      width: 100%;
+      max-width: 160px;
+      aspect-ratio: 1 / 1;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .team-img {
+      object-fit: cover;
+    }
+
+    .team-photo-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--saw-light-grey);
+      border: 1px solid var(--saw-border-grey);
+      color: var(--saw-muted-text);
+      font-size: 1.35em;
+      font-weight: 600;
+    }
+
+    .team-card h3 {
+      margin: 8px 0 4px;
+      font-size: 1.2em;
+    }
+
+    .team-card p {
+      margin: 4px 0;
+      line-height: 1.5;
+    }
+
+    .team-group-title {
+      margin: 28px 0 18px;
+      color: var(--saw-subheading-blue);
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+
+  </style>
+
 </head>
+
+
 <body>
 
-<!-- Navbar (sit on top) -->
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
 <div class="w3-top">
-              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-<script src="menu.js"></script>
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
 </div>
-              </div>
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
 
-<!-- About Team Section -->
- <div class="w3-container w3-padding-32" id="about-team">
-<h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">Team</h1>
-    <p> Team from University of Maine, Kansas State University, Pennsylvania State University, Northeastern University and EPA brings together computer science, data science,  geospatial, and chemistry experts 
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
+
+<main class="site-main">
+
+
+  <!-- ====================================================
+       Project Overview
+       ==================================================== -->
+
+  <h1 class="page-title">
+    Project
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      The Safe Agricultural Products and Water Graph (SAWGraph) is an NSF-funded project developing an open knowledge network to support the monitoring and tracing of PFAS and other contaminants in the nation’s food and water systems. SAWGraph integrates environmental observations with information about facilities and industries, hydrology, spatial relationships, agriculture, chemical substances, and other context to support analysis across datasets.
     </p>
-</div>
 
-<div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images\THahmann.jpg" class="team-img" alt="Torsten">
-      <h3>Torsten Hahmann</h3>
-      <p class="w3-opacity">Principal Investigator</p>
-      <p><i>University of Maine</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href="https://orcid.org/0000-0002-5331-5052"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-            0000-0002-5331-5052
-        </a></p>
-        <p><a href="https://umaine.edu/scis/people/torsten-hahmann/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/PHitzler.jpg" alt="Pascal" class="team-img">
-      <h3>Pascal Hitzler</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p><a href="https://people.cs.ksu.edu/~hitzler/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/GHettiarachchi.jpg" alt="Ganga" class="team-img">
-      <h3>Ganga Hettiarachchi</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href="https://orcid.org/0000-0002-6669-2885"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-            0000-0002-6669-2885
-        </a></p>
-        <p><a href="http://www.agronomy.k-state.edu/people/faculty/hettiarachchi-ganga/index.html">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/HMcGinty.jpg" alt="Hande" class="team-img">
-      <h3>Hande Küçük McGinty</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Kansas State University</i></p>
-      <p>       </p>
-      <p><a href="https://www.koncordantlab.com/teams/hande-k%C3%BC%C3%A7%C3%BCk-mcginty">Information</a></p>
-    </div>
-     <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/OApul.jpg" alt="Onur" class="team-img">
-      <h3>Onur Apul</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Pennsylvania State University</i></p>
-      <p>
-         </p>
-      <p><a href="https://civil.umaine.edu/faculty/onur-g-apul/">Information</a> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/HPalani.jpg" alt="Hari" class="team-img">
-      <h3>Hari Palani</h3>
-      <p class="w3-opacity">Co-PI</p>
-      <p><i>Northeastern University</i></p>
-      <p>
-         </p>
-      <p><a href="https://roux.northeastern.edu/people/hari-palani/">Information</a></p>
-    </div>
   </div>
-  
-  <div class="w3-row-padding">
 
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/AWilliams.jpg" alt="Antony" class="team-img">
-      <h3>Antony Williams</h3>
-      <p class="w3-opacity">Federal Partner</p>
-      <p><i>EPA</i></p>
-      <p><a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0002-2668-4821"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-        0000-0002-2668-4821
-      </a></p>
-      <p> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell" >
-      <img src="images/VKilaru.jpg" alt="Vasu" class="team-img">
-      <h3>Vasu Kilaru</h3>
-      <p class="w3-opacity">Federal Partner</p>
-      <p><i>EPA</i></p>
-      <p> 
-          
-      </p>
-      <p> </p>
-    </div>
+  <div class="button-row">
 
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/SStephen.jpg" alt="Shirly" class="team-img">
-      <h3>Shirly Stephen</h3>
-      <p class="w3-opacity">PostDoc Researcher</p>
-      <p><i>University of California Santa Barbara</i></p>
-      <p><a
-        id="cy-effective-orcid-url"
-        class="underline"
-         href=https://orcid.org/0000-0003-3547-8058"
-         target="orcid.widget"
-         rel="me noopener noreferrer"
-         style="vertical-align: top">
-         <img
-            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-            style="width: 1em; margin-inline-start: 0.5em"
-            alt="ORCID iD icon"/>
-          0000-0003-3547-8058
-        </a></p>
-        <p> </p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/DKedrowski.jpg" alt="David" class="team-img">
-      <h3>David Kedrowski</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
+    <a
+      href="#team"
+      class="site-button-secondary">
+      Meet the Team
+    </a>
+
+    <a
+      href="#contact"
+      class="site-button-secondary">
+      Contact SAWGraph
+    </a>
+
+  </div>
+
+
+  <!-- ====================================================
+       Funding and Collaboration
+       ==================================================== -->
+
+  <section id="funding">
+
+    <h2 class="section-title">
+      Funding &amp; Collaboration
+    </h2>
+
+    <p>
+      SAWGraph is supported by the National Science Foundation under Award No. 2333782 as part of the Proto-Open Knowledge Network (Proto-OKN) initiative. The project is led by the University of Maine in collaboration with Kansas State University, Pennsylvania State University, and Northeastern University.
+    </p>
+
+    <p>
+      The project brings together expertise in knowledge graphs and ontologies, computer and data science, geospatial and environmental data, hydrology, chemistry, agriculture, and contaminant monitoring. Researchers from the U.S. Environmental Protection Agency participate as federal partners.
+    </p>
+
+    <div class="button-row">
+
       <a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0002-9070-3169"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-      0000-0002-9070-3169
+        href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2333782"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View NSF Award 2333782
       </a>
-      <p><a href="https://umaine.edu/scis/people/david-kedrowski/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/KSchweikert.jpg" alt="Katrina" class="team-img">
-      <h3>Katrina Schweikert</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
-      <p><a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0003-3271-6700"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-        0000-0003-3271-6700
-      </a></p>
-      <p><a href="https://umaine.edu/scis/people/katrina-schweikert/">Information</a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/SMoavenzadeh.jpg" alt="Sonia" class="team-img">
-      <h3>Sonia Moavenzadeh</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
-      <p></p>
-      <p></p>
-    </div>
-  </div>
 
-  <div class="w3-row-padding">
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/ABarua.jpg" alt="Adrita" class="team-img">
-      <h3>Adrita Barua</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/YZhang.jpg" alt="Yinglun" class="team-img">
-      <h3>Yinglun Zhang</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p> <a href="https://www.koncordantlab.com/teams/yinglun-zhang">Information </a></p>
-    </div>
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/RBabuRaavi.jpg" alt="Revanth" class="team-img">
-      <h3>Revanth Babu Raavi</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Kansas State University</i></p>
-      <p> </p>
-      <p><a href="https://www.koncordantlab.com/teams/revanth-babu-raavi">Information</a> </p>
-    </div>
-     
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images\KPhillips.jpg" alt="Kendall" class="team-img">
-      <h3>Kendall Phillips</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>University of Maine</i></p>
+      <a
+        href="https://okn.us/"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        Learn About the Open Knowledge Network
+      </a>
 
     </div>
 
+  </section>
 
-    <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images\Photo-FE.jpg" alt="Fatih" class="team-img">
-      <h3>Fatih Evrendilek</h3>
-      <p class="w3-opacity">Researcher</p>
-      <p><i>University of Maine Visiting Scholar</i></p>
-      <p><a
-      id="cy-effective-orcid-url"
-      class="underline"
-       href="https://orcid.org/0000-0003-1099-4363"
-       target="orcid.widget"
-       rel="me noopener noreferrer"
-       style="vertical-align: top">
-       <img
-          src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-          style="width: 1em; margin-inline-start: 0.5em"
-          alt="ORCID iD icon"/>
-        0000-0003-1099-4363
-      </a></p>
-      <p><a href="https://scholar.google.com/citations?user=zmjeMEYAAAAJ&hl=en&authuser=1">Information</a></p>
+
+  <!-- ====================================================
+       Team
+       ==================================================== -->
+
+  <section id="team">
+
+    <h2 class="section-title">
+      Team
+    </h2>
+
+    <p>
+      The SAWGraph team includes principal investigators, federal partners, researchers, and students from participating institutions.
+    </p>
+
+
+    <!-- ==================================================
+         Current Team
+         ================================================== -->
+
+    <h3 class="subsection-title">
+      Current Team
+    </h3>
+
+
+    <!-- ==================================================
+         Principal Investigators
+         ================================================== -->
+
+    <h4 class="team-group-title">
+      Principal Investigators
+    </h4>
+
+    <div class="w3-row-padding">
+
+
+      <!-- Torsten Hahmann -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/THahmann.jpg"
+          class="team-img"
+          alt="Torsten Hahmann">
+
+        <h3>Torsten Hahmann</h3>
+
+        <p class="w3-opacity">
+          Principal Investigator
+        </p>
+
+        <p>
+          <i>University of Maine</i>
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0002-5331-5052"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0002-5331-5052
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://umaine.edu/scis/people/torsten-hahmann/"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
 
       </div>
 
-      <div class="w3-col l2 s3 w3-margin-bottom w3-cell">
-      <img src="images/PLashkari.jpg" alt="Prayas" class="team-img">
-      <h3>Prayas Lashkari</h3>
-      <p class="w3-opacity">Research Assistant</p>
-      <p><i>Northeastern University</i></p>
-      <p><a href="https://prayaslashkari.in">Information</a>
+
+      <!-- Pascal Hitzler -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/PHitzler.jpg"
+          class="team-img"
+          alt="Pascal Hitzler">
+
+        <h3>Pascal Hitzler</h3>
+
+        <p class="w3-opacity">
+          Co-PI
+        </p>
+
+        <p>
+          <i>Kansas State University</i>
+        </p>
+
+        <p>
+          <a
+            href="https://people.cs.ksu.edu/~hitzler/"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Ganga Hettiarachchi -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/GHettiarachchi.jpg"
+          class="team-img"
+          alt="Ganga Hettiarachchi">
+
+        <h3>Ganga Hettiarachchi</h3>
+
+        <p class="w3-opacity">
+          Co-PI
+        </p>
+
+        <p>
+          <i>Kansas State University</i>
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0002-6669-2885"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0002-6669-2885
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="http://www.agronomy.k-state.edu/people/faculty/hettiarachchi-ganga/index.html"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Hande Küçük McGinty -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/HMcGinty.jpg"
+          class="team-img"
+          alt="Hande Küçük McGinty">
+
+        <h3>Hande Küçük McGinty</h3>
+
+        <p class="w3-opacity">
+          Co-PI
+        </p>
+
+        <p>
+          <i>Kansas State University</i>
+        </p>
+
+        <p>
+          <a
+            href="https://www.koncordantlab.com/teams/hande-k%C3%BC%C3%A7%C3%BCk-mcginty"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Onur Apul -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/OApul.jpg"
+          class="team-img"
+          alt="Onur Apul">
+
+        <h3>Onur Apul</h3>
+
+        <p class="w3-opacity">
+          Co-PI
+        </p>
+
+        <p>
+          <i>Pennsylvania State University</i>
+        </p>
+
+        <p>
+          <a
+            href="https://www.cee.psu.edu/department/directory-detail-g.aspx?q=oga5061"
+            target="_blank"
+            rel="noopener">
+            Penn State Profile
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://www.onurapul.com/"
+            target="_blank"
+            rel="noopener">
+            Research Website
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Hari Palani -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/HPalani.jpg"
+          class="team-img"
+          alt="Hari Palani">
+
+        <h3>Hari Palani</h3>
+
+        <p class="w3-opacity">
+          Co-PI
+        </p>
+
+        <p>
+          <i>Northeastern University</i>
+        </p>
+
+        <p>
+          <a
+            href="https://roux.northeastern.edu/people/hari-palani/"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
 
     </div>
 
-  </div>
+
+    <!-- ==================================================
+         Federal Partners
+         ================================================== -->
+
+    <h4 class="team-group-title">
+      Federal Partners
+    </h4>
+
+    <div class="w3-row-padding">
 
 
-  
+      <!-- Antony Williams -->
 
-  <!-- End page content -->
-</div>
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/AWilliams.jpg"
+          class="team-img"
+          alt="Antony Williams">
+
+        <h3>Antony Williams</h3>
+
+        <p class="w3-opacity">
+          Federal Partner
+        </p>
+
+        <p>
+          <i>U.S. Environmental Protection Agency</i>
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0002-2668-4821"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0002-2668-4821
+          </a>
+        </p>
+
+      </div>
 
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+      <!-- Vasu Kilaru -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/VKilaru.jpg"
+          class="team-img"
+          alt="Vasu Kilaru">
+
+        <h3>Vasu Kilaru</h3>
+
+        <p class="w3-opacity">
+          Federal Partner
+        </p>
+
+        <p>
+          <i>U.S. Environmental Protection Agency</i>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         Research Team
+         ================================================== -->
+
+    <h4 class="team-group-title">
+      Research Team
+    </h4>
+
+
+    <!-- University of Maine -->
+
+    <h4>
+      University of Maine
+    </h4>
+
+    <div class="w3-row-padding">
+
+
+      <!-- David Kedrowski -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/DKedrowski.jpg"
+          class="team-img"
+          alt="David Kedrowski">
+
+        <h3>David Kedrowski</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0002-9070-3169"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0002-9070-3169
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://umaine.edu/scis/people/david-kedrowski/"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Katrina Schweikert -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/KSchweikert.jpg"
+          class="team-img"
+          alt="Katrina Schweikert">
+
+        <h3>Katrina Schweikert</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0003-3271-6700"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0003-3271-6700
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://umaine.edu/scis/people/katrina-schweikert/"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Kendall Phillips -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/KPhillips.jpg"
+          class="team-img"
+          alt="Kendall Phillips">
+
+        <h3>Kendall Phillips</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+      </div>
+
+
+      <!-- Yadina Clark -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          YC
+        </div>
+
+        <h3>Yadina Clark</h3>
+
+        <p class="w3-opacity">
+          Graduate Assistant
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Kansas State University -->
+
+    <h4>
+      Kansas State University
+    </h4>
+
+    <div class="w3-row-padding">
+
+
+      <!-- Adrita Barua -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/ABarua.jpg"
+          class="team-img"
+          alt="Adrita Barua">
+
+        <h3>Adrita Barua</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+      </div>
+
+
+      <!-- Yinglun Zhang -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/YZhang.jpg"
+          class="team-img"
+          alt="Yinglun Zhang">
+
+        <h3>Yinglun Zhang</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <a
+            href="https://www.koncordantlab.com/teams/yinglun-zhang"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Jarrar Amjad -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          JA
+        </div>
+
+        <h3>Jarrar Amjad</h3>
+
+        <p class="w3-opacity">
+          Graduate Assistant
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Pennsylvania State University -->
+
+    <h4>
+      Pennsylvania State University
+    </h4>
+
+    <div class="w3-row-padding">
+
+
+      <!-- Caroline Millwater -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          CM
+        </div>
+
+        <h3>Caroline Millwater</h3>
+
+        <p class="w3-opacity">
+          Graduate Assistant
+        </p>
+
+      </div>
+
+
+      <!-- Lina Zhu -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          LZ
+        </div>
+
+        <h3>Lina Zhu</h3>
+
+        <p class="w3-opacity">
+          Graduate Assistant
+        </p>
+
+      </div>
+
+
+      <!-- Paulina Alulema -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          PA
+        </div>
+
+        <h3>Paulina Alulema</h3>
+
+        <p class="w3-opacity">
+          Graduate Assistant
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Northeastern University -->
+
+    <h4>
+      Northeastern University
+    </h4>
+
+    <div class="w3-row-padding">
+
+
+      <!-- Prayas Lashkari -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/PLashkari.jpg"
+          class="team-img"
+          alt="Prayas Lashkari">
+
+        <h3>Prayas Lashkari</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <a
+            href="https://prayaslashkari.in"
+            target="_blank"
+            rel="noopener">
+            Profile
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         Former Team Members
+         ================================================== -->
+
+    <h3 class="subsection-title">
+      Former Team Members
+    </h3>
+
+    <div class="w3-row-padding">
+
+
+      <!-- Sonia Moavenzadeh -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/SMoavenzadeh.jpg"
+          class="team-img"
+          alt="Sonia Moavenzadeh">
+
+        <h3>Sonia Moavenzadeh</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <i>University of Maine</i>
+        </p>
+
+      </div>
+
+
+      <!-- Shirly Stephen -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/SStephen.jpg"
+          class="team-img"
+          alt="Shirly Stephen">
+
+        <h3>Shirly Stephen</h3>
+
+        <p class="w3-opacity">
+          Postdoctoral Researcher
+        </p>
+
+        <p>
+          <i>University of California, Santa Barbara</i>
+        </p>
+
+        <p>
+          <a
+            href="https://orcid.org/0000-0003-3547-8058"
+            target="_blank"
+            rel="noopener">
+            ORCID: 0000-0003-3547-8058
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Hassimiou Niane -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <!-- Replace placeholder with photo when available -->
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          HN
+        </div>
+
+        <h3>Hassimiou Niane</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <i>University of Maine</i>
+        </p>
+
+      </div>
+
+
+      <!-- Revanth Babu Raavi -->
+
+      <div class="team-card w3-col l2 m4 s6">
+
+        <img
+          src="images/RBabuRaavi.jpg"
+          class="team-img"
+          alt="Revanth Babu Raavi">
+
+        <h3>Revanth Babu Raavi</h3>
+
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+
+        <p>
+          <i>Kansas State University</i>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Contact
+       ==================================================== -->
+
+  <section id="contact">
+
+    <h2 class="section-title">
+      Contact
+    </h2>
+
+    <p>
+      For general questions about SAWGraph, its data and methods, or opportunities for research collaboration, contact Principal Investigator Torsten Hahmann at the University of Maine.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="mailto:torsten.hahmann@maine.edu"
+        class="site-button">
+        Email Torsten Hahmann
+      </a>
+
+      <a
+        href="https://github.com/SAWGraph"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        SAWGraph on GitHub
+      </a>
+
+      <a
+        href="publications.html"
+        class="site-button-secondary">
+        View Publications
+      </a>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- ======================================================
+     Site Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
 </footer>
 
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
+
 </body>
+
 </html>
