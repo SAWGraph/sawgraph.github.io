@@ -319,6 +319,8 @@ document.write(`
             Contact
         </a>
 
+    </div>
+
 `);
 
 
