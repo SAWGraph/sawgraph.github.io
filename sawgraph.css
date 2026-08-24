@@ -398,7 +398,7 @@ li {
   margin-bottom: 12px;
 }
 
-.tagline {
+.project-subtitle {
   color: var(--saw-subheading-blue);
   font-size: 1.2em;
   font-weight: 600;
@@ -747,7 +747,7 @@ li {
     font-size: 1.35em;
   }
 
-  .tagline {
+  .project-subtitle {
     font-size: 1.1em;
   }
 
