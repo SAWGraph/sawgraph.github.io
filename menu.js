@@ -10,7 +10,7 @@ document.write(`
 </a>
 
 <div class="desktop-tagline">
-    Integrating PFAS data and context to support research and decision-making.
+    Integrating PFAS data and context to support research and decision-making
 </div>
 
 
