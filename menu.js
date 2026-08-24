@@ -85,11 +85,10 @@ document.write(`
 
         <!-- Explore -->
 
-        <div class="desktop-menu-item">
-
-            <div class="desktop-menu-heading">
-                <strong>Explore</strong>
-            </div>
+          <a href="explore.html"
+             class="desktop-menu-heading">
+              <strong>Explore</strong>
+          </a>
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
@@ -245,9 +244,10 @@ document.write(`
 
         <!-- Explore -->
 
-        <div class="w3-bar-item">
+        <a href="explore.html"
+           class="w3-bar-item w3-button w3-left-align">
             <strong>Explore</strong>
-        </div>
+        </a>
 
         <a href="testing.html"
            class="w3-bar-item w3-button w3-left-align"
