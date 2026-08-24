@@ -16,11 +16,19 @@
 
   <!-- Team page styles -->
   <style>
-
-    .team-card {
-      margin-bottom: 32px;
+  
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 28px 20px;
+      margin-top: 18px;
+      margin-bottom: 36px;
     }
-
+  
+    .team-card {
+      min-width: 0;
+    }
+  
     .team-img,
     .team-photo-placeholder {
       width: 100%;
@@ -29,12 +37,12 @@
       display: block;
       margin-bottom: 12px;
     }
-
+  
     .team-img {
       object-fit: cover;
       object-position: center 25%;
     }
-
+  
     .team-photo-placeholder {
       display: flex;
       align-items: center;
@@ -45,24 +53,41 @@
       font-size: 1.35em;
       font-weight: 600;
     }
-
+  
     .team-card h3 {
       margin: 8px 0 4px;
       font-size: 1.2em;
     }
-
+  
     .team-card p {
       margin: 4px 0;
       line-height: 1.5;
     }
-
+  
     .team-group-title {
       margin: 28px 0 18px;
       color: var(--saw-subheading-blue);
       font-size: 1.15em;
       font-weight: 600;
     }
-
+  
+    @media (max-width: 1100px) {
+  
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+  
+    }
+  
+    @media (max-width: 600px) {
+  
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 16px;
+      }
+  
+    }
+  
   </style>
 
 </head>
@@ -174,57 +199,57 @@
   <!-- ====================================================
        Team
        ==================================================== -->
-
+  
   <section id="team">
-
+  
     <h2 class="section-title">
       Team
     </h2>
-
+  
     <p>
-      The SAWGraph team includes principal investigators, federal partners, researchers, and students from participating institutions.
+      The SAWGraph team includes principal investigators, federal partners, and research assistants from participating institutions.
     </p>
-
-
+  
+  
     <!-- ==================================================
          Current Team
          ================================================== -->
-
+  
     <h3 class="subsection-title">
       Current Team
     </h3>
-
-
+  
+  
     <!-- ==================================================
          Principal Investigators
          ================================================== -->
-
+  
     <h4 class="team-group-title">
       Principal Investigators
     </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+    <div class="team-grid">
+  
+  
       <!-- Torsten Hahmann -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/THahmann.jpg"
           class="team-img"
           alt="Torsten Hahmann">
-
+  
         <h3>Torsten Hahmann</h3>
-
+  
         <p class="w3-opacity">
           Principal Investigator
         </p>
-
+  
         <p>
           <i>University of Maine</i>
         </p>
-
+  
         <p>
           <a
             href="https://orcid.org/0000-0002-5331-5052"
@@ -233,7 +258,7 @@
             ORCID: 0000-0002-5331-5052
           </a>
         </p>
-
+  
         <p>
           <a
             href="https://umaine.edu/scis/people/torsten-hahmann/"
@@ -242,29 +267,29 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Pascal Hitzler -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/PHitzler.jpg"
           class="team-img"
           alt="Pascal Hitzler">
-
+  
         <h3>Pascal Hitzler</h3>
-
+  
         <p class="w3-opacity">
           Co-PI
         </p>
-
+  
         <p>
           <i>Kansas State University</i>
         </p>
-
+  
         <p>
           <a
             href="https://people.cs.ksu.edu/~hitzler/"
@@ -273,29 +298,29 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Ganga Hettiarachchi -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/GHettiarachchi.jpg"
           class="team-img"
           alt="Ganga Hettiarachchi">
-
+  
         <h3>Ganga Hettiarachchi</h3>
-
+  
         <p class="w3-opacity">
           Co-PI
         </p>
-
+  
         <p>
           <i>Kansas State University</i>
         </p>
-
+  
         <p>
           <a
             href="https://orcid.org/0000-0002-6669-2885"
@@ -304,7 +329,7 @@
             ORCID: 0000-0002-6669-2885
           </a>
         </p>
-
+  
         <p>
           <a
             href="http://www.agronomy.k-state.edu/people/faculty/hettiarachchi-ganga/index.html"
@@ -313,29 +338,29 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Hande Küçük McGinty -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/HMcGinty.jpg"
           class="team-img"
           alt="Hande Küçük McGinty">
-
+  
         <h3>Hande Küçük McGinty</h3>
-
+  
         <p class="w3-opacity">
           Co-PI
         </p>
-
+  
         <p>
           <i>Kansas State University</i>
         </p>
-
+  
         <p>
           <a
             href="https://www.koncordantlab.com/teams/hande-k%C3%BC%C3%A7%C3%BCk-mcginty"
@@ -344,29 +369,29 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Onur Apul -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/OApul.jpg"
           class="team-img"
           alt="Onur Apul">
-
+  
         <h3>Onur Apul</h3>
-
+  
         <p class="w3-opacity">
           Co-PI
         </p>
-
+  
         <p>
           <i>Pennsylvania State University</i>
         </p>
-
+  
         <p>
           <a
             href="https://www.cee.psu.edu/department/directory-detail-g.aspx?q=oga5061"
@@ -375,7 +400,7 @@
             Penn State Profile
           </a>
         </p>
-
+  
         <p>
           <a
             href="https://www.onurapul.com/"
@@ -384,29 +409,29 @@
             Research Website
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Hari Palani -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/HPalani.jpg"
           class="team-img"
           alt="Hari Palani">
-
+  
         <h3>Hari Palani</h3>
-
+  
         <p class="w3-opacity">
           Co-PI
         </p>
-
+  
         <p>
           <i>Northeastern University</i>
         </p>
-
+  
         <p>
           <a
             href="https://roux.northeastern.edu/people/hari-palani/"
@@ -415,42 +440,42 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
+  
     </div>
-
-
+  
+  
     <!-- ==================================================
          Federal Partners
          ================================================== -->
-
+  
     <h4 class="team-group-title">
       Federal Partners
     </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+    <div class="team-grid">
+  
+  
       <!-- Antony Williams -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/AWilliams.jpg"
           class="team-img"
           alt="Antony Williams">
-
+  
         <h3>Antony Williams</h3>
-
+  
         <p class="w3-opacity">
           Federal Partner
         </p>
-
+  
         <p>
           <i>U.S. Environmental Protection Agency</i>
         </p>
-
+  
         <p>
           <a
             href="https://orcid.org/0000-0002-2668-4821"
@@ -459,67 +484,67 @@
             ORCID: 0000-0002-2668-4821
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Vasu Kilaru -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/VKilaru.jpg"
           class="team-img"
           alt="Vasu Kilaru">
-
+  
         <h3>Vasu Kilaru</h3>
-
+  
         <p class="w3-opacity">
           Federal Partner
         </p>
-
+  
         <p>
           <i>U.S. Environmental Protection Agency</i>
         </p>
-
+  
       </div>
-
+  
     </div>
-
-
+  
+  
     <!-- ==================================================
-         Research Team
+         Research Assistants
          ================================================== -->
-
+  
     <h4 class="team-group-title">
-      Research Team
+      Research Assistants
     </h4>
-
-
-    <!-- University of Maine -->
-
-    <h4>
-      University of Maine
-    </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+    <div class="team-grid">
+  
+  
+      <!-- University of Maine -->
+  
+  
       <!-- David Kedrowski -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/DKedrowski.jpg"
           class="team-img"
           alt="David Kedrowski">
-
+  
         <h3>David Kedrowski</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
         <p>
           <a
             href="https://orcid.org/0000-0002-9070-3169"
@@ -528,7 +553,7 @@
             ORCID: 0000-0002-9070-3169
           </a>
         </p>
-
+  
         <p>
           <a
             href="https://umaine.edu/scis/people/david-kedrowski/"
@@ -537,25 +562,29 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Katrina Schweikert -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/KSchweikert.jpg"
           class="team-img"
           alt="Katrina Schweikert">
-
+  
         <h3>Katrina Schweikert</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
         <p>
           <a
             href="https://orcid.org/0000-0003-3271-6700"
@@ -564,7 +593,7 @@
             ORCID: 0000-0003-3271-6700
           </a>
         </p>
-
+  
         <p>
           <a
             href="https://umaine.edu/scis/people/katrina-schweikert/"
@@ -573,90 +602,101 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Kendall Phillips -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/KPhillips.jpg"
           class="team-img"
           alt="Kendall Phillips">
-
+  
         <h3>Kendall Phillips</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
       </div>
-
-
+  
+  
       <!-- Yadina Clark -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
-        <img
-          src="images/YClark.jpg"
-          class="team-img"
-          alt="Yadina Clark">
-
+  
+      <div class="team-card">
+  
+        <!-- Replace placeholder with photo when available -->
+  
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          YC
+        </div>
+  
         <h3>Yadina Clark</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
       </div>
-
-    </div>
-
-
-    <!-- Kansas State University -->
-
-    <h4>
-      Kansas State University
-    </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+  
+      <!-- Kansas State University -->
+  
+  
       <!-- Adrita Barua -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/ABarua.jpg"
           class="team-img"
           alt="Adrita Barua">
-
+  
         <h3>Adrita Barua</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Kansas State University</i>
+        </p>
+  
       </div>
-
-
+  
+  
       <!-- Yinglun Zhang -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/YZhang.jpg"
           class="team-img"
           alt="Yinglun Zhang">
-
+  
         <h3>Yinglun Zhang</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Kansas State University</i>
+        </p>
+  
         <p>
           <a
             href="https://www.koncordantlab.com/teams/yinglun-zhang"
@@ -665,127 +705,135 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
-
+  
+  
       <!-- Jarrar Amjad -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <!-- Replace placeholder with photo when available -->
+  
         <div
           class="team-photo-placeholder"
           aria-hidden="true">
           JA
         </div>
-
+  
         <h3>Jarrar Amjad</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Kansas State University</i>
+        </p>
+  
       </div>
-
-    </div>
-
-
-    <!-- Pennsylvania State University -->
-
-    <h4>
-      Pennsylvania State University
-    </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+  
+      <!-- Pennsylvania State University -->
+  
+  
       <!-- Caroline Millwater -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <!-- Replace placeholder with photo when available -->
+  
         <div
           class="team-photo-placeholder"
           aria-hidden="true">
           CM
         </div>
-
+  
         <h3>Caroline Millwater</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Pennsylvania State University</i>
+        </p>
+  
       </div>
-
-
+  
+  
       <!-- Lina Zhu -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <!-- Replace placeholder with photo when available -->
+  
         <div
           class="team-photo-placeholder"
           aria-hidden="true">
           LZ
         </div>
-
+  
         <h3>Lina Zhu</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Pennsylvania State University</i>
+        </p>
+  
       </div>
-
-
+  
+  
       <!-- Paulina Alulema -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <!-- Replace placeholder with photo when available -->
+  
         <div
           class="team-photo-placeholder"
           aria-hidden="true">
           PA
         </div>
-
+  
         <h3>Paulina Alulema</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Pennsylvania State University</i>
+        </p>
+  
       </div>
-
-    </div>
-
-
-    <!-- Northeastern University -->
-
-    <h4>
-      Northeastern University
-    </h4>
-
-    <div class="w3-row-padding">
-
-
+  
+  
+      <!-- Northeastern University -->
+  
+  
       <!-- Prayas Lashkari -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/PLashkari.jpg"
           class="team-img"
           alt="Prayas Lashkari">
-
+  
         <h3>Prayas Lashkari</h3>
-
+  
         <p class="w3-opacity">
           Research Assistant
         </p>
-
+  
+        <p>
+          <i>Northeastern University</i>
+        </p>
+  
         <p>
           <a
             href="https://prayaslashkari.in"
@@ -794,42 +842,111 @@
             Profile
           </a>
         </p>
-
+  
       </div>
-
+  
     </div>
-
-
+  
+  
     <!-- ==================================================
          Former Team Members
          ================================================== -->
-
+  
     <h3 class="subsection-title">
       Former Team Members
     </h3>
-
-    <div class="w3-row-padding">
-
-
+  
+    <div class="team-grid">
+  
+  
+      <!-- Sonia Moavenzadeh -->
+  
+      <div class="team-card">
+  
+        <img
+          src="images/SMoavenzadeh.jpg"
+          class="team-img"
+          alt="Sonia Moavenzadeh">
+  
+        <h3>Sonia Moavenzadeh</h3>
+  
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
+      </div>
+  
+  
+      <!-- Hassimiou Niane -->
+  
+      <div class="team-card">
+  
+        <!-- Replace placeholder with photo when available -->
+  
+        <div
+          class="team-photo-placeholder"
+          aria-hidden="true">
+          HN
+        </div>
+  
+        <h3>Hassimiou Niane</h3>
+  
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+  
+        <p>
+          <i>University of Maine</i>
+        </p>
+  
+      </div>
+  
+  
+      <!-- Revanth Babu Raavi -->
+  
+      <div class="team-card">
+  
+        <img
+          src="images/RBabuRaavi.jpg"
+          class="team-img"
+          alt="Revanth Babu Raavi">
+  
+        <h3>Revanth Babu Raavi</h3>
+  
+        <p class="w3-opacity">
+          Research Assistant
+        </p>
+  
+        <p>
+          <i>Kansas State University</i>
+        </p>
+  
+      </div>
+  
+  
       <!-- Shirly Stephen -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
+  
+      <div class="team-card">
+  
         <img
           src="images/SStephen.jpg"
           class="team-img"
           alt="Shirly Stephen">
-
+  
         <h3>Shirly Stephen</h3>
-
+  
         <p class="w3-opacity">
           Postdoctoral Researcher
         </p>
-
+  
         <p>
           <i>University of California, Santa Barbara</i>
         </p>
-
+  
         <p>
           <a
             href="https://orcid.org/0000-0003-3547-8058"
@@ -838,79 +955,11 @@
             ORCID: 0000-0003-3547-8058
           </a>
         </p>
-
+  
       </div>
-
-      
-      <!-- Sonia Moavenzadeh -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
-        <img
-          src="images/SMoavenzadeh.jpg"
-          class="team-img"
-          alt="Sonia Moavenzadeh">
-
-        <h3>Sonia Moavenzadeh</h3>
-
-        <p class="w3-opacity">
-          Research Assistant
-        </p>
-
-        <p>
-          <i>University of Maine</i>
-        </p>
-
-      </div>
-
-
-      <!-- Hassimiou Niane -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
-        <!-- Replace placeholder with photo when available -->
-        <div
-          class="team-photo-placeholder"
-          aria-hidden="true">
-          HN
-        </div>
-
-        <h3>Hassimiou Niane</h3>
-
-        <p class="w3-opacity">
-          Research Assistant
-        </p>
-
-        <p>
-          <i>University of Maine</i>
-        </p>
-
-      </div>
-
-
-      <!-- Revanth Babu Raavi -->
-
-      <div class="team-card w3-col l2 m4 s6">
-
-        <img
-          src="images/RBabuRaavi.jpg"
-          class="team-img"
-          alt="Revanth Babu Raavi">
-
-        <h3>Revanth Babu Raavi</h3>
-
-        <p class="w3-opacity">
-          Research Assistant
-        </p>
-
-        <p>
-          <i>Kansas State University</i>
-        </p>
-
-      </div>
-
+  
     </div>
-
+  
   </section>
 
 
