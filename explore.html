@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Explore | SAWGraph</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- SAWGraph shared styles -->
+  <link rel="stylesheet" href="sawgraph.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
+
+<main class="site-main">
+
+
+  <!-- ====================================================
+       Page Introduction
+       ==================================================== -->
+
+  <h1 class="page-title">
+    Explore SAWGraph
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      SAWGraph supports queries that connect information across datasets and domains. Users can investigate PFAS observations together with information about facilities and industries, hydrology, spatial relationships, wells, chemical substances, agriculture, and other environmental context. Several interfaces and examples are available for exploring how SAWGraph organizes, connects, and queries this information.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       Ways to Explore
+       ==================================================== -->
+
+  <section id="ways-to-explore">
+
+    <h2 class="section-title">
+      Ways to Explore SAWGraph
+    </h2>
+
+    <div class="info-grid">
+
+
+      <!-- SAWGraph Explorer -->
+
+      <div class="info-card">
+
+        <h3 class="subsection-title">
+          SAWGraph Explorer
+        </h3>
+
+        <p>
+          The SAWGraph Explorer provides interactive access to selected SAWGraph queries and results through maps and linked data views.
+        </p>
+
+        <div class="button-row">
+
+          <a
+            href="https://sawgraph-explorer.netlify.app/"
+            class="site-button"
+            target="_blank"
+            rel="noopener">
+            Open SAWGraph Explorer App
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Open Knowledge Network -->
+
+      <div class="info-card">
+
+        <h3 class="subsection-title">
+          Open Knowledge Network
+        </h3>
+
+        <p>
+          SAWGraph knowledge graphs registered with the Open Knowledge Network can be explored through their registry pages and the OKN query interface. Registry entries provide information about each graph, including its schema and query endpoint, and several include example SPARQL queries that can be run directly in OKN.
+        </p>
+
+        <ul>
+
+          <li>
+            <a
+              href="https://registry.okn.us/registry/kgs/sawgraph/"
+              target="_blank"
+              rel="noopener">
+              SAWGraph PFAS KG
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://registry.okn.us/registry/kgs/fiokg/"
+              target="_blank"
+              rel="noopener">
+              SAWGraph FRS KG
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://registry.okn.us/registry/kgs/hydrologykg/"
+              target="_blank"
+              rel="noopener">
+              SAWGraph Hydrology KG
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://registry.okn.us/registry/kgs/spatialkg/"
+              target="_blank"
+              rel="noopener">
+              SAWGraph Spatial KG
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Current Demos -->
+
+      <div class="info-card">
+
+        <h3 class="subsection-title">
+          SAWGraph Demos
+        </h3>
+
+        <p>
+          The current demos show selected SAWGraph queries and outputs related to testing, potential impacts, and contamination pathways.
+        </p>
+
+        <div class="button-row">
+
+          <a
+            href="#current-demos"
+            class="site-button-secondary">
+            View SAWGraph Demos
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Query Overview -->
+
+      <div class="info-card">
+
+        <h3 class="subsection-title">
+          Query Overview
+        </h3>
+
+        <p>
+          The Query Overview video provides a technical walkthrough of selected SAWGraph queries and shows how information from different knowledge graph components can be combined.
+        </p>
+
+        <div class="button-row">
+
+          <a
+            href="#query-overview"
+            class="site-button-secondary">
+            Watch Query Overview
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       How Queries Work
+       ==================================================== -->
+
+  <section id="how-querying-works">
+
+    <h2 class="section-title">
+      How SAWGraph Queries Work
+    </h2>
+
+    <p>
+      SAWGraph queries combine information from multiple sources through concepts and relationships represented in its interconnected knowledge graphs. Queries can use conditions such as location, chemical substance, concentration, facility or industry type, spatial relationship, or hydrologic connection to retrieve information that would otherwise have to be assembled across separate datasets.
+    </p>
+
+    <p>
+      During knowledge graph design and evaluation, competency questions define the kinds of questions the graphs should be able to answer. Specific user queries translate these broader questions into conditions that can be executed against the graph.
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================
+       Current Demos
+       ==================================================== -->
+
+  <section id="current-demos">
+
+    <h2 class="section-title">
+      Current Demos
+    </h2>
+
+    <p>
+      SAWGraph demos currently illustrate three primary use case areas: prioritizing testing and identifying gaps, assessing potential impacts, and tracing potential contamination pathways.
+    </p>
+
+
+    <!-- Testing -->
+
+    <h3 class="subsection-title">
+      Prioritize Testing and Identify Gaps
+    </h3>
+
+    <p>
+      These examples connect information about testing, wells, waterbodies, facilities, and hydrology to help examine where additional testing may be useful.
+    </p>
+
+    <ul>
+
+      <li>
+        <a href="testing.html">
+          <strong>Testing Demo 1:</strong>
+          Surface Water Bodies Near Facilities
+        </a>
+      </li>
+
+      <li>
+        <a href="testing_aquifers.html">
+          <strong>Testing Demo 2:</strong>
+          Wells with Common Aquifers
+        </a>
+      </li>
+
+    </ul>
+
+
+    <!-- Impacts -->
+
+    <h3 class="subsection-title">
+      Assess and Map Potential Impacts
+    </h3>
+
+    <p>
+      This example combines PFAS observations with geographic information to examine the distribution of measured contamination across an area.
+    </p>
+
+    <ul>
+
+      <li>
+        <a href="impacts.html">
+          <strong>Impacts Demo 1:</strong>
+          Private Well PFAS by County
+        </a>
+      </li>
+
+    </ul>
+
+
+    <!-- Tracing -->
+
+    <h3 class="subsection-title">
+      Trace Potential Contamination Pathways
+    </h3>
+
+    <p>
+      These examples connect PFAS observations with facilities, industries, and hydrologic relationships to investigate possible sources and pathways.
+    </p>
+
+    <ul>
+
+      <li>
+        <a href="tracing.html">
+          <strong>Tracing Demo 1:</strong>
+          PFAS Downstream of Facilities
+        </a>
+      </li>
+
+      <li>
+        <a href="tracing_alldownstream.html">
+          <strong>Tracing Demo 2:</strong>
+          Downstream of Industry Facilities
+        </a>
+      </li>
+
+      <li>
+        <a href="tracing_upstream.html">
+          <strong>Tracing Demo 3:</strong>
+          Upstream Facilities
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- ====================================================
+       Query Overview Video
+       ==================================================== -->
+
+  <section id="query-overview">
+
+    <h2 class="section-title">
+      Query Overview
+    </h2>
+
+    <p>
+      The Query Overview provides a technical walkthrough of selected SAWGraph queries and demonstrates how graph components can be used together to connect PFAS observations with facilities, hydrology, spatial relationships, and other contextual information.
+    </p>
+
+    <div class="video-container">
+
+      <iframe
+        src="https://www.youtube.com/embed/0Tx27vZMWpE?si=qvOSfLU7DNw_Lgvs"
+        title="SAWGraph query overview video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Related Information
+       ==================================================== -->
+
+  <section id="related-information">
+
+    <h2 class="section-title">
+      Related Information
+    </h2>
+
+    <p>
+      Learn more about the data, knowledge graph architecture, and ontologies that support SAWGraph queries.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="kg.html"
+        class="site-button-secondary">
+        Explore Data &amp; Methods
+      </a>
+
+      <a
+        href="ontologies.html"
+        class="site-button-secondary">
+        Explore SAWGraph Ontologies
+      </a>
+
+      <a
+        href="aboutkgs.html"
+        class="site-button-secondary">
+        Learn About Knowledge Graphs
+      </a>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- ======================================================
+     Site Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
+
+</body>
+
+</html>
