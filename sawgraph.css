@@ -409,26 +409,32 @@ li {
 /* ---------- Comparison Graphic ---------- */
 
 .comparison-box {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: 30px;
+  align-items: center;
+
   background: var(--saw-pale-blue);
   border-left: 5px solid var(--saw-blue);
   border-radius: 8px;
-  padding: 20px;
+
+  padding: 24px;
   margin: 30px 0 40px;
+
   box-shadow: var(--saw-shadow);
+}
+
+.comparison-text p {
+  margin: 0;
 }
 
 .comparison-box img {
   display: block;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   height: auto;
   margin: 0 auto;
 }
-
-.comparison-box p {
-  margin-bottom: 0;
-}
-
 
 /* ---------- Core Use Case Cards ---------- */
 
@@ -714,6 +720,15 @@ li {
     overflow: visible;
   }
 
+  .comparison-box {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .comparison-box img {
+    max-width: 100%;
+  }
+   
 
   /* Content grids */
 
