@@ -1,73 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>SAWGraph - About Knowledge Graphs</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>About Knowledge Graphs | SAWGraph</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- SAWGraph shared styles -->
+  <link rel="stylesheet" href="sawgraph.css">
+
 </head>
+
+
 <body>
 
-<!-- Navbar (sit on top) -->
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
 <div class="w3-top">
-              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-<script src="menu.js"></script>
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
 </div>
-              </div>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
 
 
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
 
-      <!-- About KGs -->
-<div class="w3-container" id="about-kgs">
-  <div class="w3-container w3-padding-32">
-    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">What's a Knowledge Graph?</h1>
+<main class="site-main">
+
+
+  <!-- ====================================================
+       About Knowledge Graphs
+       ==================================================== -->
+
+  <h1 class="page-title">
+    About Knowledge Graphs
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      Knowledge graphs represent information as connected entities and relationships, making it possible to integrate and query data across different sources and domains. In SAWGraph, this approach supports connections among PFAS observations, facilities, hydrology, geography, agriculture, and chemical information.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       What Is a Knowledge Graph?
+       ==================================================== -->
+
+  <section id="what-is-a-knowledge-graph">
+
+    <h2 class="section-title">
+      What Is a Knowledge Graph?
+    </h2>
+
+    <p>
+      A knowledge graph organizes information around entities, such as samples, facilities, waterbodies, wells, chemicals, and geographic regions, and the relationships among them. These relationships make connections within and across datasets explicit and machine-readable.
+    </p>
+
+    <p>
+      Rather than requiring all information to come from a single database, knowledge graphs can bring together data from multiple sources while retaining information about what the data represent and where they came from. They can also be extended as new datasets, concepts, and relationships are added.
+    </p>
+
+    <p>
+      In SAWGraph, interconnected knowledge graphs allow users to investigate relationships that cross traditional dataset boundaries, such as whether a PFAS observation is near a facility, within an administrative region, or connected to other locations through surface-water or groundwater systems.
+    </p>
+
+
+    <!-- Knowledge Graph Example -->
+
+    <figure class="content-figure">
+    
+      <img
+        src="images/graph_example.png"
+        alt="Example knowledge graph showing three connected views: a single PFAS sample point linked to multiple samples, a single feature such as a private water supply well linked to multiple sample points, and a hierarchy of feature types including monitoring wells, surface soil, farm fields, buildings, and treatment systems.">
+    
+      <figcaption>
+        Example knowledge graph showing how individual samples and sample points connect to environmental features and broader feature categories.
+      </figcaption>
+    
+    </figure>
+
+  </section>
+
+
+  <!-- ====================================================
+       Knowledge Graphs in SAWGraph
+       ==================================================== -->
+
+  <section id="sawgraph-kgs">
+
+    <h2 class="section-title">
+      Knowledge Graphs in SAWGraph
+    </h2>
+
+    <p>
+      SAWGraph uses a modular network of interconnected knowledge graph components rather than a single monolithic graph. This structure supports reuse and modular development while allowing information from different domains to be queried and analyzed together.
+    </p>
+
+    <div class="button-row">
+      <a href="kg.html" class="site-button-secondary">
+        Explore SAWGraph Data &amp; Methods
+      </a>
+
+      <a href="ontologies.html" class="site-button-secondary">
+        Explore SAWGraph Ontologies
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Further Reading
+       ==================================================== -->
+
+  <section id="further-reading">
+
+    <h2 class="section-title">
+      Further Reading on Geospatial Knowledge Graphs
+    </h2>
+
+    <p>
+      The following publications describe other geospatial knowledge graphs developed with contributions from members of the SAWGraph team:
+    </p>
+
     <ul>
-      <li>Establishes connections (links) across datasets
-        </li>
-        <li> Kind of a distributed database that can grow over time</li>
+
+      <li>
+        <a
+          href="publications/HahmannKedrowski-COSIT2024-UFOKNCascades.pdf"
+          target="_blank"
+          rel="noopener">
+          <i>
+            T. Hahmann and D. Kedrowski (2024): An ontology and geospatial knowledge graph for reasoning about cascading failures
+          </i>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://onlinelibrary.wiley.com/doi/10.1002/aaai.12043"
+          target="_blank"
+          rel="noopener">
+          <i>
+            K. Janowicz et al. (2022): Know, Know Where, KnowWhereGraph: A densely connected, cross-domain knowledge graph and geo-enrichment service stack for applications in environmental intelligence
+          </i>
+        </a>
+      </li>
+
     </ul>
-    <img src="images/graph_example.png" style="width:100%;max-width:1000px" class="w3-margin-top">
-    <h4 class="w3-border-bottom w3-border-light-grey w3-padding-16">Read more about Geospatial Knowledge Graphs</h3>
-    <p> Some papers on other geospatial knowledge graphs that were developed with the help of some of the team members:<br>
-     <ul>
-      <li><a href="publications/HahmannKedrowski-COSIT2024-UFOKNCascades.pdf"><i>T. Hahmann and D. Kedrowski (2024): An ontology and geospatial knowledge graph for reasoning about cascading failures</i></a><br></li>
-     <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/aaai.12043"><i>K. Janowicz et al. (2022): Know, Know Where, KnowWhereGraph: A densely connected, cross-domain knowledge graph and geo-enrichment service stack for applications in environmental intelligence</i></a></li>
-     </ul> 
-     </p>
-  </div>
-</div>
 
-  <!-- End page content -->
-</div>
+  </section>
 
-<!-- Page Links -->
-<div class="w3-container w3-padding-32 w3-light-grey">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Explore SAWGraph</h3>
 
-  <div class="w3-row-padding">
-    <div class="w3-col s12 m6 l4">
-      <p><a href="index.html">Home</a></p>
-      <p><a href="kg.html#project">Knowledge Graph</a></p>
-      <p><a href="kg.html#data-sources">Data Sources</a></p>
-    </div>
+</main>
 
-    <div class="w3-col s12 m6 l4">
-      <p><a href="ontologies.html">Ontologies</a></p>
-      <p><a href="publications.html">Publications</a></p>
-      <p><a href="aboutus.html">Team</a></p>
-    </div>
 
-    <div class="w3-col s12 m6 l4">
-      <p><a href="pfas.html">About PFAS</a></p>
-      <p><a href="aboutkgs.html">About KGs</a></p>
-    </div>
-  </div>
-</div>
+<!-- ======================================================
+     Site Footer
+     ====================================================== -->
 
-<!-- Footer -->
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making.
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
 
 </body>
+
 </html>
