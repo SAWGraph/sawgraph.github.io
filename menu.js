@@ -85,10 +85,12 @@ document.write(`
 
         <!-- Explore -->
 
-          <a href="explore.html"
-             class="desktop-menu-heading">
-              <strong>Explore</strong>
-          </a>
+        <div class="desktop-menu-item">
+
+            <a href="explore.html"
+               class="desktop-menu-heading">
+                <strong>Explore</strong>
+            </a>
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
@@ -131,13 +133,14 @@ document.write(`
 
         <div class="desktop-menu-item">
 
-            <div class="desktop-menu-heading">
+            <a href="aboutus.html"
+               class="desktop-menu-heading">
                 <strong>Project</strong>
-            </div>
+            </a>
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
-                <a href="aboutus.html"
+                <a href="aboutus.html#team"
                    class="w3-bar-item w3-button">
                     Team
                 </a>
@@ -145,6 +148,11 @@ document.write(`
                 <a href="publications.html"
                    class="w3-bar-item w3-button">
                     Publications
+                </a>
+
+                <a href="aboutus.html#contact"
+                   class="w3-bar-item w3-button">
+                    Contact
                 </a>
 
             </div>
@@ -288,11 +296,12 @@ document.write(`
 
         <!-- Project -->
 
-        <div class="w3-bar-item">
-            <strong>Project</strong>
-        </div>
-
         <a href="aboutus.html"
+           class="w3-bar-item w3-button w3-left-align">
+            <strong>Project</strong>
+        </a>
+
+        <a href="aboutus.html#team"
            class="w3-bar-item w3-button w3-left-align"
            style="padding-left:32px;">
             Team
@@ -304,7 +313,11 @@ document.write(`
             Publications
         </a>
 
-    </div>
+        <a href="aboutus.html#contact"
+           class="w3-bar-item w3-button w3-left-align"
+           style="padding-left:32px;">
+            Contact
+        </a>
 
 `);
 
