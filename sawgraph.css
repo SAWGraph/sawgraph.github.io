@@ -843,14 +843,9 @@ li {
     padding: 18px;
   }
 
-  .publication-list li {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-
-  .publication-list li a {
-    font-size: 1em;
-  }
+.publication-card {
+  padding: 18px;
+}
 
   .button-row {
     flex-direction: column;
