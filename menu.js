@@ -145,9 +145,14 @@ document.write(`
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
+                <a href="aboutus.html#project-context"
+                   class="w3-bar-item w3-button">
+                    Project Context
+                </a>
+
                 <a href="aboutus.html#team"
                    class="w3-bar-item w3-button">
-                    Team
+                    Research Team
                 </a>
 
                 <a href="publications.html"
@@ -312,10 +317,16 @@ document.write(`
             <strong>Project</strong>
         </a>
 
+        <a href="aboutus.html#project-context"
+           class="w3-bar-item w3-button w3-left-align"
+           style="padding-left:32px;">
+            Project Context
+        </a>
+
         <a href="aboutus.html#team"
            class="w3-bar-item w3-button w3-left-align"
            style="padding-left:32px;">
-            Team
+            Research Team
         </a>
 
         <a href="publications.html"
