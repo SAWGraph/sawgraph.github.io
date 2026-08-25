@@ -94,6 +94,11 @@ document.write(`
 
             <div class="desktop-dropdown dropdown-right w3-bar-block w3-white w3-card-4">
 
+                <a href="explore.html"
+                   class="w3-bar-item w3-button">
+                    Ways to Explore
+                </a>
+
                 <a href="testing.html"
                    class="w3-bar-item w3-button">
                     Testing Demo 1
@@ -255,6 +260,12 @@ document.write(`
         <a href="explore.html"
            class="w3-bar-item w3-button w3-left-align">
             <strong>Explore</strong>
+        </a>
+
+        <a href="explore.html"
+           class="w3-bar-item w3-button w3-left-align"
+           style="padding-left:32px;">
+            Ways to Explore
         </a>
 
         <a href="testing.html"
