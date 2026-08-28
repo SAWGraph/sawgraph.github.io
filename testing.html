@@ -3,91 +3,45 @@
 
 <head>
 
-  <title>SAWGraph - Testing Gaps</title>
+  <title>Testing Demo 1 | SAWGraph</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- W3.CSS -->
-  <link
-    rel="stylesheet"
-    href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  <!-- Leaflet dependencies -->
+  <!-- Leaflet and map dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
+
+  <!-- SAWGraph shared styles -->
+  <!-- Keep this after Bootstrap so SAWGraph navigation styles take precedence -->
+  <link rel="stylesheet" href="sawgraph.css">
+
   <script>
     L_NO_TOUCH = false;
     L_DISABLE_3D = false;
   </script>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js">
-  </script>
-
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js">
-  </script>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
-  </script>
-
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js">
-  </script>
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-
-  <link
-    rel="stylesheet"
-    href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
-
-  <!-- Shared SAWGraph styles -->
-  <link rel="stylesheet" href="sawgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
 
 
-  <!-- Demo map styles -->
+  <!-- Demo-specific styles -->
   <style>
-
-    .demo-map-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .demo-map-panel {
-      min-width: 0;
-    }
-
-    .demo-map-panel h3 {
-      margin-top: 0;
-    }
 
     .folium-map {
       position: relative;
       width: 100%;
-      height: 700px;
-      margin-top: 15px;
-      border-radius: 8px;
-      overflow: hidden;
+      height: 500px;
+      min-width: 0;
     }
 
     .leaflet-container {
@@ -110,22 +64,87 @@
       padding: 2px 8px 2px 2px;
     }
 
-    @media (max-width: 900px) {
 
-      .demo-map-grid {
+    /* What This Demo Connects */
+
+    .demo-connect-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin: 25px 0 40px;
+    }
+
+    .demo-connect-card {
+      min-width: 0;
+      background: var(--saw-light-grey);
+      border-left: 5px solid var(--saw-blue);
+      border-radius: 6px;
+      padding: 22px;
+      box-shadow: var(--saw-shadow);
+    }
+
+    .demo-connect-card h3 {
+      color: var(--saw-blue);
+      font-size: 1.25em;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    .demo-connect-card p {
+      margin-bottom: 0;
+    }
+
+
+    /* Demo result containers */
+
+    .demo-result {
+      align-items: start;
+    }
+
+    .demo-result .comparison-text h3 {
+      color: var(--saw-subheading-blue);
+      font-size: 1.35em;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .demo-result .comparison-text p {
+      margin-bottom: 16px;
+    }
+
+    .demo-result .comparison-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .map-instructions {
+      font-size: 0.95em;
+      color: var(--saw-muted-text);
+    }
+
+
+    @media (max-width: 850px) {
+
+      .demo-connect-grid {
         grid-template-columns: 1fr;
       }
 
       .folium-map {
-        height: 600px;
+        height: 450px;
       }
 
     }
 
+
     @media (max-width: 600px) {
 
+      .demo-connect-card {
+        padding: 18px;
+      }
+
       .folium-map {
-        height: 500px;
+        height: 400px;
       }
 
     }
@@ -134,107 +153,193 @@
 
 </head>
 
-    
+
 <body>
 
 
 <!-- ======================================================
-     Site Navigation
+     Navigation
      ====================================================== -->
 
 <div class="w3-top">
-
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-
     <script src="menu.js"></script>
-
   </div>
-
 </div>
 
 
 <!-- ======================================================
-     Page Content
+     Main Page Content
      ====================================================== -->
 
 <main class="site-main">
 
+
+  <!-- ====================================================
+       Demo Introduction
+       ==================================================== -->
+
   <h1 class="page-title">
-    Testing: Waterbodies Near Facilities
+    Testing Demo 1: Surface Water Bodies Near Facilities
   </h1>
+
+  <div class="intro-section">
+
+    <p>
+      <strong>Demo Question</strong><br>
+      What surface water bodies are near landfills or Department of Defense sites?
+    </p>
+
+    <p>
+      This demo presents two related SAWGraph queries. The first identifies nearby lakes and ponds, while the second extends the analysis to surface water flowlines downstream from the selected facilities. Together, they demonstrate how spatial and hydrologic relationships can support decisions about where additional environmental testing or investigation may be useful.
+    </p>
+
+    <p>
+      <strong>Use Case Area:</strong> Prioritize Testing and Identify Gaps
+    </p>
+
+  </div>
 
 
   <!-- ====================================================
-       Demo
+       What This Demo Connects
        ==================================================== -->
 
-  <section>
+  <section id="demo-connects">
 
     <h2 class="section-title">
-      What Surface Water Bodies Are Near Landfills or Department of Defense Sites?
+      What This Demo Connects
     </h2>
 
-    <p>
-      The first stage of testing prioritization for many states involves identifying facilities that are likely to be utilizing PFAs chemicals. This competency question addresses features of environmental concern (surface water bodies) that are near potential contamination sources.
-    </p>
-
-    <ul>
-      <li>
-        Landfills are sites of PFAS contamination resulting from both industrial usage and prevalence in consumer products that accumulate in landfills.
-      </li>
-
-      <li>
-        Department of Defense sites are frequently on the list PFAs contamination primarily because of the usage of Fire Fighting Foam (AFFF).
-      </li>
-    </ul>
-
-    <p>
-      The query could easily be modified to identify other features of concern (water supply wells, streams, etc.) or other potential contamination sources. This query would inform testing prioritization as it would help identify surface water bodies that may be at risk of contamination.
-    </p>
-
-    <p>
-      The map was generated by querying the SAWGraph for facilities of the specified type in the state of Maine (that are suspected pfas sources), and then finding the nearby surface water bodies based on the S2 Cell spatial indexing.
-    </p>
-
-    <p>
-      The full code is available:
-      <a href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ2/UC1_CQ2_query.ipynb">
-        here
-      </a>
-      and
-      <a href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ2b/UC1_CQ2b_query.ipynb">
-        here
-      </a>.
-    </p>
+    <div class="demo-connect-grid">
 
 
-    <div class="demo-map-grid">
+      <div class="demo-connect-card">
 
-      <div class="demo-map-panel">
-
-        <h3 class="subsection-title">
-          Lakes &amp; Ponds
+        <h3>
+          Facilities
         </h3>
 
-        <div
-          class="folium-map"
-          id="map_319ef58b6accc74cb0bf25aa64620bd1">
-        </div>
+        <p>
+          Landfills and Department of Defense sites included in the queries.
+        </p>
 
       </div>
 
 
-      <div class="demo-map-panel">
+      <div class="demo-connect-card">
 
-        <h3 class="subsection-title">
-          Rivers (Flowlines)
+        <h3>
+          Surface Water
         </h3>
 
-        <div
-          class="folium-map"
-          id="map_065b1d422d5592f6b50181ac87f1dc76">
-        </div>
+        <p>
+          Lakes, ponds, rivers, and flowlines represented in the SAWGraph hydrology data.
+        </p>
 
+      </div>
+
+
+      <div class="demo-connect-card">
+
+        <h3>
+          Spatial and Hydrologic Relationships
+        </h3>
+
+        <p>
+          S2 cells and neighboring-cell relationships used to identify nearby features, together with downstream connectivity used to trace flowlines.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Demo Results
+       ==================================================== -->
+
+  <section id="demo-results">
+
+    <h2 class="section-title">
+      Demo Results
+    </h2>
+
+    <p>
+      The maps show facilities and surface water features returned from the SAWGraph queries based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the queries.
+    </p>
+
+    <p>
+      Spatial proximity may help identify areas for further investigation or testing, but it does not establish that a facility released PFAS or that a nearby water body is contaminated.
+    </p>
+
+    <p>
+      The maps are interactive. Use the map controls to zoom and to select or deselect layers. Mapped features also provide additional information when explored.
+    </p>
+
+
+    <!-- Lakes and Ponds -->
+
+    <div class="comparison-box demo-result">
+
+      <div class="comparison-text">
+
+        <h3>
+          Lakes and Ponds
+        </h3>
+
+        <p>
+          This map shows facilities of the selected types together with nearby lakes and ponds returned from the SAWGraph query.
+        </p>
+
+        <p>
+          By default, the map displays facilities and water bodies. The layer control can also be used to display the facility S2 cells and neighboring S2 cells used to establish the spatial relationship.
+        </p>
+
+        <p class="map-instructions">
+          Use the layer control to show or hide map layers, and use the map controls to pan and zoom.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_319ef58b6accc74cb0bf25aa64620bd1">
+      </div>
+
+    </div>
+
+
+    <!-- Nearby and Downstream Flowlines -->
+
+    <div class="comparison-box demo-result">
+
+      <div class="comparison-text">
+
+        <h3>
+          Nearby and Downstream Flowlines
+        </h3>
+
+        <p>
+          This map shows facilities of the selected types together with surface water flowlines returned from the SAWGraph query. The map distinguishes flowlines associated with the facility locations from additional flowlines downstream in the hydrologic network.
+        </p>
+
+        <p>
+          Use the layer control to show or hide facilities, facility S2 cells, nearby flowlines, and downstream flowlines.
+        </p>
+
+        <p class="map-instructions">
+          Use the layer control to compare map layers, and use the map controls to pan and zoom.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_065b1d422d5592f6b50181ac87f1dc76">
       </div>
 
     </div>
@@ -242,33 +347,60 @@
   </section>
 
 
+  <!-- ====================================================
+       Code and Query Resources
+       ==================================================== -->
+
+  <section id="code-resources">
+
+    <h2 class="section-title">
+      Code and Query Resources
+    </h2>
+
+    <p>
+      View the notebooks used to run the queries and generate the interactive maps.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ2/UC1_CQ2_query.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Lakes and Ponds Query Notebook
+      </a>
+
+      <a
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ2b/UC1_CQ2b_query.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Nearby and Downstream Flowlines Query Notebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Return to Explore
+       ==================================================== -->
+
+  <div class="button-row">
+
+    <a
+      href="explore.html#current-demos"
+      class="site-button-secondary">
+      View All SAWGraph Demos
+    </a>
+
+  </div>
+
+
 </main>
 
-
-<!-- ======================================================
-     Site Footer
-     ====================================================== -->
-
-<footer class="site-footer">
-
-  <p>
-    Integrating PFAS data and context to support research and decision-making
-  </p>
-
-</footer>
-
-
-<!-- ======================================================
-     Back to Top
-     ====================================================== -->
-
-<button
-  onclick="topFunction()"
-  id="backToTop"
-  title="Go to top"
-  aria-label="Go to top">
-  ↑
-</button>
 
 
 <!-- Lakes Map -->
@@ -948,6 +1080,46 @@ return div
 
 </script>
 
+<!-- ======================================================
+     Map Interaction
+     Allow normal page scrolling over interactive maps
+     ====================================================== -->
+
+<script>
+
+  map_319ef58b6accc74cb0bf25aa64620bd1.scrollWheelZoom.disable();
+  map_065b1d422d5592f6b50181ac87f1dc76.scrollWheelZoom.disable();
+
+</script>
+
+
+<!-- ======================================================
+     Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+  
 <!-- ======================================================
      Back to Top Script
      ====================================================== -->
