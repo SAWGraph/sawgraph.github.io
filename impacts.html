@@ -23,6 +23,55 @@
   <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
   <link rel="stylesheet" href="sawgraph.css">
 
+  <!-- County summary table styles -->
+  <style>
+
+    .demo-data-table {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .demo-data-table th,
+    .demo-data-table td {
+      padding: 6px 8px;
+      vertical-align: middle;
+    }
+
+    /* Row-number column */
+    .demo-data-table tbody th {
+      text-align: right;
+    }
+
+    /* County names */
+    .demo-data-table tbody td:nth-child(2) {
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    /* All numeric values */
+    .demo-data-table tbody td:nth-child(n+3) {
+      text-align: right;
+    }
+
+    /* Table headings */
+    .demo-data-table thead th {
+      font-size: 0.82rem;
+      line-height: 1.2;
+      text-align: right;
+      white-space: normal;
+    }
+
+    .demo-data-table thead th:nth-child(2) {
+      text-align: left;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+  </style>
+
   <script>
     L_NO_TOUCH = false;
     L_DISABLE_3D = false;
@@ -181,20 +230,20 @@
 
     <div class="table-responsive">
 
-      <table class="dataframe w3-striped w3-bordered w3-border">
+      <table class="dataframe demo-data-table w3-striped w3-bordered w3-border">
 
         <thead>
 
-          <tr class="w3-green w3-padding-16" style="text-align: right;">
+          <tr class="w3-green w3-padding-16">
             <th></th>
             <th>County</th>
             <th>Total Wells</th>
             <th>Tested Wells</th>
             <th>Max Concentration</th>
-            <th>OverLimit Wells</th>
-            <th>OverLimit Samples</th>
+            <th>Wells Over 20 ppt</th>
+            <th>Samples Over 20 ppt</th>
             <th>Percent Tested</th>
-            <th>Percent OverLimit</th>
+            <th>Percent Over 20 ppt</th>
           </tr>
 
         </thead>
