@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
 
   <!-- SAWGraph shared styles -->
-  <!-- Keep this after Bootstrap so SAWGraph navigation styles take precedence -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
   <link rel="stylesheet" href="sawgraph.css">
 
   <script>
@@ -32,55 +32,6 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-
-
-  <!-- Map styles -->
-  <style>
-
-    .folium-map {
-      position: relative;
-      width: 100%;
-      height: 700px;
-      min-width: 0;
-    }
-
-    .leaflet-container {
-      font-size: 1rem;
-    }
-
-    .foliumtooltip {
-      margin: auto;
-    }
-
-    .foliumtooltip table {
-      margin: auto;
-    }
-
-    .foliumtooltip tr {
-      text-align: left;
-    }
-
-    .foliumtooltip th {
-      padding: 2px 8px 2px 2px;
-    }
-
-    @media (max-width: 850px) {
-
-      .folium-map {
-        height: 450px;
-      }
-
-    }
-
-    @media (max-width: 600px) {
-
-      .folium-map {
-        height: 400px;
-      }
-
-    }
-
-  </style>
 
 </head>
 
@@ -106,25 +57,22 @@
 <main class="site-main">
 
 
+  <!-- ====================================================
+       Demo Introduction
+       ==================================================== -->
+
   <h1 class="page-title">
     Testing Demo 2: Wells Connected Through Aquifers
   </h1>
 
-
-  <!-- ====================================================
-       Introduction
-       ==================================================== -->
-
   <div class="intro-section">
 
     <p>
-      <strong>Demo Question:</strong>
-      What wells are connected through aquifers to private water supply wells with PFOA results above 200 ng/L?
+      <strong>Demo Question:</strong> What wells are connected through aquifers to private water supply wells with PFOA results above 200 ng/L?
     </p>
 
     <p>
-      <strong>Use Case Area:</strong>
-      Prioritize Testing and Identify Gaps
+      <strong>Use Case Area:</strong> Prioritize Testing and Identify Gaps
     </p>
 
     <p>
@@ -144,28 +92,47 @@
       What This Demo Connects
     </h2>
 
-    <div class="demo-connect-grid">
+    <div class="card-grid card-grid-3">
 
-      <div class="demo-connect-card">
-        <h3>Private Water Supply Testing</h3>
+
+      <div class="content-card">
+
+        <h3>
+          Private Water Supply Testing
+        </h3>
+
         <p>
           PFOA observations and results from private water supply well sample points.
         </p>
+
       </div>
 
-      <div class="demo-connect-card">
-        <h3>Aquifers</h3>
+
+      <div class="content-card">
+
+        <h3>
+          Aquifers
+        </h3>
+
         <p>
           Aquifer systems associated with sample locations where PFOA results have been above 200 ng/L.
         </p>
+
       </div>
 
-      <div class="demo-connect-card">
-        <h3>Wells</h3>
+
+      <div class="content-card">
+
+        <h3>
+          Wells
+        </h3>
+
         <p>
           Maine Geological Survey wells associated with those aquifer systems.
         </p>
+
       </div>
+
 
     </div>
 
@@ -183,11 +150,11 @@
     </h2>
 
     <p>
-      The map shows private water supply sample points with PFOA results above 200 ng/L, aquifers associated with those sample locations, and wells associated with those aquifers returned from the SAWGraph query. The results are based on datasets represented in the SAWGraph knowledge graph and reflect the scope and version of those datasets and the conditions used in the query.
+      The map shows private water supply sample points, aquifers, and wells returned from the SAWGraph query based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the query.
     </p>
 
     <p>
-      Together, these layers demonstrate how SAWGraph can connect contamination observations with groundwater and well data to help identify locations that may warrant further investigation or testing.
+      Together, these results demonstrate how contamination observations can be connected with groundwater and well data to help identify locations where additional investigation or testing may be useful.
     </p>
 
     <p>
@@ -195,28 +162,85 @@
     </p>
 
     <p>
-      The map is interactive. Pan and zoom to explore the mapped area, use the layer controls to show or hide contaminated sample points, aquifers, and wells, and select mapped features to view available information.
-    </p>
-
-    <p>
-      <a
-        class="site-button site-button-secondary"
-        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ3b%265/UC1_CQ3b%2C5_query.ipynb">
-        View Query Notebook
-      </a>
+      The map is interactive. Pan and zoom to explore the results, use the layer controls to show or hide different types of features, and explore mapped features for additional information.
     </p>
 
 
-    <div
-      class="folium-map"
-      id="map_8ae0f178c2f6935d9ebd2e3d5590654d">
+    <!-- Wells Connected Through Aquifers -->
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+
+        <h3>
+          Wells Connected Through Aquifers
+        </h3>
+
+        <p>
+          This map shows private water supply sample points with PFOA results above 200 ng/L, the aquifer systems associated with those sample locations, and Maine Geological Survey wells associated with those aquifer systems.
+        </p>
+
+        <p>
+          The available layers include contaminated sample points, aquifers, and wells.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_8ae0f178c2f6935d9ebd2e3d5590654d">
+      </div>
+
     </div>
 
   </section>
 
 
-</main>
+  <!-- ====================================================
+       Code and Query Resources
+       ==================================================== -->
 
+  <section id="code-resources">
+
+    <h2 class="section-title">
+      Code and Query Resources
+    </h2>
+
+    <p>
+      View the notebook used to run the query and generate the interactive map.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ3b%265/UC1_CQ3b%2C5_query.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Query Notebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Return to Explore
+       ==================================================== -->
+
+  <div class="button-row">
+
+    <a
+      href="explore.html#current-demos"
+      class="site-button">
+      View More SAWGraph Demos
+    </a>
+
+  </div>
+
+
+</main>
 
 <!--Aquifers Map-->
 
