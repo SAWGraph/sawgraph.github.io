@@ -513,5 +513,68 @@ return div
 
 
 
+<!-- ======================================================
+     Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+  
+<!-- ======================================================
+     Back to Top Script
+     ====================================================== -->
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
+
 </body>
 </html>
