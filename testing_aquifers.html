@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>SAWGraph - Testing Gaps</title>
+  <title>Testing Demo 2 | SAWGraph</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,30 +107,105 @@
 
 
   <h1 class="page-title">
-    Testing: Wells with Common Aquifers
+    Testing Demo 2: Wells Connected Through Aquifers
   </h1>
 
 
-  <section id="intro">
+  <!-- ====================================================
+       Introduction
+       ==================================================== -->
+
+  <div class="intro-section">
+
+    <p>
+      <strong>Demo Question:</strong>
+      What wells are connected through aquifers to private water supply wells with PFOA results above 200 ng/L?
+    </p>
+
+    <p>
+      <strong>Use Case Area:</strong>
+      Prioritize Testing and Identify Gaps
+    </p>
+
+    <p>
+      This demo shows how SAWGraph can connect PFAS testing results from private water supply wells with aquifer and well data. It identifies aquifers associated with locations where high PFOA concentrations have been reported and other wells associated with those aquifers.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       What This Demo Connects
+       ==================================================== -->
+
+  <section id="demo-connects">
 
     <h2 class="section-title">
-      Which wells are hydrologically connected to the private water wells that tested very high for PFOA?
+      What This Demo Connects
+    </h2>
+
+    <div class="demo-connect-grid">
+
+      <div class="demo-connect-card">
+        <h3>Private Water Supply Testing</h3>
+        <p>
+          PFOA observations and results from private water supply well sample points.
+        </p>
+      </div>
+
+      <div class="demo-connect-card">
+        <h3>Aquifers</h3>
+        <p>
+          Aquifer systems associated with sample locations where PFOA results have been above 200 ng/L.
+        </p>
+      </div>
+
+      <div class="demo-connect-card">
+        <h3>Wells</h3>
+        <p>
+          Maine Geological Survey wells associated with those aquifer systems.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Demo Results
+       ==================================================== -->
+
+  <section id="demo-results">
+
+    <h2 class="section-title">
+      Demo Results
     </h2>
 
     <p>
-      This question demonstrates some more detailed hydrologic connections via the aquifers. First we identify private wells that tested above 200 ng/l in PFOA. Next we determine which aquifers they are likely fed by based on proximity in the same S2 cell. Then we discover all other private water supply wells that are likely fed by the same aquifer.
+      The map shows private water supply sample points with PFOA results above 200 ng/L, aquifers associated with those sample locations, and wells associated with those aquifers returned from the SAWGraph query. The results are based on datasets represented in the SAWGraph knowledge graph and reflect the scope and version of those datasets and the conditions used in the query.
     </p>
 
     <p>
-      This question facilitates prioritization of private well water testing by identifying high risk wells that have not been tested based on the existing data. It provides a more sophisticated hydrological modeling than simple proximity.
+      Together, these layers demonstrate how SAWGraph can connect contamination observations with groundwater and well data to help identify locations that may warrant further investigation or testing.
     </p>
 
     <p>
-      The code for this example is available
-      <a href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ3b%265/UC1_CQ3b%2C5_query.ipynb">
-        here
-      </a>.
+      For this demonstration, nearby Maine Geological Survey aquifers have been combined into larger aquifer systems. The current aquifer information is limited and is being expanded.
     </p>
+
+    <p>
+      The map is interactive. Pan and zoom to explore the mapped area, use the layer controls to show or hide contaminated sample points, aquifers, and wells, and select mapped features to view available information.
+    </p>
+
+    <p>
+      <a
+        class="site-button site-button-secondary"
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC1-Testing/UC1-CQ3b%265/UC1_CQ3b%2C5_query.ipynb">
+        View Query Notebook
+      </a>
+    </p>
+
 
     <div
       class="folium-map"
