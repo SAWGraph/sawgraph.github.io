@@ -391,7 +391,7 @@
     <!-- Map Introduction -->
 
     <p>
-      The county summary can also be visualized to highlight spatial patterns in testing coverage and in the percentage of tested wells with results above 20 ppt. The threshold is part of the query conditions and can be changed for analyses using different concentration thresholds.
+      The county summary can also be mapped to compare testing coverage and the prevalence of results above the selected 20 ppt threshold across Maine.
     </p>
 
     <p>
@@ -406,15 +406,15 @@
       <div class="split-panel-text">
 
         <h3>
-          Percent of Water Supply Wells Tested for PFAS
+          Private Well Testing Coverage by County
         </h3>
 
         <p>
-          This map compares Maine counties based on the percentage of represented wells associated with private water supply testing data.
+          This map compares the number of private water supply sample points represented in the testing data with the number of located wells represented for each county.
         </p>
 
         <p>
-          Differences among counties show how testing coverage varies within the data currently represented in SAWGraph.
+          The resulting percentage provides a county-level measure of testing coverage within the represented data. The records from the testing and well datasets are aggregated by county rather than matched well by well.
         </p>
 
       </div>
@@ -434,15 +434,15 @@
       <div class="split-panel-text">
 
         <h3>
-          Percent of Tested Water Supply Wells Above 20 ppt
+          Tested Private Wells with Results Above 20 ppt
         </h3>
 
         <p>
-          This map compares Maine counties based on the percentage of tested private water supply wells with results above the 20 ppt threshold used in this demonstration.
+          This map compares Maine counties based on the percentage of tested private water supply sample points with at least one concentration result above the 20 ppt threshold used in this demonstration.
         </p>
 
         <p>
-          The map provides a county-level view of where results above the selected threshold occur more frequently within the represented testing data.
+          This percentage is calculated within the testing data by comparing sample points with results above 20 ppt with all tested private water supply sample points represented for each county.
         </p>
 
       </div>
@@ -929,6 +929,59 @@ return div
 
 </script>
 
+
+<script>
+  window.addEventListener("load", function () {
+
+    const firstMap = document.getElementById(
+      "map_a86800b2ad2a071253bd3e64a3339719"
+    );
+
+    const secondMap = document.getElementById(
+      "map_53299b02479812d3c6990fa2d3402018"
+    );
+
+    if (!firstMap || !secondMap) return;
+
+    const firstLegend = firstMap.querySelector(".legend.leaflet-control");
+    const secondLegend = secondMap.querySelector(".legend.leaflet-control");
+
+    /*
+     * Folium/Branca may place both legend SVGs in the first
+     * legend because its generated D3 selector is not scoped
+     * to an individual map. Move the second SVG to the
+     * second map's legend.
+     */
+    if (firstLegend && secondLegend) {
+
+      const firstLegendGraphics = firstLegend.querySelectorAll("svg");
+
+      if (
+        firstLegendGraphics.length > 1 &&
+        secondLegend.querySelectorAll("svg").length === 0
+      ) {
+        secondLegend.appendChild(firstLegendGraphics[1]);
+      }
+
+    }
+
+    /*
+     * Move each legend control to the upper-right corner,
+     * leaving Leaflet's zoom controls in the upper-left.
+     */
+    [firstMap, secondMap].forEach(function (mapElement) {
+
+      const legend = mapElement.querySelector(".legend.leaflet-control");
+      const topRight = mapElement.querySelector(".leaflet-top.leaflet-right");
+
+      if (legend && topRight) {
+        topRight.appendChild(legend);
+      }
+
+    });
+
+  });
+</script>
 
 
 <!-- ======================================================
