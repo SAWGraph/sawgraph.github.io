@@ -1,324 +1,536 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>SAWGraph - Impacts</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    <!--Leaflet dependencies-->
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    <!--Map Frames styles-->
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_a86800b2ad2a071253bd3e64a3339719 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 700px;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
-            <style>
-                 #map_53299b02479812d3c6990fa2d3402018 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 700px;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
-        
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-    
-                    <style>
-                        .foliumpopup {
-                            background-color: yellow;
-                        }
-                       .foliumpopup table{
-                            margin: auto;
-                        }
-                        .foliumpopup tr{
-                            text-align: left;
-                        }
-                        .foliumpopup th{
-                            padding: 2px; padding-right: 8px;
-                        }
-                    </style>
-            
+
+  <title>Impacts Demo 1 | SAWGraph</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Leaflet and map dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
+
+  <!-- SAWGraph shared styles -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
+  <link rel="stylesheet" href="sawgraph.css">
+
+  <script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
 </head>
-<body style="font-family:Verdana, sans-serif; 
-    font-size: 15px;">
 
-<!-- Navbar (sit on top) -->
+
+<body>
+
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
 <div class="w3-top">
-              <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                <script src="menu.js"></script>
-              </div>
-              </div>
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
+</div>
 
- <!-- Page content -->
- <div class="w3-content w3-padding-32" style="max-width:1564px">
-    <!-- Intro Section -->
-    <div class="w3-container w3-padding-32 w3-margin-right" id="intro">
-        <h1 class="w3-xlarge w3-text-black">Assessing Impacts</h1>
-        <div class="w3-twothird w3-padding-32 w3-large w3-margin-right">
 
-        <p>The second major use case for the SAWGraph project supports identifying who and where is impacted by PFAs contamination. It looks at the following types of questions: </p>
-            <ul><li> Where and who is impacted? (Prevalence, risk/vulnerability mapping)</li>
-            <li>Which towns or counties have multiple test results with PFOS levels above 20ppt with no known contamination source nearby? </li> 
-            <li>Which chemicals show the highest average readings in samples from a particular region?</li>
-            <li>  Which towns/counties are most vulnerable based on their proximity to known or potential PFAS sources? </li>
-            </ul>
-        </div>
-        <!-- Right Card -->
-        <div class="w3-container w3-rest w3-card w3-padding-32 w3-pale-yellow w3-margin-left">
-            <h3>User Persona - Analytical Anna</h3>
-            <p>State Environmental Toxicologist with a focus on understanding the extent and sources of environmental contamination with PFAS </br> Likely from a state that has already done some testing
-                </p>
-            <h4>Goals</h4><ul>
-                <li>Understand where contamination is likely or known to be most prevalent 
-                </li>
-                <li>Understand where PFAS is coming from
-                </li>
-                <li>Communicate contamination and exposure risk to state stakeholders (e.g. legislators, farmers, well owners)
-                </li>
-                </ul>
-            <h4>Responsibilities</h4>
-                <ul><li>Identify and map PFAS contamination in the state 
-                </li>
-                <li>Identify significant sources of contamination in the state</li>
-                <li>Design contamination management and remediation plans
-                </li>
-            </ul>
-        </div>
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
+
+<main class="site-main">
+
+
+  <!-- ====================================================
+       Demo Introduction
+       ==================================================== -->
+
+  <h1 class="page-title">
+    Impacts Demo 1: Private Well PFAS by County
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      <strong>Demo Question:</strong> How does private well PFAS testing vary by county in Maine, and what percentage of tested wells have results over 20 ppt?
+    </p>
+
+    <p>
+      <strong>Use Case Area:</strong> Assess and Map Potential Impacts
+    </p>
+
+    <p>
+      This demo combines private water supply testing data with well and county information to compare PFAS testing across Maine counties. It shows the extent of testing represented in the available data, summarizes measured concentrations, and compares the proportion of tested wells with results above 20 ppt.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       What This Demo Connects
+       ==================================================== -->
+
+  <section id="demo-connects">
+
+    <h2 class="section-title">
+      What This Demo Connects
+    </h2>
+
+    <div class="card-grid card-grid-3">
+
+
+      <div class="content-card">
+
+        <h3>
+          Private Water Supply Testing
+        </h3>
+
+        <p>
+          PFAS observations and results from private water supply well sample points.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Wells
+        </h3>
+
+        <p>
+          Located wells represented in SAWGraph and used to provide county-level context for the testing results.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Counties
+        </h3>
+
+        <p>
+          Maine counties used to aggregate, compare, and map well and PFAS testing data.
+        </p>
+
+      </div>
+
+
     </div>
-    <!-- Use Case 1-->
-    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">What is the maximum measured PFAs contamination in private well water in each county in Maine?</h2>
 
-    <div class="w3-row-padding w3-large">
-        <p>One first step in assessing impacts is to aggregate sampling data into administrative regions such as Counties or County Subdivisions. Vulnerability information is also aggregated to administrative regions, and regional analysis is also convenient for comparing total features (for example all private water wells) to sampled features (sampled private water wells from a specific dataset without matching identifiers).</p>
-        <p>This example uses county aggregation to determine what percentage of wells have been tested in each county, what the maximum concentration in private well water was for each county, and what percentage of tested wells were over some specified concentration limit. In this example the limit was set to the current effective public drinking water limit for the state of Maine, which is 20 ppt. </p>
-        <!--Table result-->
-        <div class="w3-table w3-responsive">
-            <table class="dataframe w3-striped w3-bordered w3-border ">
-              <thead>
-                <tr  class="w3-green w3-padding-16"  style="text-align: right;">
-                  <th></th>
-                  <th>County</th>
-                  <th>Total Wells</th>
-                  <th>Tested Wells</th>
-                  <th>Max Concentration</th>
-                  <th>OverLimit Wells</th>
-                  <th>OverLimit Samples</th>
-                  <th>Percent Tested</th>
-                  <th>Percent OverLimit</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>0</th>
-                  <td>Sagadahoc County, Maine</td>
-                  <td>3425</td>
-                  <td>53</td>
-                  <td>218.310</td>
-                  <td>7</td>
-                  <td>25</td>
-                  <td>1.55</td>
-                  <td>13.21</td>
-                </tr>
-                <tr>
-                  <th>1</th>
-                  <td>Aroostook County, Maine</td>
-                  <td>3231</td>
-                  <td>87</td>
-                  <td>2290.000</td>
-                  <td>17</td>
-                  <td>39</td>
-                  <td>2.69</td>
-                  <td>19.54</td>
-                </tr>
-                <tr>
-                  <th>2</th>
-                  <td>Cumberland County, Maine</td>
-                  <td>11779</td>
-                  <td>146</td>
-                  <td>285.000</td>
-                  <td>22</td>
-                  <td>34</td>
-                  <td>1.24</td>
-                  <td>15.07</td>
-                </tr>
-                <tr>
-                  <th>3</th>
-                  <td>York County, Maine</td>
-                  <td>10917</td>
-                  <td>172</td>
-                  <td>644.000</td>
-                  <td>26</td>
-                  <td>48</td>
-                  <td>1.58</td>
-                  <td>15.12</td>
-                </tr>
-                <tr>
-                  <th>4</th>
-                  <td>Hancock County, Maine</td>
-                  <td>7295</td>
-                  <td>49</td>
-                  <td>106.000</td>
-                  <td>13</td>
-                  <td>19</td>
-                  <td>0.67</td>
-                  <td>26.53</td>
-                </tr>
-                <tr>
-                  <th>5</th>
-                  <td>Knox County, Maine</td>
-                  <td>3312</td>
-                  <td>15</td>
-                  <td>265.000</td>
-                  <td>5</td>
-                  <td>7</td>
-                  <td>0.45</td>
-                  <td>33.33</td>
-                </tr>
-                <tr>
-                  <th>6</th>
-                  <td>Androscoggin County, Maine</td>
-                  <td>5952</td>
-                  <td>99</td>
-                  <td>382.000</td>
-                  <td>7</td>
-                  <td>29</td>
-                  <td>1.66</td>
-                  <td>7.07</td>
-                </tr>
-                <tr>
-                  <th>7</th>
-                  <td>Penobscot County, Maine</td>
-                  <td>6005</td>
-                  <td>130</td>
-                  <td>3650.000</td>
-                  <td>55</td>
-                  <td>254</td>
-                  <td>2.16</td>
-                  <td>42.31</td>
-                </tr>
-                <tr>
-                  <th>8</th>
-                  <td>Kennebec County, Maine</td>
-                  <td>5880</td>
-                  <td>296</td>
-                  <td>36000.000</td>
-                  <td>106</td>
-                  <td>720</td>
-                  <td>5.03</td>
-                  <td>35.81</td>
-                </tr>
-                <tr>
-                  <th>9</th>
-                  <td>Washington County, Maine</td>
-                  <td>4577</td>
-                  <td>43</td>
-                  <td>1674.873</td>
-                  <td>29</td>
-                  <td>167</td>
-                  <td>0.94</td>
-                  <td>67.44</td>
-                </tr>
-                <tr>
-                  <th>10</th>
-                  <td>Somerset County, Maine</td>
-                  <td>2539</td>
-                  <td>506</td>
-                  <td>54100.000</td>
-                  <td>224</td>
-                  <td>2288</td>
-                  <td>19.93</td>
-                  <td>44.27</td>
-                </tr>
-                <tr>
-                  <th>11</th>
-                  <td>Oxford County, Maine</td>
-                  <td>4985</td>
-                  <td>23</td>
-                  <td>2560.000</td>
-                  <td>3</td>
-                  <td>13</td>
-                  <td>0.46</td>
-                  <td>13.04</td>
-                </tr>
-                <tr>
-                  <th>12</th>
-                  <td>Waldo County, Maine</td>
-                  <td>3554</td>
-                  <td>297</td>
-                  <td>23900.000</td>
-                  <td>108</td>
-                  <td>368</td>
-                  <td>8.36</td>
-                  <td>36.36</td>
-                </tr>
-                <tr>
-                  <th>13</th>
-                  <td>Lincoln County, Maine</td>
-                  <td>5213</td>
-                  <td>74</td>
-                  <td>339.000</td>
-                  <td>22</td>
-                  <td>34</td>
-                  <td>1.42</td>
-                  <td>29.73</td>
-                </tr>
-                <tr>
-                  <th>14</th>
-                  <td>Franklin County, Maine</td>
-                  <td>2955</td>
-                  <td>8</td>
-                  <td>83.300</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>0.27</td>
-                  <td>12.50</td>
-                </tr>
-              </tbody>
-            
-          </table></div>
-        </br>
-          <p>This information can also be visualized on a map to highlight the spatial patterns in the percent of wells tested and the percent of tested wells that were over the 20 ppt limit. This limit is a variable built into the query that can be easily modified based on changing regulations or risk levels in different contexts. 
-        <!--Left map-->
-        <div class="w3-col w3-container w3-padding-32 w3-half">
-            <h3>Percent of Water Supply Wells Tested for PFAS</h3>
-            <div class="folium-map w3-margin" id="map_53299b02479812d3c6990fa2d3402018" ></div>
-            
-        </div>
-        <!--Right Map-->
-        <div class="w3-container w3-rest w3-padding-32">
-            <h3>Percent of Tested Water Supply Wells Above 20ppt</h3>
-            <div class="folium-map w3-margin" id="map_a86800b2ad2a071253bd3e64a3339719" ></div>
-        </div>
-        <p>This code is available <a href="https://github.com/SAWGraph/public/blob/main/UseCases/UC2-Impacts/UC2-CQ2/SawGraph_UC2_Q2.ipynb">here</a></p>
-        </div>
-        
-</body>
+  </section>
+
+
+  <!-- ====================================================
+       Demo Results
+       ==================================================== -->
+
+  <section id="demo-results">
+
+    <h2 class="section-title">
+      Demo Results
+    </h2>
+
+    <p>
+      One way to assess potential impacts is to aggregate sampling data by administrative regions such as counties or county subdivisions. Regional aggregation also makes it possible to compare represented features, such as wells, with sampled features even when records from different source datasets do not use matching identifiers.
+    </p>
+
+    <p>
+      This demonstration uses county aggregation to summarize three measures from the data returned by the SAWGraph queries: the percentage of represented wells associated with private water supply testing, the maximum measured PFAS concentration returned for private water supply samples, and the percentage of tested wells with results above the 20 ppt threshold used in this demonstration.
+    </p>
+
+    <p>
+      The table and maps show county-level results based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the queries.
+    </p>
+
+    <p>
+      The well totals used in this demonstration currently reflect wells that can be spatially located from the available data. The resulting percentages therefore summarize the data represented in the demonstration rather than all private wells in each county.
+    </p>
+
+
+    <!-- County Summary Table -->
+
+    <h3>
+      County Summary
+    </h3>
+
+    <p>
+      The table provides the county-level results used in the analysis, including total represented wells, tested wells, maximum measured concentration, wells and samples with results above 20 ppt, percent tested, and percent of tested wells above 20 ppt.
+    </p>
+
+    <div class="table-responsive">
+
+      <table class="dataframe w3-striped w3-bordered w3-border">
+
+        <thead>
+
+          <tr class="w3-green w3-padding-16" style="text-align: right;">
+            <th></th>
+            <th>County</th>
+            <th>Total Wells</th>
+            <th>Tested Wells</th>
+            <th>Max Concentration</th>
+            <th>OverLimit Wells</th>
+            <th>OverLimit Samples</th>
+            <th>Percent Tested</th>
+            <th>Percent OverLimit</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th>0</th>
+            <td>Sagadahoc County, Maine</td>
+            <td>3425</td>
+            <td>53</td>
+            <td>218.310</td>
+            <td>7</td>
+            <td>25</td>
+            <td>1.55</td>
+            <td>13.21</td>
+          </tr>
+
+          <tr>
+            <th>1</th>
+            <td>Aroostook County, Maine</td>
+            <td>3231</td>
+            <td>87</td>
+            <td>2290.000</td>
+            <td>17</td>
+            <td>39</td>
+            <td>2.69</td>
+            <td>19.54</td>
+          </tr>
+
+          <tr>
+            <th>2</th>
+            <td>Cumberland County, Maine</td>
+            <td>11779</td>
+            <td>146</td>
+            <td>285.000</td>
+            <td>22</td>
+            <td>34</td>
+            <td>1.24</td>
+            <td>15.07</td>
+          </tr>
+
+          <tr>
+            <th>3</th>
+            <td>York County, Maine</td>
+            <td>10917</td>
+            <td>172</td>
+            <td>644.000</td>
+            <td>26</td>
+            <td>48</td>
+            <td>1.58</td>
+            <td>15.12</td>
+          </tr>
+
+          <tr>
+            <th>4</th>
+            <td>Hancock County, Maine</td>
+            <td>7295</td>
+            <td>49</td>
+            <td>106.000</td>
+            <td>13</td>
+            <td>19</td>
+            <td>0.67</td>
+            <td>26.53</td>
+          </tr>
+
+          <tr>
+            <th>5</th>
+            <td>Knox County, Maine</td>
+            <td>3312</td>
+            <td>15</td>
+            <td>265.000</td>
+            <td>5</td>
+            <td>7</td>
+            <td>0.45</td>
+            <td>33.33</td>
+          </tr>
+
+          <tr>
+            <th>6</th>
+            <td>Androscoggin County, Maine</td>
+            <td>5952</td>
+            <td>99</td>
+            <td>382.000</td>
+            <td>7</td>
+            <td>29</td>
+            <td>1.66</td>
+            <td>7.07</td>
+          </tr>
+
+          <tr>
+            <th>7</th>
+            <td>Penobscot County, Maine</td>
+            <td>6005</td>
+            <td>130</td>
+            <td>3650.000</td>
+            <td>55</td>
+            <td>254</td>
+            <td>2.16</td>
+            <td>42.31</td>
+          </tr>
+
+          <tr>
+            <th>8</th>
+            <td>Kennebec County, Maine</td>
+            <td>5880</td>
+            <td>296</td>
+            <td>36000.000</td>
+            <td>106</td>
+            <td>720</td>
+            <td>5.03</td>
+            <td>35.81</td>
+          </tr>
+
+          <tr>
+            <th>9</th>
+            <td>Washington County, Maine</td>
+            <td>4577</td>
+            <td>43</td>
+            <td>1674.873</td>
+            <td>29</td>
+            <td>167</td>
+            <td>0.94</td>
+            <td>67.44</td>
+          </tr>
+
+          <tr>
+            <th>10</th>
+            <td>Somerset County, Maine</td>
+            <td>2539</td>
+            <td>506</td>
+            <td>54100.000</td>
+            <td>224</td>
+            <td>2288</td>
+            <td>19.93</td>
+            <td>44.27</td>
+          </tr>
+
+          <tr>
+            <th>11</th>
+            <td>Oxford County, Maine</td>
+            <td>4985</td>
+            <td>23</td>
+            <td>2560.000</td>
+            <td>3</td>
+            <td>13</td>
+            <td>0.46</td>
+            <td>13.04</td>
+          </tr>
+
+          <tr>
+            <th>12</th>
+            <td>Waldo County, Maine</td>
+            <td>3554</td>
+            <td>297</td>
+            <td>23900.000</td>
+            <td>108</td>
+            <td>368</td>
+            <td>8.36</td>
+            <td>36.36</td>
+          </tr>
+
+          <tr>
+            <th>13</th>
+            <td>Lincoln County, Maine</td>
+            <td>5213</td>
+            <td>74</td>
+            <td>339.000</td>
+            <td>22</td>
+            <td>34</td>
+            <td>1.42</td>
+            <td>29.73</td>
+          </tr>
+
+          <tr>
+            <th>14</th>
+            <td>Franklin County, Maine</td>
+            <td>2955</td>
+            <td>8</td>
+            <td>83.300</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0.27</td>
+            <td>12.50</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- Map Introduction -->
+
+    <p>
+      The county summary can also be visualized to highlight spatial patterns in testing coverage and in the percentage of tested wells with results above 20 ppt. The threshold is part of the query conditions and can be changed for analyses using different concentration thresholds.
+    </p>
+
+    <p>
+      The maps are interactive. Pan and zoom to explore the results and select counties for additional information.
+    </p>
+
+
+    <!-- Percent Tested -->
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+
+        <h3>
+          Percent of Water Supply Wells Tested for PFAS
+        </h3>
+
+        <p>
+          This map compares Maine counties based on the percentage of represented wells associated with private water supply testing data.
+        </p>
+
+        <p>
+          Differences among counties show how testing coverage varies within the data currently represented in SAWGraph.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_a86800b2ad2a071253bd3e64a3339719">
+      </div>
+
+    </div>
+
+
+    <!-- Percent Over 20 ppt -->
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+
+        <h3>
+          Percent of Tested Water Supply Wells Above 20 ppt
+        </h3>
+
+        <p>
+          This map compares Maine counties based on the percentage of tested private water supply wells with results above the 20 ppt threshold used in this demonstration.
+        </p>
+
+        <p>
+          The map provides a county-level view of where results above the selected threshold occur more frequently within the represented testing data.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_53299b02479812d3c6990fa2d3402018">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Code and Query Resources
+       ==================================================== -->
+
+  <section id="code-resources">
+
+    <h2 class="section-title">
+      Code and Query Resources
+    </h2>
+
+    <p>
+      View the notebook used to run the queries, calculate the county summaries, and generate the interactive maps.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC2-Impacts/UC2-CQ2/SawGraph_UC2_Q2.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Query Notebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Additional Information
+       ==================================================== -->
+
+  <section id="additional-information">
+
+    <h2 class="section-title">
+      Additional Information
+    </h2>
+
+    <p>
+      For current information about PFAS investigation, testing, and standards in Maine, visit the Maine Department of Environmental Protection.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://www.maine.gov/dep/spills/topics/pfas/"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        Maine DEP PFAS Information
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Return to Explore
+       ==================================================== -->
+
+  <div class="button-row">
+
+    <a
+      href="explore.html#current-demos"
+      class="site-button">
+      View More SAWGraph Demos
+    </a>
+
+  </div>
+
+
+</main>
+
+
+
 <!--Leaflet scripts-->
 <script>
     
