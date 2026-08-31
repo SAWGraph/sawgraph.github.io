@@ -34,6 +34,8 @@ html {
 
 body {
   color: var(--saw-text);
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
 }
 
 .site-main {
@@ -57,6 +59,10 @@ li {
 
 
 /* ---------- Site Navigation ---------- */
+
+.w3-top {
+  z-index: 20000;
+}
 
 /*
    Desktop navigation appears above 850px.
@@ -406,9 +412,14 @@ li {
 }
 
 
-/* ---------- Comparison Graphic ---------- */
+/* ---------- Split Content Panels ---------- */
 
-.comparison-box {
+/*
+   Generic two-column panel for text paired with an image,
+   interactive map, or other visual content.
+*/
+
+.split-panel {
   display: grid;
   grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
   gap: 30px;
@@ -424,11 +435,28 @@ li {
   box-shadow: var(--saw-shadow);
 }
 
-.comparison-text p {
-  margin: 0;
+.split-panel-top {
+  align-items: start;
 }
 
-.comparison-box img {
+.split-panel-text h3 {
+  color: var(--saw-subheading-blue);
+  font-size: 1.35em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.split-panel-text p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.split-panel-text p:last-child {
+  margin-bottom: 0;
+}
+
+.split-panel img {
   display: block;
   width: 100%;
   max-width: 800px;
@@ -457,6 +485,48 @@ li {
   color: var(--saw-muted-text);
   font-size: 0.9em;
   line-height: 1.5;
+}
+
+
+/* ---------- Interactive Maps ---------- */
+
+.folium-map {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  min-width: 0;
+
+  /*
+     Keep Leaflet panes and controls inside the map's
+     stacking context so they remain below site navigation.
+  */
+  z-index: 0;
+  isolation: isolate;
+}
+
+.leaflet-container {
+  font-size: 1rem;
+}
+
+.foliumtooltip {
+  margin: auto;
+}
+
+.foliumtooltip table {
+  margin: auto;
+}
+
+.foliumtooltip tr {
+  text-align: left;
+}
+
+.foliumtooltip th {
+  padding: 2px 8px 2px 2px;
+}
+
+.map-instructions {
+  font-size: 0.95em;
+  color: var(--saw-muted-text);
 }
 
 
@@ -489,35 +559,40 @@ li {
 
 
 
-/* ---------- Core Use Case Cards ---------- */
+/* ---------- Content Cards ---------- */
 
-.use-case-grid {
+/*
+   Generic card grids for use cases, demo concepts,
+   exploration options, and similar grouped content.
+*/
+
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin: 25px 0 40px;
 }
 
-.use-case-card {
+.card-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.content-card {
+  min-width: 0;
+
   background: var(--saw-light-grey);
   border-left: 5px solid var(--saw-blue);
   border-radius: 6px;
+
   padding: 22px;
+
   box-shadow: var(--saw-shadow);
-
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
 }
 
-.use-case-card:hover {
-  background: var(--saw-pale-blue);
-  box-shadow: var(--saw-shadow-hover);
-  transform: translateY(-3px);
-}
-
-.use-case-card h3 {
+.content-card h3 {
   color: var(--saw-blue);
   font-size: 1.25em;
   font-weight: 600;
@@ -525,10 +600,12 @@ li {
   margin-bottom: 14px;
 }
 
-.use-case-question {
-  color: var(--saw-text);
-  font-weight: 600;
-  line-height: 1.5;
+.content-card p:first-child {
+  margin-top: 0;
+}
+
+.content-card p:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -787,24 +864,32 @@ li {
     overflow: visible;
   }
 
-  .comparison-box {
+
+  /* Split panels */
+
+  .split-panel {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  .comparison-box img {
+  .split-panel img {
     max-width: 100%;
   }
-   
+
 
   /* Content grids */
 
-  .use-case-grid {
+  .card-grid-2,
+  .card-grid-3,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
+
+  /* Interactive maps */
+
+  .folium-map {
+    height: 450px;
   }
 
 }
@@ -835,17 +920,18 @@ li {
 
   .intro-section,
   .callout-section,
-  .comparison-box {
+  .split-panel {
     padding: 18px;
   }
 
-  .use-case-card {
+  .content-card,
+  .publication-card {
     padding: 18px;
   }
 
-.publication-card {
-  padding: 18px;
-}
+  .folium-map {
+    height: 400px;
+  }
 
   .button-row {
     flex-direction: column;
