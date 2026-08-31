@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
 
   <!-- SAWGraph shared styles -->
-  <!-- Keep this after Bootstrap so SAWGraph navigation styles take precedence -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
   <link rel="stylesheet" href="sawgraph.css">
 
   <script>
@@ -32,124 +32,6 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-
-
-  <!-- Demo-specific styles -->
-  <style>
-
-    .folium-map {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      min-width: 0;
-    }
-
-    .leaflet-container {
-      font-size: 1rem;
-    }
-
-    .foliumtooltip {
-      margin: auto;
-    }
-
-    .foliumtooltip table {
-      margin: auto;
-    }
-
-    .foliumtooltip tr {
-      text-align: left;
-    }
-
-    .foliumtooltip th {
-      padding: 2px 8px 2px 2px;
-    }
-
-
-    /* What This Demo Connects */
-
-    .demo-connect-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-      margin: 25px 0 40px;
-    }
-
-    .demo-connect-card {
-      min-width: 0;
-      background: var(--saw-light-grey);
-      border-left: 5px solid var(--saw-blue);
-      border-radius: 6px;
-      padding: 22px;
-      box-shadow: var(--saw-shadow);
-    }
-
-    .demo-connect-card h3 {
-      color: var(--saw-blue);
-      font-size: 1.25em;
-      font-weight: 600;
-      margin-top: 0;
-      margin-bottom: 14px;
-    }
-
-    .demo-connect-card p {
-      margin-bottom: 0;
-    }
-
-
-    /* Demo result containers */
-
-    .demo-result {
-      align-items: start;
-    }
-
-    .demo-result .comparison-text h3 {
-      color: var(--saw-subheading-blue);
-      font-size: 1.35em;
-      font-weight: 600;
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-
-    .demo-result .comparison-text p {
-      margin-bottom: 16px;
-    }
-
-    .demo-result .comparison-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .map-instructions {
-      font-size: 0.95em;
-      color: var(--saw-muted-text);
-    }
-
-
-    @media (max-width: 850px) {
-
-      .demo-connect-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .folium-map {
-        height: 450px;
-      }
-
-    }
-
-
-    @media (max-width: 600px) {
-
-      .demo-connect-card {
-        padding: 18px;
-      }
-
-      .folium-map {
-        height: 400px;
-      }
-
-    }
-
-  </style>
 
 </head>
 
@@ -197,7 +79,6 @@
       This demo presents two related SAWGraph queries. The first identifies nearby lakes and ponds, while the second extends the analysis to surface water flowlines downstream from the selected facilities. Together, they demonstrate how spatial and hydrologic relationships can support decisions about where additional environmental testing or investigation may be useful.
     </p>
 
-
   </div>
 
 
@@ -211,10 +92,10 @@
       What This Demo Connects
     </h2>
 
-    <div class="demo-connect-grid">
+    <div class="card-grid card-grid-3">
 
 
-      <div class="demo-connect-card">
+      <div class="content-card">
 
         <h3>
           Facilities
@@ -227,7 +108,7 @@
       </div>
 
 
-      <div class="demo-connect-card">
+      <div class="content-card">
 
         <h3>
           Surface Water
@@ -240,7 +121,7 @@
       </div>
 
 
-      <div class="demo-connect-card">
+      <div class="content-card">
 
         <h3>
           Spatial and Hydrologic Relationships
@@ -277,71 +158,63 @@
     </p>
 
     <p>
-      The maps are interactive. Use the map controls to zoom and to select or deselect layers. Mapped features also provide additional information when explored.
+      The maps are interactive. Pan and zoom to explore the results, use the layer controls to show or hide different types of features, and explore mapped features for additional information.
     </p>
 
 
     <!-- Lakes and Ponds -->
-
-    <div class="comparison-box demo-result">
-
-      <div class="comparison-text">
-
+    
+    <div class="split-panel split-panel-top">
+    
+      <div class="split-panel-text">
+    
         <h3>
           Lakes and Ponds
         </h3>
-
+    
         <p>
           This map shows facilities of the selected types together with nearby lakes and ponds returned from the SAWGraph query.
         </p>
-
+    
         <p>
-          By default, the map displays facilities and water bodies. The layer control can also be used to display the facility S2 cells and neighboring S2 cells used to establish the spatial relationship.
+          Facilities and water bodies are displayed by default; the layer control can also display the facility S2 cells and neighboring S2 cells used to establish the spatial relationship.
         </p>
-
-        <p class="map-instructions">
-          Use the layer control to show or hide map layers, and use the map controls to pan and zoom.
-        </p>
-
+    
       </div>
-
+    
       <div
         class="folium-map"
         id="map_319ef58b6accc74cb0bf25aa64620bd1">
       </div>
-
+    
     </div>
-
-
+    
+    
     <!-- Nearby and Downstream Flowlines -->
-
-    <div class="comparison-box demo-result">
-
-      <div class="comparison-text">
-
+    
+    <div class="split-panel split-panel-top">
+    
+      <div class="split-panel-text">
+    
         <h3>
           Nearby and Downstream Flowlines
         </h3>
-
+    
         <p>
-          This map shows facilities of the selected types together with surface water flowlines returned from the SAWGraph query. The map distinguishes flowlines associated with the facility locations from additional flowlines downstream in the hydrologic network.
+          This map shows facilities of the selected types together with surface water flowlines returned from the SAWGraph query. It distinguishes flowlines associated with the facility locations from additional flowlines downstream in the hydrologic network.
         </p>
-
+    
         <p>
-          Use the layer control to show or hide facilities, facility S2 cells, nearby flowlines, and downstream flowlines.
+          The available layers include facilities, facility S2 cells, nearby flowlines, and downstream flowlines.
         </p>
-
-        <p class="map-instructions">
-          Use the layer control to compare map layers, and use the map controls to pan and zoom.
-        </p>
-
+    
       </div>
-
+    
       <div
         class="folium-map"
         id="map_065b1d422d5592f6b50181ac87f1dc76">
       </div>
-
+    
     </div>
 
   </section>
@@ -402,7 +275,7 @@
 </main>
 
 
-
+  
 <!-- Lakes Map -->
 
 <script>
