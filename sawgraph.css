@@ -421,7 +421,7 @@ li {
 
 .split-panel {
   display: grid;
-  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(240px, 0.65fr) minmax(0, 1.35fr);
   gap: 30px;
   align-items: center;
 
