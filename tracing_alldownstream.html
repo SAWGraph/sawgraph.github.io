@@ -1,109 +1,252 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>SAWGraph - Contaminant Tracing</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        
-        <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-        </script>
-        <!--Leaflet dependencies-->
-        
-        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-        <!--Map Frames styles-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-        <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-        <style>#map_c2bfb0c5d677343a0619f68bf0af2c5c {
-                    position: relative;
-                    width: 100.0%;
-                    height: 700px;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+<html lang="en">
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
+<head>
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>       
-    
-             <style>
-                        .foliumtooltip {
-                             margin: auto;
-                            
-                        }
-                       .foliumtooltip table{
-                            margin: auto;
-                        }
-                        .foliumtooltip tr{
-                            text-align: left;
-                        }
-                        .foliumtooltip th{
-                            padding: 2px; padding-right: 8px;
-                        }
-             </style>
+  <title>Tracing Demo 2 | SAWGraph</title>
 
-    </head>
-<body style="font-family:Verdana, sans-serif; 
-    font-size: 15px;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                    <script src="menu.js"></script>
-                </div>
-    </div>
-    
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    </header>
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- Page content -->
-    <!--UseCase 0-->
-<div>
-    <div class="w3-container w3-padding-32 w3-margin-right" id="intro">
-        <br>
-                <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">What samples are downstream of Waste Treatment Facilities (NAICS 5622) in Indiana?</h2>
-                    <p> This example looks at facilities of a particular NAICS Industry Group, and finds any sampling that has occurred downstream of those facilities. 
-                        To simplify the result, we limit to one geographic area, in this case the state of Indiana. </p>
-                        <p>The full example with changeable variables for location and industry (NAICS Code) to investigate is available: <a href="https://colab.research.google.com/github/SAWGraph/public/blob/main/UseCases/UC3-Tracing/SAWGraph_Y3_Demo_TracingDownstream.ipynb">Tracing Downstream</a></p>
-            </div>            
-    <div>
-        <div class="folium-map" id="map_c2bfb0c5d677343a0619f68bf0af2c5c" style="z-index:0"></div>     
-    </div>
-    
+  <!-- Leaflet and map dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
 
+  <!-- SAWGraph shared styles -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
+  <link rel="stylesheet" href="sawgraph.css">
+
+  <script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
 </div>
-        
-</body>
-<!--Leaflet scripts-->
+
+
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
+
+<main class="site-main">
+
+
+  <!-- ====================================================
+       Demo Introduction
+       ==================================================== -->
+
+  <h1 class="page-title">
+    Tracing Demo 2: Downstream of Industry Facilities
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      <strong>Demo Question:</strong> What samples are downstream of Waste Treatment Facilities (NAICS 5622) in Indiana?
+    </p>
+
+    <p>
+      <strong>Use Case Area:</strong> Trace Contamination Pathways
+    </p>
+
+    <p>
+      This demo shows how SAWGraph can use industry classifications and hydrologic flow paths to identify sample results downstream from a selected facility type. It demonstrates how the same tracing pattern can be applied to different industries and locations.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       What This Demo Connects
+       ==================================================== -->
+
+  <section id="demo-connects">
+
+    <h2 class="section-title">
+      What This Demo Connects
+    </h2>
+
+    <div class="card-grid card-grid-3">
+
+
+      <div class="content-card">
+
+        <h3>
+          Facilities and Industries
+        </h3>
+
+        <p>
+          Waste treatment facilities in Indiana identified through NAICS Industry Group 5622 and related facility classifications.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Hydrologic Pathways
+        </h3>
+
+        <p>
+          Streams and downstream hydrologic connections used to trace surface water pathways from the selected facility locations.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Environmental Samples
+        </h3>
+
+        <p>
+          Sampling locations associated with downstream areas, allowing sample results to be examined in relation to facility types and hydrologic pathways.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Demo Results
+       ==================================================== -->
+
+  <section id="demo-results">
+
+    <h2 class="section-title">
+      Demo Results
+    </h2>
+
+    <p>
+      The map shows waste treatment facilities, streams, and environmental samples returned from the SAWGraph queries for Indiana. Results reflect the datasets represented in the graph, the selected industry classification, the geographic extent, and the conditions of the queries.
+    </p>
+
+    <p>
+      The map distinguishes several types of waste treatment and disposal facilities, together with mapped streams and sample locations. A downstream relationship can help identify samples that may warrant further investigation, but it does not by itself establish that a facility released PFAS or caused a downstream measurement.
+    </p>
+
+    <p>
+      The map is interactive. Pan and zoom to explore the results, use the layer control to show or hide different types of features, and explore mapped features for additional information.
+    </p>
+
+
+    <!-- Downstream Samples and Waste Treatment Facilities -->
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+
+        <h3>
+          Downstream Samples and Waste Treatment Facilities
+        </h3>
+
+        <p>
+          This map shows environmental samples together with streams and waste treatment facilities in Indiana. The analysis begins with facilities in NAICS Industry Group 5622 and follows downstream hydrologic relationships to identify associated sample locations.
+        </p>
+
+        <p>
+          Available layers include samples, streams, waste treatment and disposal facilities, hazardous waste treatment and disposal facilities, other nonhazardous waste treatment and disposal facilities, solid waste landfills, and solid waste combustors and incinerators.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_c2bfb0c5d677343a0619f68bf0af2c5c">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Code and Query Resources
+       ==================================================== -->
+
+  <section id="code-resources">
+
+    <h2 class="section-title">
+      Code and Query Resources
+    </h2>
+
+    <p>
+      The original page linked to a notebook with changeable variables for location and industry. That notebook is not currently available at the linked location.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://colab.research.google.com/github/SAWGraph/public/blob/main/UseCases/UC3-Tracing/SAWGraph_Y3_Demo_TracingDownstream.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Tracing Downstream Notebook
+      </a>
+
+    </div>
+
+    <p>
+      <em>Note: This resource is currently unavailable. The button is retained so the page structure is in place if the notebook is restored or the link is updated.</em>
+    </p>
+
+  </section>
+
+
+  <!-- ====================================================
+       Return to Explore
+       ==================================================== -->
+
+  <div class="button-row">
+
+    <a
+      href="explore.html#current-demos"
+      class="site-button">
+      View More SAWGraph Demos
+    </a>
+
+  </div>
+
+
+</main>
+
+
+<!-- ======================================================
+     Existing Tracing Map
+     ====================================================== -->
+
 <script>
     
     
@@ -1191,4 +1334,69 @@
             geo_json_f87e9d999e9456e77b118fdc3fdf6886.addTo(map_c2bfb0c5d677343a0619f68bf0af2c5c);
         
 </script>
+
+
+<!-- ======================================================
+     Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+<!-- ======================================================
+     Back to Top Script
+     ====================================================== -->
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
+
+</body>
 </html>
