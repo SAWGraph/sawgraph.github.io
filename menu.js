@@ -314,6 +314,11 @@ document.write(`
             Tracing Demo 3
         </a>
 
+        <a href="tracing_nearIndustry.html"
+           class="w3-bar-item w3-button w3-left-align"
+           style="padding-left:32px;">
+            Tracing Demo 4
+        </a>
 
         <!-- Project -->
 
