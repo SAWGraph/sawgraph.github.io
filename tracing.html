@@ -1,162 +1,248 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>SAWGraph - Contaminant Tracing</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        
-        <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-        </script>
-        <!--Leaflet dependencies-->
-        <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-        <!--Map Frames styles-->
-        <meta name="viewport" content="width=device-width,
-                    initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-        <style>
-                    #map_246537f924c98c05df96a0a8a5dd041b {
-                        position: relative;
-                        width: 100.0%;
-                        height: 700px;
-                        left: 0.0%;
-                        top: 0.0%;
-                    }
-                    .leaflet-container { font-size: 1rem; }
-        </style>
-            
-        <style>
-                    #map_7ad00ba2c79f3d2e9c35b6fc0989a018 {
-                        position: relative;
-                        width: 100.0%;
-                        height: 700px;
-                        left: 0.0%;
-                        top: 0.0%;
-                    }
-                    .leaflet-container { font-size: 1rem; }
-        </style>
-        
-        <style>
-                            .foliumtooltip {
-                                margin: auto;
-                                
-                            }
-                        .foliumtooltip table{
-                                margin: auto;
-                            }
-                            .foliumtooltip tr{
-                                text-align: left;
-                            }
-                            .foliumtooltip th{
-                                padding: 2px; padding-right: 8px;
-                            }
-        </style>
+<html lang="en">
 
-        <style>
-                            .foliumpopup {
-                                margin: auto;
-                            }
-                        .foliumpopup table{
-                                margin: auto;
-                            }
-                            .foliumpopup tr{
-                                text-align: left;
-                            }
-                            .foliumpopup th{
-                                padding: 2px; padding-right: 8px;
-                            }
-        </style>
+<head>
 
-    </head>
-<body style="font-family:Verdana, sans-serif; 
-    font-size: 15px;">
+  <title>Tracing Demo 1 | SAWGraph</title>
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Leaflet and map dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
+
+  <!-- SAWGraph shared styles -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
+  <link rel="stylesheet" href="sawgraph.css">
+
+  <script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     Navigation
+     ====================================================== -->
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <script src="menu.js"></script>
-                </div>
-                </div>
-    
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    </header>
-    
-    <!-- Page content -->
-        <div class="w3-content w3-padding-32" style="max-width:1564px">
-            <!-- Intro Section -->
-            <div class="w3-container w3-padding-32 w3-margin-right" id="intro">
-                <h1 class="w3-xlarge w3-text-black">Tracing: PFAS Downstream of Facilities</h1>
-                <p>Given a known source of PFAS release or a suspected source based on the facility type, SAWGraph can leverage hydrological features to trace downstream of the contamination. 
-                    This use case is particularly relevant for surface water contamination, as PFAS can be transported downstream from industrial facilities via rivers and streams. Visualizing the downstream test results can indicate the extent of the water contamination and also the varying impact on different aquatic species.  
-                    By tracing downstream of suspected sources, SAWGraph can help identify areas that may be at risk of contamination and prioritize testing and remediation efforts.</p>
-                <!-- <div>
-                <div class="w3-twothird w3-padding-32 w3-large w3-margin-right w3-large">
-                    <p>The third Use Case for SAWGraph aims to support more advanced research questions for PFAS researchers. 
-                        It involves connecting observations to known or suspected sources and answering questions like:</p>
-                        <ul>
-                            <li>Where does PFAS in a particular region originate from?</li>
-                            <li>What specific features or types of facilities seem to contribute the most?</li>
-                            <li>What may be the source of the PFAS in this drinking water district? </li>
-                            <li>What potential sources are upstream (surface or subsurface water) from a public
-                                beach?</li>
-                        </ul>
-                        <p>This use case will receive a stronger focus in Year 3 of the Proto-OKN project, however SAWGraph already supports some basic queries that would apply to this use case as demonstrated below. </p>
-                </div> -->
-                <!-- Right Card -->
-                <!-- <div class="w3-container w3-rest w3-card w3-padding-32 w3-pale-green w3-margin-left">
-                    <h3>User Persona - Geeky Georgia</h3>
-                    <p>PFAS Reasearcher from EPA, state agency or academia</p>
-                    <h4>Goals</h4>
-                    <ul><li>Propose and conduct research studies to better understand PFAS sources, accumulation and transport pathways</li>
+  </div>
+</div>
 
-                        </ul>
-                    <h4>Responsibilities</h4>
-                        <ul>
-                            <li>Identify gaps in knowledge on PFAS contamination and transport</li>
-                            <li>Develop testable hypothesis</li>
-                            <li>Conduct novel research</li>
-                    </ul>
-                </div>
-                </div>
-            </div> -->
 
-            <div>
-                <!-- Use Case 1-->
-                <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">What are the downstream fish tissue and surface water results below Converted Paper Manufacturing Facilities in Maine? </h2>
-                <!--Left Map-->
-                <div class="w3-row-padding w3-large">
-                <div class="folium-map" id="map_246537f924c98c05df96a0a8a5dd041b" style="z-index:0"></div>
-                <div class="w3-container w3-padding-32">
-                    <p>This example traces downstream of Converted Paper Manufacturing Facilities, to examine the pattern in downstream samples of fish and water.</p>
-                    <div class="w3-container">
-                        <p>This query begins by locating all Converted Paper Manufacturing Facilities from the FIO graph based on the NAICS code (naics:NAICS-IndustryGroup-3222). </p>
-                        <p>Next it gets hyf:HY_FlowPath (stream reaches) that are in the same S2 Cell as the Facilities using the Hydrology graph. From the stream reaches, it finds connected downstream reaches by following the hyf:downstreamWaterbody links in the Hydrology graph</p>
-                        <p> The last step is to find samples that are in the same S2 Cells as the downstream reaches, and get all the sample properties including the test results for each chemical for the sample types of interest.</p>
+<!-- ======================================================
+     Main Page Content
+     ====================================================== -->
 
-                        <p> In Maine only one of the river systems that is downstream from Converted Paper Manufacturing Facilities has had repeated testing of surface water and fish tissue samples. The Kennebec River does demonstrate high PFAS levels that diminish as you move downstream, however it is worth noting that Converted Paper Manufacturing is only one of the sources of PFAS that have contributed to this river system. Nevertheless this type of query demonstrates how researchers could test new hypotheses based on suspected sources of PFAS contamination, and existing test results.</p>
-                        <p>A further demonstration and code for this query is available <a href="https://github.com/SAWGraph/public/blob/main/UseCases/UC3-Tracing/UC3-CQ15/SAWGRAPH_demo_UC3_Q15.ipynb">here</a></p>
-                    </div>
-                </div></div>
-                </div></div>
-            </div>
-            
-        </div>
-        
-</body>
-<!--Leaflet scripts-->
+<main class="site-main">
+
+
+  <!-- ====================================================
+       Demo Introduction
+       ==================================================== -->
+
+  <h1 class="page-title">
+    Tracing Demo 1: PFAS Downstream of Facilities
+  </h1>
+
+  <div class="intro-section">
+
+    <p>
+      <strong>Demo Question:</strong> What are the downstream fish tissue and surface water results below Converted Paper Manufacturing Facilities in Maine?
+    </p>
+
+    <p>
+      <strong>Use Case Area:</strong> Trace Contamination Pathways
+    </p>
+
+    <p>
+      This demo shows how SAWGraph can connect facility types, hydrologic flow paths, downstream waterbodies, sampling locations, and PFAS test results. It demonstrates how linked data can support tracing questions across facilities, water systems, and environmental samples.
+    </p>
+
+  </div>
+
+
+  <!-- ====================================================
+       What This Demo Connects
+       ==================================================== -->
+
+  <section id="demo-connects">
+
+    <h2 class="section-title">
+      What This Demo Connects
+    </h2>
+
+    <div class="card-grid card-grid-3">
+
+
+      <div class="content-card">
+
+        <h3>
+          Facilities and Industries
+        </h3>
+
+        <p>
+          Converted paper manufacturing facilities identified through industry classifications represented in SAWGraph.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Hydrology and Spatial Relationships
+        </h3>
+
+        <p>
+          S2 cells, stream reaches, and downstream hydrologic connections used to trace pathways from facility locations through the surface water network.
+        </p>
+
+      </div>
+
+
+      <div class="content-card">
+
+        <h3>
+          Samples and PFAS Results
+        </h3>
+
+        <p>
+          Surface water and fish tissue sampling locations together with PFAS measurements associated with downstream areas.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Demo Results
+       ==================================================== -->
+
+  <section id="demo-results">
+
+    <h2 class="section-title">
+      Demo Results
+    </h2>
+
+    <p>
+      The map shows facilities, hydrologic features, downstream pathways, and environmental sample results returned from the SAWGraph queries based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the queries.
+    </p>
+
+    <p>
+      In the Maine data represented in this demo, repeated surface water and fish tissue testing is concentrated along the Kennebec River. The mapped results illustrate how PFAS measurements can be examined along a downstream pathway. A downstream relationship does not by itself establish that a selected facility released PFAS or caused a downstream measurement; multiple sources may contribute to contamination within the same river system.
+    </p>
+
+    <p>
+      The map is interactive. Pan and zoom to explore the results, use the layer control to show or hide different types of features, and explore mapped features for additional information.
+    </p>
+
+
+    <!-- Downstream Facilities, Flow Paths, and Samples -->
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+
+        <h3>
+          Downstream Facilities, Flow Paths, and Samples
+        </h3>
+
+        <p>
+          The workflow begins with converted paper manufacturing facilities and identifies hydrologic flow paths associated with their locations. It then follows connected reaches downstream and retrieves PFAS sample results associated with downstream areas.
+        </p>
+
+        <p>
+          Available layers include facilities, stream reaches, downstream reaches, surface water samples, skinless fish samples, skin-on fish samples, and S2 cells used in the spatial relationships.
+        </p>
+
+      </div>
+
+      <div
+        class="folium-map"
+        id="map_246537f924c98c05df96a0a8a5dd041b">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Code and Query Resources
+       ==================================================== -->
+
+  <section id="code-resources">
+
+    <h2 class="section-title">
+      Code and Query Resources
+    </h2>
+
+    <p>
+      View the notebook used to run the queries and generate the interactive map.
+    </p>
+
+    <div class="button-row">
+
+      <a
+        href="https://github.com/SAWGraph/public/blob/main/UseCases/UC3-Tracing/UC3-CQ15/SAWGRAPH_demo_UC3_Q15.ipynb"
+        class="site-button-secondary"
+        target="_blank"
+        rel="noopener">
+        View Tracing Query Notebook
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====================================================
+       Return to Explore
+       ==================================================== -->
+
+  <div class="button-row">
+
+    <a
+      href="explore.html#current-demos"
+      class="site-button">
+      View More SAWGraph Demos
+    </a>
+
+  </div>
+
+
+</main>
+
+
+<!-- ======================================================
+     Existing Tracing Map
+     ====================================================== -->
+
 <script>
     
     
@@ -906,4 +992,68 @@ function geo_json_70724fd8b1bdcc5de6e8da39480dbf3b_add (data) {
 
 </script>
 
+
+<!-- ======================================================
+     Footer
+     ====================================================== -->
+
+<footer class="site-footer">
+
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+
+</footer>
+
+
+<!-- ======================================================
+     Back to Top
+     ====================================================== -->
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+
+<!-- ======================================================
+     Back to Top Script
+     ====================================================== -->
+
+<script>
+
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+</script>
+
+
+</body>
 </html>
