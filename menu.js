@@ -129,6 +129,11 @@ document.write(`
                     Tracing Demo 3
                 </a>
 
+                <a href="tracing_nearIndustry.html"
+                   class="w3-bar-item w3-button">
+                    Tracing Demo 4
+                </a>
+
             </div>
 
         </div>
