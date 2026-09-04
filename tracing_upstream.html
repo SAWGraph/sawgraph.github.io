@@ -182,9 +182,18 @@
 
       </div>
 
-      <div
-        class="folium-map"
-        id="map_78c5c49290781488c7377c30ce87f298">
+      <div class="map-with-layers">
+
+        <div
+          class="folium-map"
+          id="map_78c5c49290781488c7377c30ce87f298">
+        </div>
+
+        <div
+          class="map-layer-panel"
+          id="upstream-layer-panel">
+        </div>
+
       </div>
 
     </div>
@@ -2952,6 +2961,12 @@
 }
             ).addTo(map_78c5c49290781488c7377c30ce87f298);
 
+const upstreamLayerPanel =
+  document.getElementById("upstream-layer-panel");
+
+upstreamLayerPanel.appendChild(
+  layer_control_8e6f15cbc21bf215e091e7273d53fdfe.getContainer()
+);
         
     
             tile_layer_09491206cded5c0b7f1bc6cbc1c2f0e0.addTo(map_78c5c49290781488c7377c30ce87f298);
