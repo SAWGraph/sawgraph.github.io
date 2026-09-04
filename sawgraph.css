@@ -529,6 +529,33 @@ li {
   color: var(--saw-muted-text);
 }
 
+/* Maps with external Leaflet layer controls */
+
+.map-with-layers {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, auto);
+  gap: 18px;
+  align-items: start;
+  min-width: 0;
+}
+
+.map-layer-panel {
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.map-layer-panel .leaflet-control {
+  float: none;
+  margin: 0;
+}
+
+.map-layer-panel .leaflet-control-layers {
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
 
 /* ---------- Data Tables ---------- */
 
@@ -892,6 +919,19 @@ li {
     height: 450px;
   }
 
+   .map-with-layers {
+    grid-template-columns: 1fr;
+  }
+
+  .map-layer-panel {
+    width: 100%;
+    max-width: none;
+  }
+
+  .map-layer-panel .leaflet-control-layers {
+    max-height: none;
+  }
+   
 }
 
 
