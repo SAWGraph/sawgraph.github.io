@@ -1,109 +1,171 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>SAWGraph - Contaminant Tracing</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        
-        <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-        </script>
-        <!--Leaflet dependencies-->
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
-            <style>
-                #map_45e8535c5aa455a4bbc06ad397823706 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 700px;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+<html lang="en">
 
-            
+<head>
 
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
-            <!--Leaflet map-->
-    
-                    <style>
-                        .foliumtooltip {
-                            margin: auto;
-                        }
-                       .foliumtooltip table{
-                            margin: auto;
-                        }
-                        .foliumtooltip tr{
-                            text-align: left;
-                        }
-                        .foliumtooltip th{
-                            padding: 2px; padding-right: 8px;
-                        }
-                    </style>
+  <title>Tracing Demo 4 | SAWGraph</title>
 
-    </head>
-<body style="font-family:Verdana, sans-serif; 
-    font-size: 15px;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                    <script src="menu.js"></script>
-                </div>
-    </div>
-    
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    </header>
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!-- Page content -->
-    <!--UseCase 0-->
-<div>
-    <div class="w3-container w3-padding-32 w3-margin-right" id="intro">
-        <br>
-        <h1>Tracing Near Facilities by Industry</h1>
-        <p>While a number of studies have industries of concern for PFAS usage, SAWGraph can quickly summarize all sampling results taken near facilities and group them by the industry code, based on the North American Industry Classification System (NAICS)</p>
-                <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">What samples have been taken near waste treatment facilities? </h2>
-                    <p>This map shows all sampling done within 1-2 km of Waste Treatment and Disposal facilities. Facilities from the Facility Registry Service (FRS) are mapped and colored based on the NAICS code. There are 4 specific industries in the Waste Treatment and Disposal Industry Grooup.</p>
-            </div>            
+  <!-- Leaflet and map dependencies -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
 
-    <div>
-         <div class="folium-map" id="map_45e8535c5aa455a4bbc06ad397823706" style="z-index:0"></div>     
-    </div>
-    
+  <!-- SAWGraph shared styles -->
+  <!-- Keep this after Bootstrap so SAWGraph styles take precedence -->
+  <link rel="stylesheet" href="sawgraph.css">
 
+  <script>
+    L_NO_TOUCH = false;
+    L_DISABLE_3D = false;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+
+</head>
+
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <script src="menu.js"></script>
+  </div>
 </div>
-        
-</body>
-<!--Leaflet scripts-->
+
+<main class="site-main">
+
+  <h1 class="page-title">
+    Tracing Demo 4: Samples Near Industry Facilities
+  </h1>
+
+  <div class="intro-section">
+    <p>
+      <strong>Demo Question:</strong> What samples have been taken near waste treatment facilities?
+    </p>
+    <p>
+      <strong>Use Case Area:</strong> Tracing Potential Contamination Sources
+    </p>
+    <p>
+      This demo shows how SAWGraph can connect environmental sampling results with nearby facilities and industry classifications. It demonstrates how spatial proximity can be used to identify potential relationships between observed PFAS results and facilities that may warrant further investigation.
+    </p>
+  </div>
+
+  <section id="demo-connects">
+    <h2 class="section-title">What This Demo Connects</h2>
+
+    <div class="card-grid card-grid-3">
+
+      <div class="content-card">
+        <h3>Environmental Samples</h3>
+        <p>
+          Sampling locations and PFAS results represented in SAWGraph, including different sample materials and measured substances.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Facilities</h3>
+        <p>
+          Waste Treatment and Disposal facilities represented through EPA Facility Registry Service data.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Industry Classifications</h3>
+        <p>
+          NAICS-based industry categories used to distinguish broader Waste Treatment and Disposal facilities from more specific facility types.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="demo-results">
+    <h2 class="section-title">Demo Results</h2>
+
+    <p>
+      The map displays environmental sample points located within 1–2 km of Waste Treatment and Disposal facilities, along with facilities in the represented industry categories.
+    </p>
+
+    <p>
+      Facilities are grouped by NAICS-based industry classification, allowing users to compare sample locations with different types of nearby waste treatment and disposal facilities. Spatial proximity identifies a potential relationship for investigation, but it does not establish that a nearby facility released PFAS or caused a particular sample result.
+    </p>
+
+    <p>
+      The map is interactive. Pan and zoom to explore the results, use the layer panel to show or hide different facility categories, and explore mapped features for additional information.
+    </p>
+
+    <div class="split-panel split-panel-top">
+
+      <div class="split-panel-text">
+        <h3>Nearby Samples and Waste Treatment Facilities</h3>
+        <p>
+          This example compares PFAS sampling locations with nearby Waste Treatment and Disposal facilities. Sample points are shown together with facilities grouped by industry classification.
+        </p>
+        <p>
+          Available layers include Sample Points, Waste Treatment and Disposal, Hazardous Waste Treatment and Disposal, Solid Waste Combustors and Incinerators, Solid Waste Landfill, and Other Nonhazardous Waste Treatment and Disposal.
+        </p>
+      </div>
+
+      <div class="map-with-layers">
+
+        <div
+          class="folium-map"
+          id="map_45e8535c5aa455a4bbc06ad397823706">
+        </div>
+
+        <div
+          class="map-layer-panel"
+          id="near-industry-layer-panel">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="code-resources">
+    <h2 class="section-title">Code and Query Resources</h2>
+
+    <p>
+      The query workflow connects environmental sampling results with nearby facilities and NAICS-based industry classifications.
+    </p>
+
+    <div class="button-row">
+      <a
+        href="#"
+        class="site-button-secondary"
+        aria-disabled="true"
+        onclick="return false;">
+        View Nearby Industry Query Notebook
+      </a>
+    </div>
+
+    <p>
+      <em>The query notebook for this demo is not currently available online.</em>
+    </p>
+  </section>
+
+  <div class="button-row">
+    <a href="explore.html#current-demos" class="site-button">
+      View More SAWGraph Demos
+    </a>
+  </div>
+
+</main>
+
+<!-- Existing Near-Industry Map -->
+
 <script>
     
     
@@ -1317,6 +1379,13 @@
 }
             ).addTo(map_45e8535c5aa455a4bbc06ad397823706);
 
+            const nearIndustryLayerPanel =
+              document.getElementById("near-industry-layer-panel");
+
+            nearIndustryLayerPanel.appendChild(
+              layer_control_5a842e55654449ab8c711f56a1c3f004.getContainer()
+            );
+
         
     
             tile_layer_cc4c7eacad9345c1363aa5f518a8d894.addTo(map_45e8535c5aa455a4bbc06ad397823706);
@@ -1340,4 +1409,44 @@
             geo_json_222e16ca9b442a4c50fdb028fd70d1f9.addTo(map_45e8535c5aa455a4bbc06ad397823706);
         
 </script>
+
+<footer class="site-footer">
+  <p>
+    Integrating PFAS data and context to support research and decision-making
+  </p>
+</footer>
+
+<button
+  onclick="topFunction()"
+  id="backToTop"
+  title="Go to top"
+  aria-label="Go to top">
+  ↑
+</button>
+
+<script>
+  const backToTopButton = document.getElementById("backToTop");
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  }
+
+  window.addEventListener("scroll", scrollFunction);
+
+  function topFunction() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+</body>
 </html>
