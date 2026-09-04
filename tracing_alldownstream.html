@@ -182,9 +182,18 @@
 
       </div>
 
-      <div
-        class="folium-map"
-        id="map_c2bfb0c5d677343a0619f68bf0af2c5c">
+      <div class="map-with-layers">
+
+        <div
+          class="folium-map"
+          id="map_c2bfb0c5d677343a0619f68bf0af2c5c">
+        </div>
+
+        <div
+          class="map-layer-panel"
+          id="tracing2-layer-panel">
+        </div>
+
       </div>
 
     </div>
@@ -203,7 +212,7 @@
     </h2>
 
     <p>
-      The original page linked to a notebook with changeable variables for location and industry. That notebook is not currently available at the linked location.
+      View the notebook used to run the downstream tracing workflow and generate the interactive map.
     </p>
 
     <div class="button-row">
@@ -1303,6 +1312,13 @@
   "autoZIndex": true,
 }
             ).addTo(map_c2bfb0c5d677343a0619f68bf0af2c5c);
+
+    const externalLayerPanel =
+      document.getElementById("tracing2-layer-panel");
+
+    externalLayerPanel.appendChild(
+      layer_control_9f81f79a3b2d30b60ba320150d4a7e42.getContainer()
+    );
 
         
     

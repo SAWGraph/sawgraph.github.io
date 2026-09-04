@@ -68,7 +68,7 @@
   <div class="intro-section">
 
     <p>
-      <strong>Demo Question:</strong> What are the downstream fish tissue and surface water results below Converted Paper Manufacturing Facilities (NAICS 3222) in Maine?
+      <strong>Demo Question:</strong> What are the downstream fish tissue and surface water results below Converted Paper Manufacturing Facilities in Maine?
     </p>
 
     <p>
@@ -182,9 +182,18 @@
 
       </div>
 
-      <div
-        class="folium-map"
-        id="map_246537f924c98c05df96a0a8a5dd041b">
+      <div class="map-with-layers">
+
+        <div
+          class="folium-map"
+          id="map_246537f924c98c05df96a0a8a5dd041b">
+        </div>
+
+        <div
+          class="map-layer-panel"
+          id="tracing1-layer-panel">
+        </div>
+
       </div>
 
     </div>
@@ -964,6 +973,13 @@ function geo_json_70724fd8b1bdcc5de6e8da39480dbf3b_add (data) {
         layer_control_29becb82d46d0278f798dd7ab79f5d19_layers.overlays,
         {"autoZIndex": true, "collapsed": false, "position": "topright"}
     ).addTo(map_246537f924c98c05df96a0a8a5dd041b);
+
+    const externalLayerPanel =
+      document.getElementById("tracing1-layer-panel");
+
+    externalLayerPanel.appendChild(
+      layer_control_29becb82d46d0278f798dd7ab79f5d19.getContainer()
+    );
 
 
 
