@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Testing Demo 1 | SAWGraph</title>
+  <title>Impacts Demo 2 | SAWGraph</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,21 +62,21 @@
        ==================================================== -->
 
   <h1 class="page-title">
-    Testing Demo 1: Surface Water Bodies Near Facilities
+    Impacts Demo 2: PFAS Based on Well Type
   </h1>
 
   <div class="intro-section">
 
     <p>
-      <strong>Demo Question:</strong> What surface water bodies are near landfills or Department of Defense sites?
+      <strong>Demo Question:</strong> Can well type predict PFAS contamination risk?
     </p>
 
     <p>
-      <strong>Use Case Area:</strong> Prioritize Testing and Identify Gaps
+      <strong>Use Case Area:</strong> Assessing and Mapping Impacts and Risks
     </p>
 
     <p>
-      This demo presents two related SAWGraph queries. The first identifies nearby lakes and ponds, while the second extends the analysis to surface water flowlines downstream from the selected facilities. Together, they demonstrate how spatial and hydrologic relationships can support decisions about where additional environmental testing or investigation may be useful.
+      This demo showcases how SAWGraph can be used to perform analyses to identify potential patterns in vulnerability to PFAS contamination. It shows how PFAS concentrations vary based on the type of well that was sampled, performs a statistical analysis, and visualizes the results based on the type of well a sample was likely taken from.
     </p>
 
   </div>
@@ -98,11 +98,11 @@
       <div class="content-card">
 
         <h3>
-          Facilities
+          Wells
         </h3>
 
         <p>
-          Landfills and Department of Defense sites included in the queries.
+          Located water wells and their respective types in Maine.
         </p>
 
       </div>
@@ -111,11 +111,11 @@
       <div class="content-card">
 
         <h3>
-          Surface Water
+          Public and Private Water Supply Testing
         </h3>
 
         <p>
-          Lakes, ponds, rivers, and flowlines represented in the SAWGraph hydrology data.
+          PFAS test results from public water supply wells and private water supply wells.
         </p>
 
       </div>
@@ -124,11 +124,11 @@
       <div class="content-card">
 
         <h3>
-          Spatial and Hydrologic Relationships
+          Counties
         </h3>
 
         <p>
-          S2 cells and neighboring-cell relationships used to identify nearby features, together with downstream connectivity used to trace flowlines.
+          Maine counties used to analyze, compare, and map data.
         </p>
 
       </div>
@@ -150,11 +150,15 @@
     </h2>
 
     <p>
-      The maps show facilities and surface water features returned from the SAWGraph queries based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the queries.
+      Looking for indicators of PFAS contamination risk can help us identify, prioritize, and target testing in areas that may have an increased risk for PFAS contamination based on the results of this impact demo.
     </p>
 
     <p>
-      Spatial proximity may help identify areas for further investigation or testing, but it does not establish that a facility released PFAS or that a nearby water body is contaminated.
+      This demo focuses on assigning a ‘likely’ well type that sample points are from based on spatial proximity in Kennebec County. This is needed because the sample dataset does not contain information about the well that the sample was taken from, only that it was taken from a well. By spatially associating these two datasets using S2 neighborhoods, we can identify which samples likely came from gravel wells and which likely came from bedrock wells.
+    </p>
+
+    <p>
+      Along with assigning a likely well type to the sample points, the sample points were split into two groups, detect and non-detects, with the detected points having an average detected value at each sample point.
     </p>
 
     <p>
