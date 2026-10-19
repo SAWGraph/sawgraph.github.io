@@ -68,7 +68,7 @@
   <div class="intro-section">
 
     <p>
-      <strong>Demo Question:</strong> What surface water bodies are near landfills or Department of Defense sites?
+      <strong>Demo Question:</strong> What surface water bodies are near or downstream of landfills or Department of Defense sites?
     </p>
 
     <p>
@@ -76,7 +76,7 @@
     </p>
 
     <p>
-      This demo presents two related SAWGraph queries. The first identifies nearby lakes and ponds, while the second extends the analysis to surface water flowlines downstream from the selected facilities. Together, they demonstrate how spatial and hydrologic relationships can support decisions about where additional environmental testing or investigation may be useful.
+      This demo presents two related SAWGraph queries. The first identifies nearby surface water bodies, such as lakes and ponds. The second identifies nearby surface water flowlines, including river and stream segments, and follows their downstream connections. Together, they demonstrate how spatial and hydrologic relationships can help identify locations where additional environmental testing or investigation may be useful.
     </p>
 
   </div>
@@ -102,7 +102,7 @@
         </h3>
 
         <p>
-          Landfills and Department of Defense sites included in the queries.
+          Landfills and Department of Defense sites identified through industry classifications represented in SAWGraph.
         </p>
 
       </div>
@@ -115,7 +115,7 @@
         </h3>
 
         <p>
-          Lakes, ponds, rivers, and flowlines represented in the SAWGraph hydrology data.
+          Surface water bodies, such as lakes and ponds, and flowlines representing river and stream segments in the SAWGraph hydrology data.
         </p>
 
       </div>
@@ -128,7 +128,7 @@
         </h3>
 
         <p>
-          S2 cells and neighboring-cell relationships used to identify nearby features, together with downstream connectivity used to trace flowlines.
+          S2 cells—geographic grid cells used to associate nearby features—and downstream connections in the surface water network.
         </p>
 
       </div>
@@ -150,15 +150,19 @@
     </h2>
 
     <p>
-      The maps show facilities and surface water features returned from the SAWGraph queries based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the queries.
+      The maps show facilities and surface water features returned from the SAWGraph queries for this Maine example. Results reflect the datasets represented in the graph when the maps were generated, as well as the spatial relationships and other conditions used in each query.
     </p>
 
     <p>
-      Spatial proximity may help identify areas for further investigation or testing, but it does not establish that a facility released PFAS or that a nearby water body is contaminated.
+      The first query identifies water bodies that overlap the same or neighboring S2 cells as the selected facilities. The second starts with flowlines within the same S2 cells as facilities and traces downstream through the hydrologic network.
     </p>
 
     <p>
-      The maps are interactive. Pan and zoom to explore the results, use the layer controls to show or hide different types of features, and explore mapped features for additional information.
+      These relationships can help identify locations for further investigation or testing, but they do not establish that a facility released PFAS or that an associated water body is contaminated.
+    </p>
+
+    <p>
+      The maps are interactive. Pan and zoom to explore the results, use the layer controls to show or hide different types of features, and select mapped features for additional information.
     </p>
 
 
@@ -169,15 +173,15 @@
       <div class="split-panel-text">
     
         <h3>
-          Lakes and Ponds
+          Nearby Surface Water Bodies
         </h3>
     
         <p>
-          This map shows facilities of the selected types together with nearby lakes and ponds returned from the SAWGraph query.
+          This map shows landfills and Department of Defense sites together with nearby surface water bodies, such as lakes and ponds. Water bodies are included in the results when they overlap a facility’s S2 cell or neighboring cells.
         </p>
     
         <p>
-          Facilities and water bodies are displayed by default. The layer control can also display the facility S2 cells and neighboring S2 cells used to establish the spatial relationship.
+          Facilities and water bodies are displayed by default. The layer control can also display the facility S2 cells and neighboring S2 cells used to establish the spatial relationships.
         </p>
     
       </div>
@@ -201,7 +205,7 @@
         </h3>
     
         <p>
-          This map shows facilities of the selected types together with surface water flowlines returned from the SAWGraph query. It distinguishes flowlines associated with the facility locations from additional flowlines downstream in the hydrologic network.
+          This map shows landfills and Department of Defense sites together with nearby river and stream segments represented as flowlines. The query selects initial flowlines within the same S2 cells as facilities, then follows their downstream connections. Coastline features are excluded from the query results.
         </p>
     
         <p>
@@ -241,7 +245,7 @@
         class="site-button-secondary"
         target="_blank"
         rel="noopener">
-        View Lakes and Ponds Query Notebook
+        View Surface Water Bodies Query Notebook
       </a>
 
       <a
