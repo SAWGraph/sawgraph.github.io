@@ -76,7 +76,7 @@
     </p>
 
     <p>
-      This demo shows how SAWGraph can connect PFAS testing results from private water supply wells with aquifer and well data. It identifies aquifers associated with locations where high PFOA concentrations have been reported and other wells associated with those aquifers.
+      This demo shows how SAWGraph can connect PFAS testing results from private water supply wells with aquifer and well data. It identifies sample points with reported PFOA results above 200 ng/L, associates those locations with mapped aquifer systems, and finds other wells associated with those systems. These connections can help identify locations where additional investigation or testing may be useful.
     </p>
 
   </div>
@@ -102,7 +102,7 @@
         </h3>
 
         <p>
-          PFOA observations and results from private water supply well sample points.
+          PFOA observations and results from private water supply well sample points in Maine’s Environmental and Geographic Analysis Database (EGAD).
         </p>
 
       </div>
@@ -115,7 +115,7 @@
         </h3>
 
         <p>
-          Aquifer systems associated with sample locations where PFOA results have been above 200 ng/L.
+          Mapped aquifer systems associated with sample points where PFOA results have been above 200 ng/L.
         </p>
 
       </div>
@@ -150,19 +150,23 @@
     </h2>
 
     <p>
-      The map shows private water supply sample points, aquifers, and wells returned from the SAWGraph query based on the datasets currently represented in the graph. Results therefore reflect the scope and version of those datasets, as well as the conditions of the query.
+      The map shows private water supply sample points with at least one reported PFOA result above 200 ng/L, the aquifer systems associated with those locations, and other wells associated with those systems.
     </p>
 
     <p>
-      Together, these results demonstrate how contamination observations can be connected with groundwater and well data to help identify locations where additional investigation or testing may be useful.
+      The query uses S2 cells—geographic grid cells used to connect spatial data—to associate sample points with mapped aquifers. It then finds other wells within S2 cells that fall within or overlap those aquifers.
     </p>
 
     <p>
-      For this demonstration, nearby Maine Geological Survey aquifers have been combined into larger aquifer systems. The current aquifer information is limited and is being expanded.
+      For this demonstration, nearby Maine Geological Survey aquifers have been combined into larger aquifer systems. The displayed connections reflect these mapped aquifer systems and spatial relationships; they do not independently confirm groundwater flow between individual wells.
     </p>
 
     <p>
-      The map is interactive. Pan and zoom to explore the results, use the layer controls to show or hide different types of features, and explore mapped features for additional information.
+      Results reflect the datasets represented in the graph when the map was generated, the available aquifer information, and the conditions of the query. They can help identify wells for further investigation or testing, but they do not establish that other wells associated with the same aquifer system are contaminated.
+    </p>
+
+    <p>
+      The map is interactive. Pan and zoom to explore the results, use the layer control to show or hide different types of features, and select mapped features for additional information.
     </p>
 
 
@@ -177,11 +181,11 @@
         </h3>
 
         <p>
-          This map shows private water supply sample points with PFOA results above 200 ng/L, the aquifer systems associated with those sample locations, and Maine Geological Survey wells associated with those aquifer systems.
+          This map brings together private water supply sample points with PFOA results above 200 ng/L, associated aquifer systems, and Maine Geological Survey wells.
         </p>
 
         <p>
-          The available layers include contaminated sample points, aquifers, and wells.
+          The available layers include sample points, aquifers, and wells. A qualifying sample point has at least one result above the demonstration threshold; other results from that location may be lower.
         </p>
 
       </div>
@@ -217,7 +221,7 @@
         class="site-button-secondary"
         target="_blank"
         rel="noopener">
-        View Query Notebook
+        View Wells Connected Through Aquifers Query Notebook
       </a>
 
     </div>
