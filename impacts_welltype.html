@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Impacts Demo 2 | SAWGraph</title>
+  <title>Impacts Demo 2</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,7 +61,7 @@
   <div class="intro-section">
     <p><strong>Demo Question:</strong> Can well type predict PFAS contamination risk?</p>
     <p><strong>Use Case Area:</strong> Assessing and Mapping Impacts and Risks</p>
-    <p>This demo shows how SAWGraph can connect PFAS testing results with well and county data to explore potential patterns in vulnerability to contamination. It uses spatial proximity to assign a likely well type to sample points, compares detected PFOS concentrations by likely well type, and visualizes the results.</p>
+    <p>This demo showcases how SAWGraph can be used to perform analyses to identify potential patterns in vulnerability to PFAS contamination. It shows how PFAS concentrations vary based on the type of well that was sampled, performs a statistical analysis, and visualizes the results based on the type of well a sample was likely taken from.</p>
   </div>
 
   <!-- What This Demo Connects -->
@@ -70,11 +70,11 @@
     <div class="card-grid card-grid-3">
       <div class="content-card">
         <h3>Wells</h3>
-        <p>Located water wells and their recorded well types in Maine.</p>
+        <p>Located water wells and their respective types in Maine.</p>
       </div>
       <div class="content-card">
         <h3>Public and Private Water Supply Testing</h3>
-        <p>PFAS test results from public and private water supply well sample points.</p>
+        <p>PFAS test results from public water supply wells and private water supply wells.</p>
       </div>
       <div class="content-card">
         <h3>Counties</h3>
@@ -86,19 +86,30 @@
   <!-- Demo Results -->
   <section id="demo-results">
     <h2 class="section-title">Demo Results</h2>
-    <p>Looking for indicators of PFAS contamination risk can help inform where further investigation or testing may be useful. This demonstration explores differences in detected PFOS concentrations between sample points assigned to likely gravel and bedrock wells in Kennebec County, Maine.</p>
-    <p>The testing dataset identifies samples as coming from wells but does not identify the specific wells from which they were collected. SAWGraph uses S2 neighborhoods—geographic grid cells used to associate nearby locations—to connect sample points with nearby well records and assign a likely gravel or bedrock well type. These assignments are inferred from spatial proximity.</p>
-    <p>The workflow separates detected and non-detected PFOS results and calculates an average detected concentration for each sample point with detections. It includes a statistical analysis and a box-and-whisker plot to compare the distribution of those averages by likely well type.</p>
-    <p>The interactive map displays sample points with detected PFOS and uses circle size to represent the average detected concentration at each point. Results reflect the datasets represented in the graph when the map was generated, the study area and substance, and the spatial matching and analysis methods.</p>
-    <p>This comparison can help identify patterns for further investigation, but it does not by itself establish that well type predicts contamination risk.</p>
+    <p>Looking for indicators of PFAS contamination risk can help us identify, prioritize, and target testing in areas that may have an increased risk for PFAS contamination based on the results of this impact demo.</p>
+    <p>This demo focuses on assigning a ‘likely’ well type that sample points are from based on spatial proximity in Kennebec County. This is needed because the sample dataset does not contain information about the well that the sample was taken from, only that it was taken from a well. By spatially associating these two datasets using S2 neighborhoods, we can identify which samples likely came from gravel wells and which likely came from bedrock wells.</p>
+    <p>Along with assigning a likely well type to the sample points, the sample points of the specified PFAS (PFOS in this demo) were split into two groups, detect and non-detects, with the detected points having an average detected value at each sample point.</p>
+    <p>A statistical analysis was performed and a box and whisker plot was created to visualize the distribution of detected sample points for each type of well for PFOS in Kennebec County.</p>
+
+    <!-- PFOS Concentration Chart -->
+    <h3>Detected PFOS Concentrations by Likely Well Type</h3>
+    <p>The box-and-whisker plot compares the distribution of average detected PFOS concentrations at sample points assigned to likely bedrock and gravel wells. Each plotted value is an average for one sample point; non-detected results are excluded from these concentration averages.</p>
+
+    <figure class="content-figure" style="max-width: 788px;">
+      <a href="images/Impacts_ppt_welltype.png" target="_blank" rel="noopener"
+         aria-label="Open the PFOS concentration chart at full size in a new tab">
+        <img src="images/Impacts_ppt_welltype.png" width="788" height="480"
+             alt="Box-and-whisker plot comparing average detected PFOS concentrations per sample point for likely bedrock and gravel wells in Kennebec County, Maine."
+             aria-describedby="welltype-chart-caption">
+      </a>
+      <figcaption id="welltype-chart-caption">Kennebec County, Maine. Values are averages of detected PFOS results at each sample point, expressed in parts per trillion (ppt). Likely well types are inferred from spatial proximity to well records. Select the image to open it at full size.</figcaption>
+    </figure>
 
     <!-- PFOS Map -->
     <div class="split-panel split-panel-top">
       <div class="split-panel-text">
         <h3>PFOS by Likely Well Type in Kennebec County</h3>
-        <p>The map displays sample points assigned to likely gravel and bedrock wells. Blue and red markers identify the two groups; cyan and pink circles show their average detected PFOS concentrations.</p>
-        <p>Larger circles represent higher average detected concentrations. Circle radii are capped in the map display; use the concentration values shown when hovering over a point for exact comparisons.</p>
-        <p>Pan and zoom to explore the results, use the layer control to show or hide the location markers and concentration circles, and hover over sample points for additional information.</p>
+        <p>The results also produce a map for Kennebec County with the average detected amount at each sample point represented by circles with a radius size that corresponds to the detected amount of PFOS.</p>
       </div>
       <div class="folium-map" id="map_67bb1b8c613999a65083f579f370c57c"
            role="region" aria-label="Interactive map of detected PFOS by likely well type in Kennebec County">
