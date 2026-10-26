@@ -114,6 +114,11 @@ document.write(`
                     Impacts Demo 1
                 </a>
 
+                <a href="impacts_welltype.html"
+                   class="w3-bar-item w3-button">
+                    Impacts Demo 2
+                </a>
+
                 <a href="tracing.html"
                    class="w3-bar-item w3-button">
                     Tracing Demo 1
